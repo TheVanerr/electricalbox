@@ -1,0 +1,42 @@
+# Elektrik kutuları — proje anahtarı
+#
+# AÇIK   = satır # ile başlıyor  → Cursor bu klasörü okur
+# KAPALI = satır # ile başlamıyor → Cursor bu klasörü okumaz
+#
+# Bir kutuda çalışırken:
+#   1. O projenin satırının başına # koy (aç).
+#   2. Diğer projelerin başındaki # işaretini sil (kapat).
+#   3. Yeni klasör ekleyince buraya adını yaz; başında # olmasın (kapalı gelsin).
+#   4. Kaydettikten sonra Command Palette → Developer: Reload Window
+#
+# Aynı anda tek proje açık kalsın.
+
+# -----------------------------------------------------------------------------
+# Her zaman kapalı (proje açık olsa bile)
+# -----------------------------------------------------------------------------
+**/node_modules/
+**/.git/
+**/dist/
+**/build/
+**/out/
+**/.next/
+**/.nuxt/
+**/.cache/
+**/.turbo/
+**/coverage/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/target/
+**/*.log
+**/.DS_Store
+**/Thumbs.db
+
+# -----------------------------------------------------------------------------
+# PROJELER  (hepsi kapalı. Açmak için satır başına # koy.)
+# -----------------------------------------------------------------------------
+#0326069-KSYSTE-KBN 1B 1850/
+0326070-RICHAR-KBN 2B 1650/
+0326072-KÜRSAN-KBN 2B 1650/
+1326050-KSYSTE-KBN 2B 1650/

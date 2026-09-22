@@ -1,0 +1,78 @@
+---
+description: Kontaktör, termik, MKŞ, sigorta, röle ve redüktör eşlemesi bu stoktan yapılır
+alwaysApply: true
+---
+
+# Kontaktör, termik, MKŞ
+
+Kontaktör, termik veya MKŞ istendiğinde yalnızca aşağıdaki stoktan seç. Başka marka veya bu listede olmayan kod yazma. Çıktıda malzeme adını ve stok kodunu birlikte yaz.
+
+Akım verilmezse 380 V, 3 faz, 50 Hz kabul et. Çizimde "380 V · 50 Hz" ibaresi üstte durur. In yaklaşık: 0,37 kW→1,1 A; 0,55→1,5; 0,75→1,9; 1,1→2,6; 1,5→3,7; 2,2→5,2; 3→6,6; 4→8,9; 5,5→12; 7,5→16; 11→23. Ayar = In. Tablo gücü kW toplamıdır. Tablo akımı, yükler aynı anda çalışırken hat akımlarının toplamıdır.
+
+- Kontaktör: hem AC-3 akımı hem katalog kW değeri motoru karşılayan en küçük model.
+- Termik: In, ayar aralığının içinde olan LR2K. Aralık In'i içermiyorsa o model yok say.
+- MKŞ: In, ayar aralığının içinde olan GV2ME. In yalnızca üst durakta kalıyorsa ve bir üst model de In'i alıyorsa üst modeli seç.
+- Seri yetmiyorsa uydurma; yetmediğini yaz.
+
+## Kontaktör (bobin 220 V)
+
+- KONTAKTÖR LC1K0610M7 220V — 6 A, 2,2 kW — 10 02314
+- KONTAKTÖR LC1K0910M7 220V — 9 A, 4 kW — 10 01331
+- KONTAKTÖR LC1K1610M7 220V — 16 A, 7,5 kW — 10 01332
+- KONTAKTÖR LC1D25M7 — 25 A, 11 kW — 10 01329
+
+## Termik
+
+- TERMIK RÖLESİ LR2K0305 0,54-0,8A — 10 00243
+- TERMIK RÖLESİ LR2K0306 0,80-1,2A — 10 00244
+- TERMIK RÖLESİ LR2K0307 1,20-1,8A — 10 00245
+- TERMIK RÖLESİ LR2K0308 1,80-2,6A — 10 00246
+- TERMIK RÖLESİ LR2K0310 2,60-3,7A — 10 00247
+- TERMIK RÖLESİ LR2K0312 3,70-5,5A — 10 00248
+- TERMIK RÖLESİ LR2K0314 5,80-8,0A — 10 00249
+- TERMIK RÖLESİ LR2K0316 8-11,5A — 10 01359
+- TERMIK RÖLESİ LR2K0321 10,0-14A — 10 00250
+- TERMIK RÖLESİ LR2K0322 12-16A — 10 09431
+
+## MKŞ
+
+Ayar aralığı Schneider GV2ME katalog değeridir. Stok kodu listedekidir. GV2ME32 bu stokta yok.
+
+- MOTOR KORUMA ŞALTERİ GV2ME01 0,10-0,16A — 10 18250
+- MOTOR KORUMA ŞALTERİ GV2ME02 0,16-0,25A — 10 16799
+- MOTOR KORUMA ŞALTERİ GV2ME03 0,25-0,40A — 10 05619
+- MOTOR KORUMA ŞALTERİ GV2ME04 0,40-0,63A — 10 01368
+- MOTOR KORUMA ŞALTERİ GV2ME05 0,63-1A — 10 01370
+- MOTOR KORUMA ŞALTERİ GV2ME06 1-1,6A — 10 01367
+- MOTOR KORUMA ŞALTERİ GV2ME07 1,6-2,5A — 10 01371
+- MOTOR KORUMA ŞALTERİ GV2ME08 2,5-4A — 10 01369
+- MOTOR KORUMA ŞALTERİ GV2ME10 4-6,3A — 10 01362
+- MOTOR KORUMA ŞALTERİ GV2ME14 6-10A — 10 01363
+- MOTOR KORUMA ŞALTERİ GV2ME16 9-14A — 10 01364
+- MOTOR KORUMA ŞALTERİ GV2ME20 13-18A — 10 01366
+- MOTOR KORUMA ŞALTERİ GV2ME21 17-23A — 10 01372
+- MOTOR KORUMA ŞALTERİ GV2ME22 20-25A — 10 18165
+
+Örnek, termik düzeni: 3 kW, In 6,6 A → LC1K0910M7 (10 01331) + LR2K0314 ayar 6,6 A (10 00249). LC1K06 yetmez (6 A / 2,2 kW).
+Örnek, MKŞ düzeni: aynı motor → GV2ME14 ayar 6,6 A (10 01363) + LC1K0910M7 (10 01331) + GVAE11 (10 01365). Termik bu düzene girmez.
+
+## Motor sürme
+
+Bir motoru süren düzenlerden yalnız biri seçilir. Üçü bir arada olmaz. MKŞ ile termik aynı motorda durmaz.
+
+- MKŞ + kontaktör + yardımcı kontak. Her MKŞ için bir YARDIMCI KONTAK GVAE11 MKŞ — 10 01365.
+- Termik + kontaktör.
+- İnvertör + sigorta.
+
+## Eşleme
+
+- Sepet redüktörü 0,37 kW invertörle sürülür. İnvertörün tam adı İNVERTÖR VFD004EL21W-1 0,4KW — 10 16319. Tam adıyla yaz. Sigortası SCHNEIDER SİGORTA A9F74106 1*6 — 10 01421.
+- 8 kW ısıtıcı için 16 A kontaktör: KONTAKTÖR LC1K1610M7 220V — 10 01332. Isıtıcıya termik veya MKŞ ekleme.
+- Sensör, termokupl ve el koruma sensörüne kontaktör, termik, MKŞ ekleme.
+- Kapak kapalı sensörü kuru kontaktır. 24 V veya 220 V beslemesi yoktur; kontak emniyet rölesinin girişine gider. Her kapak için bir EMNİYET RÖLESİ G9SB2002AACDC241 OMRON G9SX — 10 08330.
+- Termokupl cihazı: ORDEL OC990-9/0240 FIR.KON.CİH-DİJ.PAN. — 10 00229.
+- Pano beslemesinde her zaman: GÜÇ KAYNAĞI MDR 20/24 — 10 02491, 1 adet. FAZ KORUMA RÖLESİ MKS-03 — 10 00258, 1 adet.
+- Kaçak akım tüm pano için 1 adettir. Tablo akımını karşılayan en küçük modeli seç: SİGORTA KAÇAK AKIMLI A9R41425 4'LÜ 25 A — 10 00303. A9R41440 4'LÜ 40 A — 10 00304. A9R41463 4'LÜ 63 A — 10 00305. Akım 63 A üstündeyse uydurma, yetmediğini yaz.
+- Aşırı akım koruma tüm pano için 1 adettir. Aynı seçim: SİGORTA A9F74425 SCHNEIDER iC60N 6KA 25A — 10 02663. SİGORTA A9F74440 SCHNEIDER 40A — 10 02664. SİGORTA A9F74463 SCHNEIDER iC60N 6KA 63A 4P 63A — 10 04732. Akım 63 A üstündeyse uydurma, yetmediğini yaz.
+- Manuel KBN: MİNYATÜR RÖLE RXM4AB1BD 24V 16 PİNLİ — 10 01398, 1 adet. MİNYATÜR RÖLE RXM4AB1P7 220V — 10 00294, 2 adet. RÖLE SOKETİ RXZE2M114M — 10 00295, 3 adet.
+- Ön yüz, üstte ORDEL OC990-9/0240 — 10 00229. START yeşil = BUTON START B100DY — 10 00273. STOP kırmızı = BUTON START B100DK — 10 00271. RESET mavi = BUTON START B100DM — 10 00272. ACİL STOP = BUTON ACİL STOP MANTAR B200EE — 10 03445, 1 adet. SEPET TEST = BUTON START B100DB — 10 00270. Kapak aç yeşil, kapak kapat kırmızı; her kapak için birer tane, stok kodu verilmedi, kod uydurma. Uyarı lambası 3 adet: SİNYAL LAMBASI S14K KIRMIZI 220V — 10 00278. Etiket adları: düşük su seviyesi, pompa arızası, redüktör arızası.
