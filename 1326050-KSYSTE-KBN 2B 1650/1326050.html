@@ -80,6 +80,86 @@
     .notes th, .notes td { border: 1px solid #1a1a1a; padding: 7px 10px; text-align: left; }
     .notes th { background: #1a1a1a; color: #fafafa; font-size: 11px; letter-spacing: 0.08em; font-weight: 650; text-align: center; }
     .notes td.no { width: 42px; text-align: center; font-weight: 650; background: #efefef; font-variant-numeric: tabular-nums; }
+    .io { padding: 4px 14px 18px; }
+    .io h2 { margin: 10px 0 8px; font-size: 12px; letter-spacing: 0.12em; }
+    .io table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .io th, .io td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; }
+    .io th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
+    .io td.num { width: 72px; text-align: center; font-variant-numeric: tabular-nums; }
+    .io td.role, .safety td.role { width: 72px; text-align: center; }
+    .safety td.ext { color: #b42318; font-weight: 650; }
+    .opts { padding: 4px 14px 8px; }
+    .opts h2 { margin: 8px 0 2px; font-size: 12px; letter-spacing: 0.12em; }
+    .opts p { margin: 0 0 8px; font-size: 11px; }
+    .opts table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .opts th, .opts td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; }
+    .opts th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
+    .opts td:first-child, .opts td:nth-child(3) { text-align: center; }
+    .opts tr.el { background: #f3e2a8; }
+  
+    .face { padding: 12px 14px 16px; }
+    .face h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; }
+    .label {
+      width: 400px; margin: 0 auto; background: #fff; color: #1a1a1a;
+      border: 1px solid #1a1a1a; padding: 22px 18px 8px;
+    }
+    .brand { margin: 0; text-align: center; color: #e10600; font-size: 48px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
+    .brand-sub { margin: 6px 0 18px; text-align: center; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; }
+    .disp { display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .win { border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .win.hmi { width: 220px; height: 132px; }
+    .win .screen { width: 196px; height: 84px; background: #163024; margin-bottom: 4px; }
+    .win p { margin: 0; font-size: 9px; text-align: center; line-height: 1.2; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-bottom: 16px; align-items: center; }
+    .cell { display: flex; align-items: center; gap: 8px; }
+    .cols .cell:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+    .cap { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #1a1a1a; flex: none; }
+    .cap.open { background: #2f8f4e; }
+    .cap.close { background: #c0392b; }
+    .cap.reset { background: #2f6fbf; }
+    .cap.test { background: #1a1a1a; }
+    .pair .cell.test { flex-direction: row-reverse; text-align: right; }
+    .cell .t { margin: 0; font-size: 11px; font-weight: 750; letter-spacing: 0.02em; }
+    .cell .e { margin: 0; font-size: 9px; }
+    .cell .s { margin: 0; font-size: 8px; line-height: 1.2; }
+    .pair { display: flex; justify-content: space-between; align-items: center; margin: 4px 8px 18px; }
+    .estop { display: flex; flex-direction: column; align-items: center; }
+    .ring {
+      width: 78px; height: 78px; border-radius: 50%; background: #f5d400;
+      border: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: center;
+    }
+    .ring .cap { width: 40px; height: 40px; background: #c0392b; border-width: 2px; }
+    .estop .t { margin: 4px 0 0; font-size: 11px; font-weight: 750; }
+    .estop .s { margin: 0; font-size: 8px; }
+    .hands { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin: 0 4px 16px; }
+    .hands > .estop {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      background: #fff; padding: 4px 8px; z-index: 1;
+    }
+    .stack { display: flex; flex-direction: column; align-items: flex-start; }
+    .stack.right { align-items: flex-end; }
+    .stack.right .cell { flex-direction: row-reverse; text-align: right; }
+    .reach {
+      position: relative; width: 28px; height: 360px; margin: 4px 0;
+      border-left: 1px solid #1a1a1a;
+    }
+    .stack.right .reach { border-left: 0; border-right: 1px solid #1a1a1a; }
+    .reach span {
+      position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
+      width: 76px; text-align: left; font-size: 10px; letter-spacing: 0.04em;
+    }
+    .stack.right .reach span { left: auto; right: 8px; text-align: right; }
+    .cnk { margin-top: 12px; border-top: 2px solid #1a1a1a; padding-top: 6px; text-align: center; font-size: 9px; line-height: 1.35; }
+    .cnk strong { display: block; font-size: 11px; letter-spacing: 0.01em; }
+    header { align-items: flex-start; }
+    .head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      width: 28px; height: 18px; padding: 0; border: 1px solid #1a1a1a;
+      background: #fff; cursor: pointer; line-height: 0;
+    }
+    .langs button.on { outline: 2px solid #1a1a1a; outline-offset: 1px; }
+    .langs svg { display: block; width: 28px; height: 18px; }
   </style>
 </head>
 <body>
@@ -87,9 +167,16 @@
     <header>
       <div>
         <h1>1326050-KSYSTE-KBN 2B 1650</h1>
-        <p class="supply">380 V · 50 Hz · Tablo gücü 23,22 kW · Tablo akımı 51,82 A</p>
+        <p class="supply">380 V · 50 Hz · Tablo gücü 61,22 kW · Tablo akımı 109,54 A</p>
       </div>
-      <div class="meta">MANUEL · KBN</div>
+      <div class="head-side">
+        <div class="langs" role="group" aria-label="Language">
+          <button type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 36" aria-hidden="true"><rect width="60" height="36" fill="#012169"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#fff" stroke-width="10"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#C8102E" stroke-width="6"/><path d="M30 0 V36 M0 18 H60" stroke="#fff" stroke-width="16"/><path d="M30 0 V36 M0 18 H60" stroke="#C8102E" stroke-width="9"/></svg></button>
+          <button type="button" data-lang="tr" title="Türkçe" aria-label="Türkçe"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="5" fill="#fff"/><circle cx="13.3" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="17,10 19.1,10.7 18.3,8.7 20,7.3 17.9,7.2 17,5.2 16.1,7.2 14,7.3 15.7,8.7 14.9,10.7"/></svg></button>
+          <button type="button" data-lang="de" title="Deutsch" aria-label="Deutsch"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#000"/><rect y="6.67" width="30" height="6.66" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></button>
+        </div>
+        <div class="meta">MANUEL · KBN</div>
+      </div>
     </header>
 
     <section class="row">
@@ -364,6 +451,1023 @@
       </div>
     </section>
 
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Yıkama tankı 1. ısıtıcı</p>
+        <p class="s">8 kW · kontaktör + 3P sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="4" width="16" height="36" rx="1" fill="#fafafa" stroke="#1a1a1a"/><rect x="22" y="16" width="8" height="10" fill="#1a1a1a"/><path d="M26 4 V1 M26 40 V43" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74316 SCHNEİDER 16A</p>
+          <p class="c">3P · 10 04000</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Yıkama tankı 2. ısıtıcı</p>
+        <p class="s">8 kW · kontaktör + 3P sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="4" width="16" height="36" rx="1" fill="#fafafa" stroke="#1a1a1a"/><rect x="22" y="16" width="8" height="10" fill="#1a1a1a"/><path d="M26 4 V1 M26 40 V43" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74316 SCHNEİDER 16A</p>
+          <p class="c">3P · 10 04000</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Durulama tankı 1. ısıtıcı</p>
+        <p class="s">8 kW · kontaktör + 3P sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="4" width="16" height="36" rx="1" fill="#fafafa" stroke="#1a1a1a"/><rect x="22" y="16" width="8" height="10" fill="#1a1a1a"/><path d="M26 4 V1 M26 40 V43" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74316 SCHNEİDER 16A</p>
+          <p class="c">3P · 10 04000</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Durulama tankı 2. ısıtıcı</p>
+        <p class="s">8 kW · kontaktör + 3P sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="4" width="16" height="36" rx="1" fill="#fafafa" stroke="#1a1a1a"/><rect x="22" y="16" width="8" height="10" fill="#1a1a1a"/><path d="M26 4 V1 M26 40 V43" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74316 SCHNEİDER 16A</p>
+          <p class="c">3P · 10 04000</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Kurutma fanı ısıtıcısı</p>
+        <p class="s">6 kW · kontaktör + 3P sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="4" width="16" height="36" rx="1" fill="#fafafa" stroke="#1a1a1a"/><rect x="22" y="16" width="8" height="10" fill="#1a1a1a"/><path d="M26 4 V1 M26 40 V43" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74316 SCHNEİDER 16A</p>
+          <p class="c">3P · 10 04000</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="8" width="40" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 8 V28 M26 8 V28 M36 8 V28" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Yıkama tankı kaçak akım</p>
+        <p class="s">32 A · 2 × 16 A sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="4" y="6" width="44" height="32" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M15 6 V38 M26 6 V38 M37 6 V38" stroke="#1a1a1a"/><rect x="8" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="19" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="30" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="41" y="16" width="5" height="8" fill="#1a1a1a"/></svg>
+          <p class="n">SİGORTA KAÇAK AKIMLI A9R41440 4'LÜ 40 A</p>
+          <p class="c">10 00304</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="8" width="20" height="28" fill="#fafafa" stroke="#1a1a1a"/><circle cx="22" cy="20" r="2" fill="#1a1a1a"/><circle cx="30" cy="20" r="2" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">YARDIMCI KONTAK 1NA/1NK A9A26924 IOF</p>
+          <p class="c">10 10820</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="8" width="40" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 8 V28 M26 8 V28 M36 8 V28" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Durulama tankı kaçak akım</p>
+        <p class="s">24,30 A · 2 × 16 A sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="4" y="6" width="44" height="32" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M15 6 V38 M26 6 V38 M37 6 V38" stroke="#1a1a1a"/><rect x="8" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="19" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="30" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="41" y="16" width="5" height="8" fill="#1a1a1a"/></svg>
+          <p class="n">SİGORTA KAÇAK AKIMLI A9R41440 4'LÜ 40 A</p>
+          <p class="c">10 00304</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="8" width="20" height="28" fill="#fafafa" stroke="#1a1a1a"/><circle cx="22" cy="20" r="2" fill="#1a1a1a"/><circle cx="30" cy="20" r="2" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">YARDIMCI KONTAK 1NA/1NK A9A26924 IOF</p>
+          <p class="c">10 10820</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="8" width="40" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 8 V28 M26 8 V28 M36 8 V28" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Kurutma ısıtıcısı kaçak akım</p>
+        <p class="s">9,12 A · 16 A sigorta</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="4" y="6" width="44" height="32" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M15 6 V38 M26 6 V38 M37 6 V38" stroke="#1a1a1a"/><rect x="8" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="19" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="30" y="16" width="5" height="8" fill="#1a1a1a"/><rect x="41" y="16" width="5" height="8" fill="#1a1a1a"/></svg>
+          <p class="n">SİGORTA KAÇAK AKIMLI A9R41425 4'LÜ 25 A</p>
+          <p class="c">10 00303</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M26 4 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="26" cy="22" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M22 28 L16 34 M30 28 L36 34" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Termokupl grubu</p>
+        <p class="s">3 adet · IO</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Karşılık malzeme yok.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M26 6 V18" stroke="#1a1a1a"/><circle cx="26" cy="24" r="6" fill="none" stroke="#1a1a1a"/><path d="M22 30 L18 38 M30 30 L34 38" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tankı termokupl</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M26 6 V18" stroke="#1a1a1a"/><circle cx="26" cy="24" r="6" fill="none" stroke="#1a1a1a"/><path d="M22 30 L18 38 M30 30 L34 38" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tankı termokupl</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M26 6 V18" stroke="#1a1a1a"/><circle cx="26" cy="24" r="6" fill="none" stroke="#1a1a1a"/><path d="M22 30 L18 38 M30 30 L34 38" stroke="#1a1a1a"/></svg>
+          <p class="n">Kurutma fanı termokupl</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M14 6 H34 V30 H14 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 22 H32 M16 12 H32" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Seviye sensörleri</p>
+        <p class="s">4 adet · +24VDC</p>
+      </div>
+      <div class="out">
+        <p class="explain">+24VDC. Kontaktör, termik ve MKŞ yok. Stok kodu verilmedi.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tankı alt seviye sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tankı üst seviye sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tankı alt seviye sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tankı üst seviye sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="8" y="12" width="18" height="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="36" cy="18" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M26 18 H30" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Proximity sensörler</p>
+        <p class="s">4 adet · +24VDC</p>
+      </div>
+      <div class="out">
+        <p class="explain">+24VDC. Kontaktör, termik ve MKŞ yok. Stok kodu verilmedi.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Sepet pozisyon sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 1. pozisyon sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 2. pozisyon sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 3. pozisyon sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="12" width="24" height="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M30 18 H42" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="40" y="14" width="6" height="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Piston sensörleri</p>
+        <p class="s">7 adet · +24VDC</p>
+      </div>
+      <div class="out">
+        <p class="explain">+24VDC. Kontaktör, termik ve MKŞ yok. Stok kodu verilmedi.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tahliye pistonu açık sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tahliye pistonu kapalı sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tahliye pistonu açık sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tahliye pistonu kapalı sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 1. pozisyon piston sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 2. pozisyon piston sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme ünitesi 3. pozisyon piston sensörü</p>
+          <p class="c">+24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 10 L22 18 L8 26 Z M44 10 L30 18 L44 26 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="22" y="4" width="8" height="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M26 12 V18" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Aktüatörlü vanalar</p>
+        <p class="s">3 adet · 3/2 tek taraflı</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Karşılık malzeme yok. 3/2 tek taraflı. Her vananın açık ve kapalı bilgisi vardır.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Kaskat vanası</p>
+          <p class="c">3/2 tek taraflı · IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama otomatik dolum vanası</p>
+          <p class="c">3/2 tek taraflı · IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama otomatik dolum vanası</p>
+          <p class="c">3/2 tek taraflı · IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 10 L22 18 L8 26 Z M44 10 L30 18 L44 26 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="22" y="4" width="8" height="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M26 12 V18" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Piston vanaları</p>
+        <p class="s">5 adet · 5/3 çift taraflı</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Karşılık malzeme yok. Piston vanaları 5/3 çift taraflıdır.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama tahliye vanası</p>
+          <p class="c">5/3 çift taraflı</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama tahliye vanası</p>
+          <p class="c">5/3 çift taraflı</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Yükleme pistonu vanası</p>
+          <p class="c">5/3 çift taraflı</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 1 piston vanası</p>
+          <p class="c">5/3 çift taraflı</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 14 L22 22 L8 30 Z M44 14 L30 22 L44 30 Z" fill="none" stroke="#1a1a1a"/><rect x="22" y="6" width="8" height="8" fill="none" stroke="#1a1a1a"/><path d="M26 14 V22" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 2 piston vanası</p>
+          <p class="c">5/3 çift taraflı</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="12" width="24" height="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M30 18 H42" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="40" y="14" width="6" height="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Kapak piston sensörleri</p>
+        <p class="s">4 adet · IO</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Sensörler seri bağlanır, 2 input harcar.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 1. piston açık sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 1. piston kapalı sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 2. piston açık sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="16" width="28" height="12" fill="#fafafa" stroke="#1a1a1a"/><path d="M34 22 H44" stroke="#1a1a1a"/><rect x="40" y="18" width="6" height="8" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak 2. piston kapalı sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="16" cy="18" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M24 18 H46" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 10 V26" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Basınç transmitteri</p>
+        <p class="s">2 adet · 4-20 mA · IO</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Analog 4-20 mA. Karşılık malzeme yok.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="18" cy="22" r="10" fill="none" stroke="#1a1a1a"/><path d="M18 22 L24 16" stroke="#1a1a1a"/><path d="M28 22 H44" stroke="#1a1a1a"/></svg>
+          <p class="n">Yıkama basınç transmitteri</p>
+          <p class="c">4-20 mA · IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="18" cy="22" r="10" fill="none" stroke="#1a1a1a"/><path d="M18 22 L24 16" stroke="#1a1a1a"/><path d="M28 22 H44" stroke="#1a1a1a"/></svg>
+          <p class="n">Durulama basınç transmitteri</p>
+          <p class="c">4-20 mA · IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="8" y="10" width="18" height="16" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="38" cy="18" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Bilgi sensörleri</p>
+        <p class="s">4 adet · IO</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Karşılık malzeme yok.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Hava bilgisi</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">Su bilgisi</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">1. basınç sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">2. basınç sensörü</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="22" y="4" width="8" height="28" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="26" cy="12" r="3" fill="#c0392b" stroke="#1a1a1a"/>
+          <circle cx="26" cy="20" r="3" fill="#f5d400" stroke="#1a1a1a"/>
+          <circle cx="26" cy="28" r="3" fill="#2f8f4e" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Tepe lambası</p>
+        <p class="s">3 adet · IO</p>
+      </div>
+      <div class="out">
+        <p class="explain">IO. Karşılık malzeme yok.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="10" fill="#c0392b" stroke="#1a1a1a"/></svg>
+          <p class="n">Tepe lambası kırmızı</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="10" fill="#f5d400" stroke="#1a1a1a"/></svg>
+          <p class="n">Tepe lambası sarı</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="10" fill="#2f8f4e" stroke="#1a1a1a"/></svg>
+          <p class="n">Tepe lambası yeşil</p>
+          <p class="c">IO</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="8" y="8" width="16" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="28" y="8" width="16" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">PLC ve HMI</p>
+        <p class="s">CPU + ek modül</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="8" width="32" height="28" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M16 16 H36 M16 22 H30 M16 28 H24" stroke="#1a1a1a"/></svg>
+          <p class="n">PLC EK MODÜL CPU OMRON CP2EN60DT1</p>
+          <p class="c">10 17185</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="8" width="24" height="28" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M18 16 H34 M18 22 H34 M18 28 H34" stroke="#1a1a1a"/></svg>
+          <p class="n">PLC EK MODÜL OMRON CP1W20EDT1</p>
+          <p class="c">10 18528</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="8" width="24" height="28" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M18 18 H34 M18 26 H34" stroke="#1a1a1a"/></svg>
+          <p class="n">PLC EK MODÜL OMRON CP1WTS002</p>
+          <p class="c">10 17183</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="8" width="24" height="28" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M18 18 H34 M18 26 H34" stroke="#c0392b"/></svg>
+          <p class="n">PLC EK MODÜL OMRON CP1WADB21</p>
+          <p class="c">10 17184</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="10" width="36" height="24" fill="#f4f4f4" stroke="#1a1a1a"/><rect x="12" y="14" width="28" height="16" fill="#163024" stroke="#1a1a1a"/></svg>
+          <p class="n">OMRON NB7W-TW01B</p>
+          <p class="c">10 16496</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 8 H22 V28 H8 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M22 10 H40 V26 H22" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="18" cy="18" r="2" fill="#1a1a1a"/>
+        </svg>
+        <p class="v">Kapak sensörleri</p>
+        <p class="s">2 adet · 1 NO + 1 NC</p>
+      </div>
+      <div class="out">
+        <p class="explain">Kuru kontak. Sensörün üzerinde 24 V veya 220 V besleme yoktur. Her biri 1 NO + 1 NC. Kapak sensörleri emniyet rölesine bağlanır. Stok kodu verilmedi.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M10 8 H24 V36 H10 Z" fill="none" stroke="#1a1a1a"/><path d="M24 12 H40 V32 H24" fill="none" stroke="#1a1a1a"/><circle cx="20" cy="22" r="2" fill="#1a1a1a"/></svg>
+          <p class="n">Kapak sensörü 1</p>
+          <p class="c">1 NO + 1 NC · kuru kontak</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M10 8 H24 V36 H10 Z" fill="none" stroke="#1a1a1a"/><path d="M24 12 H40 V32 H24" fill="none" stroke="#1a1a1a"/><circle cx="20" cy="22" r="2" fill="#1a1a1a"/></svg>
+          <p class="n">Kapak sensörü 2</p>
+          <p class="c">1 NO + 1 NC · kuru kontak</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="6" y="8" width="8" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <rect x="38" y="8" width="8" height="20" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 18 H38" stroke="#1a1a1a" stroke-width="1.4" stroke-dasharray="2 2"/>
+        </svg>
+        <p class="v">Işın bariyeri</p>
+        <p class="s">1 adet · kontaktör yok</p>
+      </div>
+      <div class="out">
+        <p class="explain">El koruma sensörü. Kontaktör, termik ve MKŞ yok. Emniyet rölesine bağlanır. Stok kodu verilmedi.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="8" width="10" height="28" fill="#fafafa" stroke="#1a1a1a"/><rect x="36" y="8" width="10" height="28" fill="#fafafa" stroke="#1a1a1a"/><path d="M16 22 H36" stroke="#1a1a1a" stroke-dasharray="2 2"/></svg>
+          <p class="n">Işın bariyeri</p>
+          <p class="c">el koruma sensörü</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="12" y="6" width="28" height="24" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 14 H36 M16 20 H30 M16 26 H24" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Safety PLC</p>
+        <p class="s">1 adet</p>
+      </div>
+      <div class="out">
+        <p class="explain">Kapak sensörleri ve ışın bariyeri bu rölenin girişine bağlanır. G9SB2002 bu düzende kullanılmaz.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" rx="2" fill="#f3e2a8" stroke="#1a1a1a"/><rect x="14" y="10" width="24" height="8" fill="#fafafa" stroke="#1a1a1a"/><circle cx="18" cy="28" r="2" fill="#1a1a1a"/><circle cx="26" cy="28" r="2" fill="none" stroke="#1a1a1a"/><circle cx="34" cy="28" r="2" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">EMNİYET RÖLESİ G9SPN20S OMRON G9SX</p>
+          <p class="c">10 04538</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="14" y="6" width="24" height="24" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="22" cy="14" r="2" fill="#1a1a1a"/>
+          <circle cx="30" cy="14" r="2" fill="none" stroke="#1a1a1a"/>
+          <path d="M18 24 H34" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">Faz sıra rölesi</p>
+        <p class="s">1 adet · zorunlu</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="6" width="24" height="32" rx="2" fill="#f7f7f7" stroke="#1a1a1a"/><circle cx="22" cy="16" r="2" fill="#1a1a1a"/><circle cx="30" cy="16" r="2" fill="none" stroke="#1a1a1a"/><path d="M18 26 H34 M20 34 V40 M32 34 V40" stroke="#1a1a1a"/></svg>
+          <p class="n">FAZ KORUMA RÖLESİ MKS-03</p>
+          <p class="c">10 00258</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="14" cy="18" r="8" fill="#c0392b" stroke="#1a1a1a"/>
+          <circle cx="38" cy="18" r="8" fill="#2f6fbf" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Ön yüz butonları</p>
+        <p class="s">çift el · 2 aç + 2 kapat</p>
+      </div>
+      <div class="out">
+        <p class="explain">Acil stop 2 NC. Reset 1 NO + 1 NC. Sepet test 1 NO. Her kapak aç ve her kapak kapat 1 NO + 1 NC.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="20" r="14" fill="#f5d400" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#c0392b" stroke="#1a1a1a"/></svg>
+          <p class="n">BUTON ACİL STOP MANTAR B200EE</p>
+          <p class="c">10 03445</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#2f6fbf" stroke="#1a1a1a"/></svg>
+          <p class="n">BUTON START B100DM</p>
+          <p class="c">10 00272</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#1a1a1a" stroke="#1a1a1a"/></svg>
+          <p class="n">BUTON START B100DB</p>
+          <p class="c">10 00270</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#2f8f4e" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak aç butonu</p>
+          <p class="c">yeşil · stok kodu yok</p>
+          <p class="q">2 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#c0392b" stroke="#1a1a1a"/></svg>
+          <p class="n">Kapak kapat butonu</p>
+          <p class="c">kırmızı · stok kodu yok</p>
+          <p class="q">2 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="8" width="20" height="28" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="20" r="3" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAK BLOK NO B1</p>
+          <p class="c">10 00267</p>
+          <p class="q">6 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="8" width="20" height="28" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="20" r="3" fill="#1a1a1a"/></svg>
+          <p class="n">KONTAK BLOK NC B2</p>
+          <p class="c">10 00268</p>
+          <p class="q">7 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="16" cy="9" r="6" fill="#2f8f4e" stroke="#1a1a1a"/>
+          <circle cx="16" cy="27" r="6" fill="#2f8f4e" stroke="#1a1a1a"/>
+          <circle cx="36" cy="9" r="6" fill="#c0392b" stroke="#1a1a1a"/>
+          <circle cx="36" cy="27" r="6" fill="#c0392b" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Konveyör yükleme butonları</p>
+        <p class="s">çift el · 2 ileri + 2 geri</p>
+      </div>
+      <div class="out">
+        <p class="explain">Makine üzerinde. Solda alt alta 2 yeşil ileri, sağda alt alta 2 kırmızı geri. Her buton 2 NO. Pano etiketinde yok.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#2f8f4e" stroke="#1a1a1a"/></svg>
+          <p class="n">Konveyör ileri butonu</p>
+          <p class="c">yeşil · stok kodu yok</p>
+          <p class="q">2 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="12" fill="#c0392b" stroke="#1a1a1a"/></svg>
+          <p class="n">Konveyör geri butonu</p>
+          <p class="c">kırmızı · stok kodu yok</p>
+          <p class="q">2 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="8" width="20" height="28" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="20" r="3" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAK BLOK NO B1</p>
+          <p class="c">10 00267</p>
+          <p class="q">8 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="8" y="8" width="14" height="20" fill="#fafafa" stroke="#1a1a1a"/>
+          <rect x="26" y="8" width="14" height="20" fill="#fafafa" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Çıkış röleleri</p>
+        <p class="s">32 çıkış + 7 safety</p>
+      </div>
+      <div class="out">
+        <p class="explain">R1–R32 çıkış uçları, 103.7 dahil. R33–R39 safety PLC, SO6 dahil. Her 24 röle için 1 köprü.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="6" width="20" height="32" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M20 16 H32 M20 24 H32 M20 32 H32" stroke="#1a1a1a"/></svg>
+          <p class="n">YAPRAK ROLE KONTAĞI WEİDMÜLLER TRS 24VDC 1CO</p>
+          <p class="c">10 02146</p>
+          <p class="q">39 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M8 22 H44" stroke="#e67e22" stroke-width="4"/><circle cx="14" cy="22" r="3" fill="#1a1a1a"/><circle cx="26" cy="22" r="3" fill="#1a1a1a"/><circle cx="38" cy="22" r="3" fill="#1a1a1a"/></svg>
+          <p class="n">RÖLE KÖPRÜSÜ WEIDMÜLLER TCC 6.4/51 OR (24 diş) (3 ADET)</p>
+          <p class="c">10 13016</p>
+          <p class="q">2 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="16" y="8" width="20" height="14" fill="#f5d400" stroke="#1a1a1a"/>
+          <path d="M26 22 V30" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Pano lambası</p>
+        <p class="s">1 adet</p>
+      </div>
+      <div class="out">
+        <p class="explain">Lamba, sigortası ve anahtarı.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="10" width="24" height="16" fill="#f5d400" stroke="#1a1a1a"/></svg>
+          <p class="n">PANO LAMBASI CT-2467</p>
+          <p class="c">10 03253</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="20" y="6" width="12" height="32" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">SCHNEIDER SİGORTA A9F74106 1*6</p>
+          <p class="c">10 01421</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="12" width="20" height="20" fill="#fafafa" stroke="#1a1a1a"/><path d="M22 22 H30" stroke="#1a1a1a"/></svg>
+          <p class="n">SWITCH BS1022 ANI HARK.1NA+1NK</p>
+          <p class="c">10 16235</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="10" y="10" width="32" height="16" fill="#fafafa" stroke="#1a1a1a"/>
+          <circle cx="20" cy="18" r="3" fill="none" stroke="#1a1a1a"/>
+          <circle cx="32" cy="18" r="3" fill="none" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Priz</p>
+        <p class="s">ray montaj · topraklı</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="12" width="36" height="20" fill="#fafafa" stroke="#1a1a1a"/><circle cx="20" cy="22" r="3" fill="none" stroke="#1a1a1a"/><circle cx="32" cy="22" r="3" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">PRİZ RAYA MONTAJ TOPRAKLI EPREU2G</p>
+          <p class="c">10 03313</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="20" y="6" width="12" height="24" fill="#fafafa" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Kumanda</p>
+        <p class="s">kumanda sigortası</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="20" y="6" width="12" height="32" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">SCHNEIDER SİGORTA A9F74106 1*6</p>
+          <p class="c">10 01421</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <rect x="8" y="8" width="36" height="20" fill="#f4f4f4" stroke="#1a1a1a"/>
+          <path d="M14 18 H24 M30 18 H38" stroke="#1a1a1a"/>
+        </svg>
+        <p class="v">Güç kaynağı 24 V</p>
+        <p class="s">14,6 A</p>
+      </div>
+      <div class="out">
+        <p class="explain">Giriş sigortası 6 A, çıkış sigortası 10 A.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="10" width="36" height="24" fill="#f4f4f4" stroke="#1a1a1a"/><path d="M14 22 H24" stroke="#1a1a1a"/></svg>
+          <p class="n">GÜÇ KAYNAĞI LRS 350/24 24VDC 14,6AMP</p>
+          <p class="c">10 04903</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="20" y="6" width="12" height="32" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">SCHNEIDER SİGORTA A9F74106 1*6</p>
+          <p class="c">10 01421</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="20" y="6" width="12" height="32" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">SIGORTA A9F74110 1*10</p>
+          <p class="c">10 01421</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="face">
+      <h2>ÖN YÜZ</h2>
+      <div class="label">
+        <p class="brand">Dolfin</p>
+        <p class="brand-sub">INDUSTRIAL WASHING SYSTEMS</p>
+        <div class="disp">
+          <div class="win hmi">
+            <div class="screen"></div>
+            <p>OMRON NB7W-TW01B</p>
+            <p>10 16496</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div class="cell">
+            <div class="cap reset"></div>
+            <div><p class="t">SIFIRLA</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
+          </div>
+          <div class="cell test">
+            <div class="cap test"></div>
+            <div><p class="t">SEPET TEST</p><p class="s">B100DB · 10 00270</p></div>
+          </div>
+        </div>
+        <div class="hands">
+          <div class="estop">
+            <div class="ring"><div class="cap"></div></div>
+            <p class="t">ACİL STOP</p>
+            <p class="s">B200EE · 10 03445</p>
+          </div>
+          <div class="stack">
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">üst</p><p class="s">yeşil · stok kodu yok</p></div>
+            </div>
+            <div class="reach"><span>25–30 cm</span></div>
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">alt</p><p class="s">yeşil · stok kodu yok</p></div>
+            </div>
+          </div>
+          <div class="stack right">
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">üst</p><p class="s">kırmızı · stok kodu yok</p></div>
+            </div>
+            <div class="reach"><span>25–30 cm</span></div>
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">alt</p><p class="s">kırmızı · stok kodu yok</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="cnk">
+          <strong>CNK ELEKTRONİK MAKİNE SAN. A.Ş.</strong>
+          Organize San. Böl. Orhan Işık Bulv. No:8 Sincan / ANKARA<br>
+          Tel : +90 312 267 30 15<br>
+          www.dolfintr.com
+        </div>
+      </div>
+    </section>
+
     <section class="calc">
       <h2>TABLO GÜCÜ</h2>
       <table>
@@ -380,7 +1484,12 @@
           <tr><td>Drenaj pompası</td><td class="num">1,10</td></tr>
           <tr><td>Egzoz fanı</td><td class="num">2,20</td></tr>
           <tr><td>Kurutma fanı</td><td class="num">4,00</td></tr>
-          <tr class="sum"><td>Tablo gücü</td><td class="num">23,22</td></tr>
+          <tr><td>Yıkama tankı 1. ısıtıcı</td><td class="num">8,00</td></tr>
+          <tr><td>Yıkama tankı 2. ısıtıcı</td><td class="num">8,00</td></tr>
+          <tr><td>Durulama tankı 1. ısıtıcı</td><td class="num">8,00</td></tr>
+          <tr><td>Durulama tankı 2. ısıtıcı</td><td class="num">8,00</td></tr>
+          <tr><td>Kurutma fanı ısıtıcısı</td><td class="num">6,00</td></tr>
+          <tr class="sum"><td>Tablo gücü</td><td class="num">61,22</td></tr>
         </tbody>
       </table>
       <h2>AKIM FORMÜLÜ</h2>
@@ -390,6 +1499,7 @@
         </thead>
         <tbody>
           <tr><td>Motor</td><td>I = P / (√3 × U × cosφ × η)</td><td>380 V, √3 = 1,732</td></tr>
+          <tr><td>Isıtıcı</td><td>I = P / (√3 × U)</td><td>380 V, cosφ = 1</td></tr>
           <tr><td>Yağ sıyırıcı</td><td>Verilen hat akımı</td><td>0,46 A</td></tr>
         </tbody>
       </table>
@@ -408,7 +1518,48 @@
           <tr><td>Drenaj pompası</td><td>1100 / (1,732 × 380 × 0,80 × 0,80)</td><td class="num">2,60 A</td></tr>
           <tr><td>Egzoz fanı</td><td>2200 / (1,732 × 380 × 0,80 × 0,80)</td><td class="num">5,20 A</td></tr>
           <tr><td>Kurutma fanı</td><td>4000 / (1,732 × 380 × 0,82 × 0,83)</td><td class="num">8,90 A</td></tr>
-          <tr class="sum"><td>Hat akımı</td><td>1,10 + 1,10 + 16,00 + 16,00 + 0,46 + 0,46 + 2,60 + 5,20 + 8,90</td><td class="num">51,82 A</td></tr>
+          <tr><td>Yıkama tankı 1. ısıtıcı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr><td>Yıkama tankı 2. ısıtıcı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr><td>Durulama tankı 1. ısıtıcı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr><td>Durulama tankı 2. ısıtıcı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr><td>Kurutma fanı ısıtıcısı</td><td>6000 / (1,732 × 380)</td><td class="num">9,12 A</td></tr>
+          <tr class="sum"><td>Hat akımı</td><td>1,10 + 1,10 + 16,00 + 16,00 + 0,46 + 0,46 + 2,60 + 5,20 + 8,90 + 12,15 + 12,15 + 12,15 + 12,15 + 9,12</td><td class="num">109,54 A</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="opts">
+      <h2>MAKİNE OPSİYONLARI</h2>
+      <p>Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar elektrikle ilgilidir.</p>
+      <table>
+        <thead>
+          <tr><th>Kod</th><th>Opsiyon</th><th>Seçim kodu</th><th>Seçim</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>EX107</td><td>BAĞLANTI ELEMANLARI</td><td>316 BAĞEL</td><td>AISI 316 PASLANMAZ BAĞLANTI ELEMANLARI</td></tr>
+          <tr><td>EX106</td><td>BORULAMA</td><td>316 BORU</td><td>AISI 316 BORULAMA</td></tr>
+          <tr><td>PR124</td><td>AISI 316 PASLANMAZ GÖVDE VE YIKAMA HÜCRESİ</td><td>316 FARKH</td><td>AISI 316 PASLANMAZ ÇELİK YIKAMA HÜCRESİ FARKI</td></tr>
+          <tr><td>PR163</td><td>AISI 316 PASLANMAZ ÇELİK TANK</td><td>316 FARKT</td><td>AISI 316 PASLANMAZ ÇELİK TANK FARKI</td></tr>
+          <tr><td>EX101</td><td>YIKAMA SEPETİ</td><td>316 SEPET</td><td>AISI 316 PASLANMAZ ÇELİK YIKAMA SEPET FARKI</td></tr>
+          <tr><td>EX105</td><td>NOZUL</td><td>316 NOZUL</td><td>AISI 316 NOZUL</td></tr>
+          <tr><td>PR138</td><td>AYARLANABİLİR YIKAMA YÜKSEKLİĞİ</td><td>AYR YIK YÜ</td><td>AYARLANABİLİR YIKAMA YÜKSEKLİĞİ MANUEL 1 KOL</td></tr>
+          <tr class="el"><td>EX110</td><td>BUHAR TAHLİYE FANI</td><td>BUHTAH K4</td><td>GÜÇLENDİRİLMİŞ BUHAR TAHLİYE FANI</td></tr>
+          <tr><td>EX100</td><td>MAKİNE ETİKETİ</td><td>DOLFIN ALM</td><td>DOLFIN ALMANCA ETİKET GRUBU</td></tr>
+          <tr><td>EX124</td><td>DOZAJ ÜNİTESİ (1 TANK İÇİN)</td><td>DOZAJÜN1BD</td><td>DOZAJ ÜNİTESİ (1 TANK İÇİN DOZATRON)</td></tr>
+          <tr class="el"><td>EX116</td><td>EL KORUMA IŞIN BARİYERİ</td><td>EL KO IŞIN</td><td>EL KORUMA IŞIN BARİYERİ</td></tr>
+          <tr class="el"><td>EX189</td><td>POMPA BASINCI İNVERTÖR KONTROLÜ</td><td>EX189B</td><td>POMPA BASINCI İNVERTÖR KONTROLÜ 2 POMPA</td></tr>
+          <tr class="el"><td>EX109</td><td>POMPA</td><td>GÜÇ UD</td><td>BASINÇLI POMPASI UYGULAMASI (4-5 BAR) UD</td></tr>
+          <tr><td>EX115</td><td>HASSAS FİLTRASYON</td><td>HASFİ2B316</td><td>HASSAS FİLTRE 2 POMPA 316</td></tr>
+          <tr><td>EX193</td><td>HAVA ŞARTLANDIRICI</td><td>HAVASMC</td><td>HAVA ŞARTLANDIRICI YUMUŞAK KALKIŞLI SMC</td></tr>
+          <tr class="el"><td>EX118</td><td>FAN İLE KURUTMA ÜNİTESİ</td><td>LEISTER385</td><td>LEISTER HAVA KURUTMA 385 METRE KÜP</td></tr>
+          <tr><td>EX104</td><td>TAŞIMA ARABASI</td><td>OTO ARABA</td><td>PASLANMAZ ÇELİK OTOMATİK YÜKLEMELİ TAŞIMA ARABASI</td></tr>
+          <tr><td>EX414</td><td>OTOMATİK TANK BOŞALTMA ÜNİTESİ</td><td>OTO TNK316</td><td>OTOMATİK TANK BOŞALTMA ÜNİTESİ 316</td></tr>
+          <tr class="el"><td>EX122</td><td>ELEKTRİK KUTUSU</td><td>PLC STD</td><td>PLC KONTROL ÜNİTESİ</td></tr>
+          <tr><td>EX192</td><td>FRENLİ PİSTON</td><td>PISTONSMC</td><td>FRENLİ PİSTON SMC</td></tr>
+          <tr><td>EX154</td><td>SANDIK</td><td>SANDIK FAN</td><td>EXPORT SANDIK (FANLI)</td></tr>
+          <tr class="el"><td>EX108</td><td>SENSORLU OTOMATİK TANK DOLUM</td><td>SENOTTANK2</td><td>SENSORLU OTOMATİK TANK DOLUM 2 BANYO</td></tr>
+          <tr class="el"><td>EX111</td><td>YAĞ SIYIRICI</td><td>YAĞ SIY 2B</td><td>YAĞ SIYIRICI DİP TİP 2 TANK İÇİN</td></tr>
+          <tr class="el"><td>EX174</td><td>SEW REDÜKTÖR FARKI</td><td>YILMAZREDÜ</td><td>YILMAZ REDÜKTÖR</td></tr>
         </tbody>
       </table>
     </section>
@@ -420,17 +1571,42 @@
           <tr><th>Stok</th><th>Foto</th><th>Malzeme</th><th class="adet">Adet</th></tr>
         </thead>
         <tbody>
+          <tr><td>10 00258</td><td class="foto"><img src="../photos/temiz/10%2000258.png" alt="10 00258"></td><td>FAZ KORUMA RÖLESİ MKS-03</td><td class="adet">1</td></tr>
+          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">14</td></tr>
+          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">7</td></tr>
+          <tr><td>10 00270</td><td class="foto"><img src="../photos/temiz/10%2000270.png" alt="10 00270"></td><td>BUTON START B100DB</td><td class="adet">1</td></tr>
+          <tr><td>10 00272</td><td class="foto"><img src="../photos/temiz/10%2000272.png" alt="10 00272"></td><td>BUTON START B100DM</td><td class="adet">1</td></tr>
+          <tr><td>10 00303</td><td class="foto"><img src="../photos/temiz/10%2000303.png" alt="10 00303"></td><td>SİGORTA KAÇAK AKIMLI A9R41425 4'LÜ 25 A</td><td class="adet">1</td></tr>
+          <tr><td>10 00304</td><td class="foto"><img src="../photos/temiz/10%2000304.png" alt="10 00304"></td><td>SİGORTA KAÇAK AKIMLI A9R41440 4'LÜ 40 A</td><td class="adet">2</td></tr>
           <tr><td>10 01331</td><td class="foto"><img src="../photos/temiz/10%2001331.png" alt="10 01331"></td><td>KONTAKTÖR LC1K0910M7 220V</td><td class="adet">1</td></tr>
+          <tr><td>10 01332</td><td class="foto"><img src="../photos/temiz/10%2001332.png" alt="10 01332"></td><td>KONTAKTÖR LC1K1610M7 220V</td><td class="adet">5</td></tr>
           <tr><td>10 01362</td><td class="foto"><img src="../photos/temiz/10%2001362.png" alt="10 01362"></td><td>MOTOR KORUMA ŞALTERİ GV2ME10 4-6,3A</td><td class="adet">1</td></tr>
           <tr><td>10 01363</td><td class="foto"><img src="../photos/temiz/10%2001363.png" alt="10 01363"></td><td>MOTOR KORUMA ŞALTERİ GV2ME14 6-10A</td><td class="adet">1</td></tr>
           <tr><td>10 01365</td><td class="foto"><img src="../photos/temiz/10%2001365.png" alt="10 01365"></td><td>YARDIMCI KONTAK GVAE11 MKŞ</td><td class="adet">5</td></tr>
           <tr><td>10 01368</td><td class="foto"><img src="../photos/temiz/10%2001368.png" alt="10 01368"></td><td>MOTOR KORUMA ŞALTERİ GV2ME04 0,40-0,63A</td><td class="adet">2</td></tr>
           <tr><td>10 01369</td><td class="foto"><img src="../photos/temiz/10%2001369.png" alt="10 01369"></td><td>MOTOR KORUMA ŞALTERİ GV2ME08 2,5-4A</td><td class="adet">1</td></tr>
-          <tr><td>10 01421</td><td class="foto"><img src="../photos/temiz/10%2001421.png" alt="10 01421"></td><td>SCHNEIDER SİGORTA A9F74106 1*6</td><td class="adet">2</td></tr>
+          <tr><td>10 01421</td><td class="foto"><img src="../photos/temiz/10%2001421.png" alt="10 01421"></td><td>SCHNEIDER SİGORTA A9F74106 1*6</td><td class="adet">6</td></tr>
+          <tr><td>10 02146</td><td class="foto"><img src="../photos/temiz/10%2002146.png" alt="10 02146"></td><td>YAPRAK ROLE KONTAĞI WEİDMÜLLER TRS 24VDC 1CO</td><td class="adet">39</td></tr>
           <tr><td>10 02314</td><td class="foto"><img src="../photos/temiz/10%2002314.png" alt="10 02314"></td><td>KONTAKTÖR LC1K0610M7 220V</td><td class="adet">4</td></tr>
+          <tr><td>10 03253</td><td class="foto"><img src="../photos/temiz/10%2003253.png" alt="10 03253"></td><td>PANO LAMBASI CT-2467</td><td class="adet">1</td></tr>
+          <tr><td>10 03313</td><td class="foto"><img src="../photos/temiz/10%2003313.png" alt="10 03313"></td><td>PRİZ RAYA MONTAJ TOPRAKLI EPREU2G</td><td class="adet">1</td></tr>
+          <tr><td>10 03445</td><td class="foto"><img src="../photos/temiz/10%2003445.png" alt="10 03445"></td><td>BUTON ACİL STOP MANTAR B200EE</td><td class="adet">1</td></tr>
+          <tr><td>10 04000</td><td class="foto"><img src="../photos/temiz/10%2004000.png" alt="10 04000"></td><td>SİGORTA A9F74316 SCHNEİDER 16A</td><td class="adet">5</td></tr>
+          <tr><td>10 04538</td><td class="foto"><img src="../photos/temiz/10%2004538.png" alt="10 04538"></td><td>EMNİYET RÖLESİ G9SPN20S OMRON G9SX</td><td class="adet">1</td></tr>
+          <tr><td>10 04903</td><td class="foto"><img src="../photos/temiz/10%2004903.png" alt="10 04903"></td><td>GÜÇ KAYNAĞI LRS 350/24 24VDC 14,6AMP</td><td class="adet">1</td></tr>
           <tr><td>10 05803</td><td class="foto"><img src="../photos/temiz/10%2005803.png" alt="10 05803"></td><td>İNVERTÖR VFD75E43A 7,5KW</td><td class="adet">2</td></tr>
+          <tr><td>10 10820</td><td class="foto"><img src="../photos/temiz/10%2010820.png" alt="10 10820"></td><td>YARDIMCI KONTAK 1NA/1NK A9A26924 IOF</td><td class="adet">2</td></tr>
+          <tr><td>10 13016</td><td class="foto"><img src="../photos/temiz/10%2013016.png" alt="10 13016"></td><td>RÖLE KÖPRÜSÜ WEIDMÜLLER TCC 6.4/51 OR (24 diş) (3 ADET)</td><td class="adet">2</td></tr>
+          <tr><td>10 14974</td><td class="foto"><img src="../photos/temiz/10%2014974.png" alt="10 14974"></td><td>BARA GWEST 4*11MM</td><td class="adet">1</td></tr>
+          <tr><td>10 15962</td><td class="foto"><img src="../photos/temiz/10%2015962.png" alt="10 15962"></td><td>BARA GWEST 2X7 MM</td><td class="adet">1</td></tr>
           <tr><td>10 16119</td><td class="foto"><img src="../photos/temiz/10%2016119.png" alt="10 16119"></td><td>SİGORTA A9F74340 SCHNEİDER 40A</td><td class="adet">2</td></tr>
+          <tr><td>10 16235</td><td class="foto"><img src="../photos/temiz/10%2016235.png" alt="10 16235"></td><td>SWITCH BS1022 ANI HARK.1NA+1NK</td><td class="adet">1</td></tr>
           <tr><td>10 16319</td><td class="foto"><img src="../photos/temiz/10%2016319.png" alt="10 16319"></td><td>İNVERTÖR VFD004EL21W-1 0,4KW</td><td class="adet">2</td></tr>
+          <tr><td>10 16496</td><td class="foto"><img src="../photos/temiz/10%2016496.png" alt="10 16496"></td><td>OMRON NB7W-TW01B</td><td class="adet">1</td></tr>
+          <tr><td>10 17183</td><td class="foto"><img src="../photos/temiz/10%2017183.png" alt="10 17183"></td><td>PLC EK MODÜL OMRON CP1WTS002</td><td class="adet">1</td></tr>
+          <tr><td>10 17184</td><td class="foto"><img src="../photos/temiz/10%2017184.png" alt="10 17184"></td><td>PLC EK MODÜL OMRON CP1WADB21</td><td class="adet">1</td></tr>
+          <tr><td>10 17185</td><td class="foto"><img src="../photos/temiz/10%2017185.png" alt="10 17185"></td><td>PLC EK MODÜL CPU OMRON CP2EN60DT1</td><td class="adet">1</td></tr>
+          <tr><td>10 18528</td><td class="foto"><img src="../photos/temiz/10%2018528.png" alt="10 18528"></td><td>PLC EK MODÜL OMRON CP1W20EDT1</td><td class="adet">1</td></tr>
         </tbody>
       </table>
     </section>
@@ -444,9 +1620,490 @@
         <tbody>
           <tr><td class="no">1</td><td>Pano etiketi Almanca ve İngilizce olacak.</td></tr>
           <tr><td class="no">2</td><td>Panoda çift el butonu kullanılacak.</td></tr>
+          <tr><td class="no">3</td><td>Kapak sensörleri kuru kontaktır. Her biri 1 NO + 1 NC. 24 V veya 220 V beslemesi yoktur.</td></tr>
+          <tr><td class="no">4</td><td>Kapak sensörleri ve ışın bariyeri emniyet rölesine bağlanır.</td></tr>
+          <tr><td class="no">5</td><td>Kapak piston sensörleri seri bağlanır, 2 input harcar.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="io">
+      <h2>IO LİSTESİ</h2>
+      <table>
+        <thead>
+          <tr><th>Input No</th><th>Input</th><th>Röle No</th><th>Output No</th><th>Output</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">0.0</td><td>Acil stop bilgisi</td><td class="num">R1</td><td class="num">100.0</td><td>Sepet redüktörü çalıştır</td></tr>
+          <tr><td class="num">0.1</td><td>Kapak kapandı bilgisi</td><td class="num">R2</td><td class="num">100.1</td><td>Sepet yükleme motoru çalıştır</td></tr>
+          <tr><td class="num">0.2</td><td>Faz sıra rölesi faz bilgisi</td><td class="num">R3</td><td class="num">100.2</td><td>Yıkama pompası çalıştır</td></tr>
+          <tr><td class="num">0.3</td><td>Reset butonu bilgisi</td><td class="num">R4</td><td class="num">100.3</td><td>Durulama pompası çalıştır</td></tr>
+          <tr><td class="num">0.4</td><td>Sepet redüktörü invertör arıza bilgisi</td><td class="num">R5</td><td class="num">100.4</td><td>Yıkama tankı yağ sıyırıcı çalıştır</td></tr>
+          <tr><td class="num">0.5</td><td>Sepet yükleme motoru invertör arıza bilgisi</td><td class="num">R6</td><td class="num">100.5</td><td>Durulama tankı yağ sıyırıcı çalıştır</td></tr>
+          <tr><td class="num">0.6</td><td>Yıkama pompası invertör arıza bilgisi</td><td class="num">R7</td><td class="num">100.6</td><td>Drenaj pompası çalıştır</td></tr>
+          <tr><td class="num">0.7</td><td>Durulama pompası invertör arıza bilgisi</td><td class="num">R8</td><td class="num">100.7</td><td>Egzoz fanı çalıştır</td></tr>
+          <tr><td class="num">0.8</td><td>Yıkama tankı yağ sıyırıcı MKŞ arıza</td><td class="num">R9</td><td class="num">101.0</td><td>Kurutma fanı çalıştır</td></tr>
+          <tr><td class="num">0.9</td><td>Durulama tankı yağ sıyırıcı MKŞ arıza</td><td class="num">R10</td><td class="num">101.1</td><td>Yıkama ısıtıcısı çalıştır</td></tr>
+          <tr><td class="num">0.10</td><td>Drenaj pompası MKŞ arıza</td><td class="num">R11</td><td class="num">101.2</td><td>Durulama ısıtıcısı çalıştır</td></tr>
+          <tr><td class="num">0.11</td><td>Egzoz fanı MKŞ arıza</td><td class="num">R12</td><td class="num">101.3</td><td>Kurutma ısıtıcısı çalıştır</td></tr>
+          <tr><td class="num">1.0</td><td>Kurutma fanı MKŞ arıza</td><td class="num">R13</td><td class="num">101.4</td><td>SEPET REDÜKTÖR MOTORU ÇALIŞ BİLGİSİ (SI13 OMRON)</td></tr>
+          <tr><td class="num">1.1</td><td>Yıkama tankı kaçak akım</td><td class="num">R14</td><td class="num">101.5</td><td>SEPET REDÜKTÖR MOTORU TEST BİLGİSİ (SI5 OMRON)</td></tr>
+          <tr><td class="num">1.2</td><td>Durulama tankı kaçak akım</td><td class="num">R15</td><td class="num">101.6</td><td>Yıkama tahliye pistonu aç</td></tr>
+          <tr><td class="num">1.3</td><td>Kurutma fanı kaçak akım</td><td class="num">R16</td><td class="num">101.7</td><td>Yıkama tahliye pistonu kapa</td></tr>
+          <tr><td class="num">1.4</td><td>Yıkama tankı alt seviye sensörü</td><td class="num">R17</td><td class="num">102.0</td><td>Durulama tahliye pistonu aç</td></tr>
+          <tr><td class="num">1.5</td><td>Yıkama tankı üst seviye sensörü</td><td class="num">R18</td><td class="num">102.1</td><td>Durulama tahliye pistonu kapa</td></tr>
+          <tr><td class="num">1.6</td><td>Durulama tankı alt seviye sensörü</td><td class="num">R19</td><td class="num">102.2</td><td>Yıkama otomatik dolum vanası</td></tr>
+          <tr><td class="num">1.7</td><td>Durulama tankı üst seviye sensörü</td><td class="num">R20</td><td class="num">102.3</td><td>Durulama otomatik dolum vanası</td></tr>
+          <tr><td class="num">1.8</td><td>Yıkama tahliye pistonu açık sensörü</td><td class="num">R21</td><td class="num">102.4</td><td>Kaskat vanası</td></tr>
+          <tr><td class="num">1.9</td><td>Yıkama tahliye pistonu kapalı sensörü</td><td class="num">R22</td><td class="num">102.5</td><td>Tepe lambası kırmızı</td></tr>
+          <tr><td class="num">1.10</td><td>Durulama tahliye pistonu açık sensörü</td><td class="num">R23</td><td class="num">102.6</td><td>Tepe lambası sarı</td></tr>
+          <tr><td class="num">1.11</td><td>Durulama tahliye pistonu kapalı sensörü</td><td class="num">R24</td><td class="num">102.7</td><td>Tepe lambası yeşil</td></tr>
+          <tr><td class="num">2.0</td><td>Yükleme ünitesi 1. pozisyon piston sensörü</td><td class="num">R25</td><td class="num">103.0</td><td>Yükleme pistonu ileri</td></tr>
+          <tr><td class="num">2.1</td><td>Yükleme ünitesi 2. pozisyon piston sensörü</td><td class="num">R26</td><td class="num">103.1</td><td>Yükleme pistonu geri</td></tr>
+          <tr><td class="num">2.2</td><td>Yükleme ünitesi 3. pozisyon piston sensörü</td><td class="num">R27</td><td class="num">103.2</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.3</td><td>Kapak piston açık sensörleri</td><td class="num">R28</td><td class="num">103.3</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.4</td><td>Kapak piston kapalı sensörleri</td><td class="num">R29</td><td class="num">103.4</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.5</td><td>Kaskat vanası açık bilgisi</td><td class="num">R30</td><td class="num">103.5</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.6</td><td>Kaskat vanası kapalı bilgisi</td><td class="num">R31</td><td class="num">103.6</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.7</td><td>Yıkama otomatik dolum vanası açık bilgisi</td><td class="num">R32</td><td class="num">103.7</td><td>YEDEK</td></tr>
+          <tr><td class="num">2.8</td><td>Yıkama otomatik dolum vanası kapalı bilgisi</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">2.9</td><td>Durulama otomatik dolum vanası açık bilgisi</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">2.10</td><td>Durulama otomatik dolum vanası kapalı bilgisi</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">2.11</td><td>Yükleme pistonu ileri butonu</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.0</td><td>Yükleme pistonu geri butonu</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.1</td><td>Hava bilgisi</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.2</td><td>Su bilgisi</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.3</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.4</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.5</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.6</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.7</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.8</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.9</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.10</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">3.11</td><td>YEDEK</td><td class="num"></td><td class="num"></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="io safety">
+      <h2>SAFETY PLC</h2>
+      <table>
+        <thead>
+          <tr><th>Giriş</th><th>Giriş komutu</th><th>Role</th><th>Çıkış</th><th>Çıkış komutu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">SI0</td><td>ACİL STOP</td><td class="role">R33</td><td class="num">SO0</td><td>KAPAK AÇ</td></tr>
+          <tr><td class="num">SI1</td><td>ACİL STOP</td><td class="role">R34</td><td class="num">SO1</td><td>KAPAK KAPAT</td></tr>
+          <tr><td class="num">SI2</td><td>KAPAK AÇ BUTONU</td><td class="role">R35</td><td class="num">SO2</td><td>REDÜKTÖR RUN</td></tr>
+          <tr><td class="num">SI3</td><td>KAPAK KAPAT BUTONU</td><td class="role">R36</td><td class="num">SO3</td><td class="ext">KAPAK KAPANDI BİLGİSİ (OMRONA I0.1)</td></tr>
+          <tr><td class="num">SI4</td><td>BARİYER</td><td class="role">R37</td><td class="num">SO4</td><td>ANA VALF</td></tr>
+          <tr><td class="num">SI5</td><td class="ext">TEST (OMRONA 101.5)</td><td class="role">R38</td><td class="num">SO5</td><td>RESET BUTONU LAMBASI</td></tr>
+          <tr><td class="num">SI6</td><td>KAPI SW 1 NO</td><td class="role">R39</td><td class="num">SO6</td><td class="ext">ACİL STOP BİLGİSİ (OMRONA I0.0)</td></tr>
+          <tr><td class="num">SI7</td><td>KAPI SW 1 NC</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI8</td><td>KAPI SW 2 NO</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI9</td><td>KAPI SW 2 NC</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI10</td><td>BASINÇ ŞALTERİ</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI11</td><td class="ext">YIKAMA BİTTİ BİLGİSİ (SIEMENSE Q1.5)</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI12</td><td>RESET BUTONU</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">SI13</td><td class="ext">REDÜKTÖR ÇALIŞ (OMRONA 101.4)</td><td class="role"></td><td class="num"></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="io">
+      <h2>TC MODÜL</h2>
+      <table>
+        <thead>
+          <tr><th>Giriş</th><th>Giriş komutu</th><th>Role</th><th>Çıkış</th><th>Çıkış komutu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">I0.0</td><td>Yıkama tankı termokupl</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">I0.1</td><td>Durulama tankı termokupl</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">I0.2</td><td>Kurutma fanı termokupl</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">I0.3</td><td>YEDEK</td><td class="role"></td><td class="num"></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="io">
+      <h2>ANALOG INPUT</h2>
+      <table>
+        <thead>
+          <tr><th>Giriş</th><th>Giriş komutu</th><th>Role</th><th>Çıkış</th><th>Çıkış komutu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">AI0.0</td><td>Yıkama tankı basınç transmitteri</td><td class="role"></td><td class="num"></td><td></td></tr>
+          <tr><td class="num">AI0.1</td><td>Durulama tankı basınç transmitteri</td><td class="role"></td><td class="num"></td><td></td></tr>
         </tbody>
       </table>
     </section>
   </div>
+<script>
+(function () {
+  var D = {
+    "MANUEL · KBN": { en: "MANUAL · KBN", de: "MANUELL · KBN" },
+    "MAKİNE": { en: "MACHINE", de: "MASCHINE" },
+    "PANO": { en: "PANEL", de: "SCHALTSCHRANK" },
+    "Sepet redüktörü": { en: "Basket reducer", de: "Korbgetriebe" },
+    "Sepet yükleme motoru": { en: "Basket loading motor", de: "Korb-Lademotor" },
+    "Yıkama pompası": { en: "Wash pump", de: "Waschpumpe" },
+    "Durulama pompası": { en: "Rinse pump", de: "Spülpumpe" },
+    "Yıkama tankı yağ sıyırıcı": { en: "Wash tank oil skimmer", de: "Waschtank-Ölabstreifer" },
+    "Durulama tankı yağ sıyırıcı": { en: "Rinse tank oil skimmer", de: "Spültank-Ölabstreifer" },
+    "Drenaj pompası": { en: "Drain pump", de: "Ablaufpumpe" },
+    "Egzoz fanı": { en: "Exhaust fan", de: "Abluftventilator" },
+    "Kurutma fanı": { en: "Drying fan", de: "Trocknungsventilator" },
+    "Yıkama tankı 1. ısıtıcı": { en: "Wash tank heater 1", de: "Waschtank-Heizung 1" },
+    "Yıkama tankı 2. ısıtıcı": { en: "Wash tank heater 2", de: "Waschtank-Heizung 2" },
+    "Durulama tankı 1. ısıtıcı": { en: "Rinse tank heater 1", de: "Spültank-Heizung 1" },
+    "Durulama tankı 2. ısıtıcı": { en: "Rinse tank heater 2", de: "Spültank-Heizung 2" },
+    "Kurutma fanı ısıtıcısı": { en: "Drying fan heater", de: "Trocknungsventilator-Heizung" },
+    "Yıkama tankı kaçak akım": { en: "Wash tank residual current", de: "Waschtank-Fehlerstrom" },
+    "Durulama tankı kaçak akım": { en: "Rinse tank residual current", de: "Spültank-Fehlerstrom" },
+    "Kurutma ısıtıcısı kaçak akım": { en: "Drying heater residual current", de: "Trocknungsheizung-Fehlerstrom" },
+    "32 A · 2 × 16 A sigorta": { en: "32 A · 2 × 16 A fuse", de: "32 A · 2 × 16 A Sicherung" },
+    "24,30 A · 2 × 16 A sigorta": { en: "24,30 A · 2 × 16 A fuse", de: "24,30 A · 2 × 16 A Sicherung" },
+    "9,12 A · 16 A sigorta": { en: "9,12 A · 16 A fuse", de: "9,12 A · 16 A Sicherung" },
+    "Termokupl grubu": { en: "Thermocouple group", de: "Thermoelementgruppe" },
+    "Seviye sensörleri": { en: "Level sensors", de: "Füllstandssensoren" },
+    "Proximity sensörler": { en: "Proximity sensors", de: "Näherungssensoren" },
+    "Piston sensörleri": { en: "Piston sensors", de: "Kolbensensoren" },
+    "Aktüatörlü vanalar": { en: "Actuated valves", de: "Stellventile" },
+    "Kaskat vanası": { en: "Cascade valve", de: "Kaskadenventil" },
+    "Yıkama otomatik dolum vanası": { en: "Wash automatic fill valve", de: "Wasch-Füllventil" },
+    "Durulama otomatik dolum vanası": { en: "Rinse automatic fill valve", de: "Spül-Füllventil" },
+    "açık + kapalı · IO": { en: "open + closed · IO", de: "auf + zu · E/A" },
+    "IO. Karşılık malzeme yok. Her vananın açık ve kapalı bilgisi vardır.": { en: "IO. No matching material. Each valve has an open and a closed signal.", de: "IO. Kein zugehöriges Material. Jedes Ventil hat eine Auf- und eine Zu-Meldung." },
+    "3 adet · 3/2 tek taraflı": { en: "3 pcs · 3/2 single acting", de: "3 Stk. · 3/2 einfachwirkend" },
+    "3/2 tek taraflı · IO": { en: "3/2 single acting · IO", de: "3/2 einfachwirkend · E/A" },
+    "IO. Karşılık malzeme yok. 3/2 tek taraflı. Her vananın açık ve kapalı bilgisi vardır.": { en: "IO. No matching material. 3/2 single acting. Each valve has an open and a closed signal.", de: "IO. Kein zugehöriges Material. 3/2 einfachwirkend. Jedes Ventil hat eine Auf- und eine Zu-Meldung." },
+    "Piston vanaları": { en: "Piston valves", de: "Kolbenventile" },
+    "5 adet · 5/3 çift taraflı": { en: "5 pcs · 5/3 double acting", de: "5 Stk. · 5/3 doppelwirkend" },
+    "IO. Karşılık malzeme yok. Piston vanaları 5/3 çift taraflıdır.": { en: "IO. No matching material. Piston valves are 5/3 double acting.", de: "IO. Kein zugehöriges Material. Kolbenventile sind 5/3 doppelwirkend." },
+    "Yıkama tahliye vanası": { en: "Wash drain valve", de: "Waschablassventil" },
+    "Durulama tahliye vanası": { en: "Rinse drain valve", de: "Spülablassventil" },
+    "Yükleme pistonu vanası": { en: "Loading piston valve", de: "Ladepistonventil" },
+    "Kapak 1 piston vanası": { en: "Lid 1 piston valve", de: "Deckel 1 Kolbenventil" },
+    "Kapak 2 piston vanası": { en: "Lid 2 piston valve", de: "Deckel 2 Kolbenventil" },
+    "5/3 çift taraflı": { en: "5/3 double acting", de: "5/3 doppelwirkend" },
+    "Yükleme pistonu ileri butonu": { en: "Loading piston forward button", de: "Ladepiston Vor-Taster" },
+    "Yükleme pistonu geri butonu": { en: "Loading piston back button", de: "Ladepiston Zurück-Taster" },
+    "YEDEK": { en: "SPARE", de: "RESERVE" },
+    "Sepet redüktörü çalıştır": { en: "Basket reducer run", de: "Korbgetriebe Start" },
+    "Sepet yükleme motoru çalıştır": { en: "Basket loading motor run", de: "Korb-Lademotor Start" },
+    "Yıkama pompası çalıştır": { en: "Wash pump run", de: "Waschpumpe Start" },
+    "Durulama pompası çalıştır": { en: "Rinse pump run", de: "Spülpumpe Start" },
+    "Yıkama tankı yağ sıyırıcı çalıştır": { en: "Wash tank oil skimmer run", de: "Waschtank-Ölabstreifer Start" },
+    "Durulama tankı yağ sıyırıcı çalıştır": { en: "Rinse tank oil skimmer run", de: "Spültank-Ölabstreifer Start" },
+    "Drenaj pompası çalıştır": { en: "Drain pump run", de: "Ablaufpumpe Start" },
+    "Egzoz fanı çalıştır": { en: "Exhaust fan run", de: "Abluftventilator Start" },
+    "Kurutma fanı çalıştır": { en: "Drying fan run", de: "Trocknungsventilator Start" },
+    "Yıkama ısıtıcısı çalıştır": { en: "Wash heater run", de: "Waschheizung Start" },
+    "Durulama ısıtıcısı çalıştır": { en: "Rinse heater run", de: "Spülheizung Start" },
+    "Kurutma ısıtıcısı çalıştır": { en: "Drying heater run", de: "Trocknungsheizung Start" },
+    "Yıkama tahliye pistonu aç": { en: "Wash drain piston open", de: "Waschablass Kolben auf" },
+    "Yıkama tahliye pistonu kapa": { en: "Wash drain piston close", de: "Waschablass Kolben zu" },
+    "Durulama tahliye pistonu aç": { en: "Rinse drain piston open", de: "Spülablass Kolben auf" },
+    "Durulama tahliye pistonu kapa": { en: "Rinse drain piston close", de: "Spülablass Kolben zu" },
+    "Yükleme pistonu ileri": { en: "Loading piston forward", de: "Ladepiston vor" },
+    "Yükleme pistonu geri": { en: "Loading piston back", de: "Ladepiston zurück" },
+    "Kapak piston sensörleri": { en: "Lid piston sensors", de: "Deckelkolben-Sensoren" },
+    "Basınç transmitteri": { en: "Pressure transmitter", de: "Drucktransmitter" },
+    "Bilgi sensörleri": { en: "Status sensors", de: "Meldesensoren" },
+    "Tepe lambası": { en: "Tower lamp", de: "Signalleuchte" },
+    "PLC ve HMI": { en: "PLC and HMI", de: "SPS und HMI" },
+    "Çıkış röleleri": { en: "Output relays", de: "Ausgangsrelais" },
+    "32 çıkış + 7 safety": { en: "32 outputs + 7 safety", de: "32 Ausgänge + 7 Safety" },
+    "R1–R32 çıkış uçları, 103.7 dahil. R33–R39 safety PLC, SO6 dahil. Her 24 röle için 1 köprü.": { en: "R1–R32 are the output points, including 103.7. R33–R39 are the safety PLC, including SO6. One jumper per 24 relays.", de: "R1–R32 sind die Ausgänge, einschließlich 103.7. R33–R39 sind die Safety-SPS, einschließlich SO6. Eine Brücke je 24 Relais." },
+    "Pano lambası": { en: "Panel lamp", de: "Schaltschrankleuchte" },
+    "Lamba, sigortası ve anahtarı.": { en: "Lamp, its fuse and its switch.", de: "Leuchte, ihre Sicherung und ihr Schalter." },
+    "Priz": { en: "Socket", de: "Steckdose" },
+    "ray montaj · topraklı": { en: "DIN rail · earthed", de: "Tragschiene · geerdet" },
+    "Kumanda": { en: "Control", de: "Steuerung" },
+    "kumanda sigortası": { en: "control fuse", de: "Steuerungssicherung" },
+    "Güç kaynağı 24 V": { en: "24 V power supply", de: "24-V-Netzteil" },
+    "14,6 A": { en: "14.6 A", de: "14,6 A" },
+    "Giriş sigortası 6 A, çıkış sigortası 10 A.": { en: "Input fuse 6 A, output fuse 10 A.", de: "Eingangssicherung 6 A, Ausgangssicherung 10 A." },
+    "CPU + ek modül": { en: "CPU + expansion module", de: "CPU + Erweiterungsmodul" },
+    "Kapak sensörleri": { en: "Lid sensors", de: "Deckelsensoren" },
+    "Işın bariyeri": { en: "Light barrier", de: "Lichtschranke" },
+    "Safety PLC": { en: "Safety PLC", de: "Sicherheits-SPS" },
+    "Faz sıra rölesi": { en: "Phase sequence relay", de: "Phasenfolgerelais" },
+    "1. Yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. Yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "1. Yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. Yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "1. yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "1. yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "Saha": { en: "Field", de: "Feld" },
+    "Kapak kapalı sensörü": { en: "Lid closed sensor", de: "Deckel-geschlossen-Sensor" },
+    "Besleme": { en: "Supply", de: "Einspeisung" },
+    "Manuel KBN": { en: "Manual KBN", de: "Manuell KBN" },
+    "0,37 kW · invertör + sigorta": { en: "0,37 kW · inverter + fuse", de: "0,37 kW · Frequenzumrichter + Sicherung" },
+    "7,5 kW · invertör + sigorta": { en: "7,5 kW · inverter + fuse", de: "7,5 kW · Frequenzumrichter + Sicherung" },
+    "0,09 kW · 0,46 A · MKŞ + kontaktör": { en: "0,09 kW · 0,46 A · MPCB + contactor", de: "0,09 kW · 0,46 A · Motorschutzschalter + Schütz" },
+    "1,1 kW · MKŞ + kontaktör": { en: "1,1 kW · MPCB + contactor", de: "1,1 kW · Motorschutzschalter + Schütz" },
+    "2,2 kW · MKŞ + kontaktör": { en: "2,2 kW · MPCB + contactor", de: "2,2 kW · Motorschutzschalter + Schütz" },
+    "4 kW · MKŞ + kontaktör": { en: "4 kW · MPCB + contactor", de: "4 kW · Motorschutzschalter + Schütz" },
+    "8 kW · kontaktör + 3P sigorta": { en: "8 kW · contactor + 3P fuse", de: "8 kW · Schütz + 3P-Sicherung" },
+    "6 kW · kontaktör + 3P sigorta": { en: "6 kW · contactor + 3P fuse", de: "6 kW · Schütz + 3P-Sicherung" },
+    "3 kW · termik + kontaktör": { en: "3 kW · thermal overload + contactor", de: "3 kW · Thermorelais + Schütz" },
+    "0,37 kW · termik + kontaktör": { en: "0,37 kW · thermal overload + contactor", de: "0,37 kW · Thermorelais + Schütz" },
+    "ORDEL yerine": { en: "instead of ORDEL", de: "anstelle von ORDEL" },
+    "Kontaktör yok": { en: "No contactor", de: "Kein Schütz" },
+    "kontaktör yok": { en: "no contactor", de: "kein Schütz" },
+    "zorunlu": { en: "mandatory", de: "Pflicht" },
+    "kuru kontak": { en: "dry contact", de: "potenzialfreier Kontakt" },
+    "1 NO + 1 NC · kuru kontak": { en: "1 NO + 1 NC · dry contact", de: "1 NO + 1 NC · potenzialfreier Kontakt" },
+    "el koruma sensörü": { en: "hand protection sensor", de: "Handschutzsensor" },
+    "24 V, faz, kaçak akım": { en: "24 V, phase, residual current", de: "24 V, Phase, Fehlerstrom" },
+    "Röle grubu": { en: "Relay group", de: "Relaisgruppe" },
+    "kumanda · 10 00302": { en: "control · 10 00302", de: "Steuerung · 10 00302" },
+    "yeşil · stok kodu yok": { en: "green · no stock code", de: "grün · keine Lagernummer" },
+    "kırmızı · stok kodu yok": { en: "red · no stock code", de: "rot · keine Lagernummer" },
+    "IO. Karşılık malzeme yok.": { en: "IO. No matching material.", de: "IO. Kein zugehöriges Material." },
+    "IO. Sensörler seri bağlanır, 2 input harcar.": { en: "IO. Sensors are wired in series and use 2 inputs.", de: "IO. Sensoren werden in Reihe geschaltet und belegen 2 Eingänge." },
+    "IO. Analog 4-20 mA. Karşılık malzeme yok.": { en: "IO. Analog 4-20 mA. No matching material.", de: "IO. Analog 4-20 mA. Kein zugehöriges Material." },
+    "+24VDC. Kontaktör, termik ve MKŞ yok. Stok kodu verilmedi.": { en: "+24VDC. No contactor, thermal overload or MPCB. No stock code was given.", de: "+24VDC. Kein Schütz, kein Thermorelais und kein Motorschutzschalter. Keine Lagernummer angegeben." },
+    "Kuru kontak. Sensörün üzerinde 24 V veya 220 V besleme yoktur. Her biri 1 NO + 1 NC. Kapak sensörleri emniyet rölesine bağlanır. Stok kodu verilmedi.": { en: "Dry contact. The sensor has no 24 V or 220 V supply. Each is 1 NO + 1 NC. Lid sensors are wired to the safety relay. No stock code was given.", de: "Potenzialfreier Kontakt. Der Sensor hat keine 24-V- oder 220-V-Versorgung. Jeder ist 1 NO + 1 NC. Deckelsensoren werden an das Sicherheitsrelais angeschlossen. Keine Lagernummer angegeben." },
+    "El koruma sensörü. Kontaktör, termik ve MKŞ yok. Emniyet rölesine bağlanır. Stok kodu verilmedi.": { en: "Hand protection sensor. No contactor, thermal overload or MPCB. Wired to the safety relay. No stock code was given.", de: "Handschutzsensor. Kein Schütz, kein Thermorelais und kein Motorschutzschalter. Anschluss an das Sicherheitsrelais. Keine Lagernummer angegeben." },
+    "Kapak sensörleri ve ışın bariyeri bu rölenin girişine bağlanır. G9SB2002 bu düzende kullanılmaz.": { en: "Lid sensors and the light barrier are wired to this relay input. G9SB2002 is not used in this arrangement.", de: "Deckelsensoren und die Lichtschranke werden an den Eingang dieses Relais angeschlossen. G9SB2002 wird in dieser Anordnung nicht verwendet." },
+    "Kuru kontaktır. Sensörün üzerinde 24 V veya 220 V besleme yoktur. Kapak kapalı switchleri ve acil stop, tek emniyet rölesinin girişine bağlanır.": { en: "It is a dry contact. The sensor has no 24 V or 220 V supply. Lid-closed switches and the emergency stop are wired to the single safety relay input.", de: "Potenzialfreier Kontakt. Der Sensor hat keine 24-V- oder 220-V-Versorgung. Deckel-geschlossen-Schalter und Not-Halt werden an den Eingang des einen Sicherheitsrelais angeschlossen." },
+    "Yıkama tankı termokupl": { en: "Wash tank thermocouple", de: "Waschtank-Thermoelement" },
+    "Durulama tankı termokupl": { en: "Rinse tank thermocouple", de: "Spültank-Thermoelement" },
+    "Kurutma fanı termokupl": { en: "Drying fan thermocouple", de: "Trocknungsventilator-Thermoelement" },
+    "Yıkama tankı alt seviye sensörü": { en: "Wash tank low level sensor", de: "Waschtank unterer Füllstandssensor" },
+    "Yıkama tankı üst seviye sensörü": { en: "Wash tank high level sensor", de: "Waschtank oberer Füllstandssensor" },
+    "Durulama tankı alt seviye sensörü": { en: "Rinse tank low level sensor", de: "Spültank unterer Füllstandssensor" },
+    "Durulama tankı üst seviye sensörü": { en: "Rinse tank high level sensor", de: "Spültank oberer Füllstandssensor" },
+    "Sepet pozisyon sensörü": { en: "Basket position sensor", de: "Korbpositionssensor" },
+    "Yükleme ünitesi 1. pozisyon sensörü": { en: "Loading unit position 1 sensor", de: "Ladeeinheit Position-1-Sensor" },
+    "Yükleme ünitesi 2. pozisyon sensörü": { en: "Loading unit position 2 sensor", de: "Ladeeinheit Position-2-Sensor" },
+    "Yükleme ünitesi 3. pozisyon sensörü": { en: "Loading unit position 3 sensor", de: "Ladeeinheit Position-3-Sensor" },
+    "Yıkama tahliye pistonu açık sensörü": { en: "Wash drain piston open sensor", de: "Waschablass Kolben-offen-Sensor" },
+    "Yıkama tahliye pistonu kapalı sensörü": { en: "Wash drain piston closed sensor", de: "Waschablass Kolben-geschlossen-Sensor" },
+    "Durulama tahliye pistonu açık sensörü": { en: "Rinse drain piston open sensor", de: "Spülablass Kolben-offen-Sensor" },
+    "Durulama tahliye pistonu kapalı sensörü": { en: "Rinse drain piston closed sensor", de: "Spülablass Kolben-geschlossen-Sensor" },
+    "Yükleme ünitesi 1. pozisyon piston sensörü": { en: "Loading unit position 1 piston sensor", de: "Ladeeinheit Position 1 Kolbensensor" },
+    "Yükleme ünitesi 2. pozisyon piston sensörü": { en: "Loading unit position 2 piston sensor", de: "Ladeeinheit Position 2 Kolbensensor" },
+    "Yükleme ünitesi 3. pozisyon piston sensörü": { en: "Loading unit position 3 piston sensor", de: "Ladeeinheit Position 3 Kolbensensor" },
+    "Kapak 1. piston açık sensörü": { en: "Lid 1 piston open sensor", de: "Deckel 1 Kolben-offen-Sensor" },
+    "Kapak 1. piston kapalı sensörü": { en: "Lid 1 piston closed sensor", de: "Deckel 1 Kolben-geschlossen-Sensor" },
+    "Kapak 2. piston açık sensörü": { en: "Lid 2 piston open sensor", de: "Deckel 2 Kolben-offen-Sensor" },
+    "Kapak 2. piston kapalı sensörü": { en: "Lid 2 piston closed sensor", de: "Deckel 2 Kolben-geschlossen-Sensor" },
+    "Yıkama basınç transmitteri": { en: "Wash pressure transmitter", de: "Wasch-Drucktransmitter" },
+    "Durulama basınç transmitteri": { en: "Rinse pressure transmitter", de: "Spül-Drucktransmitter" },
+    "Hava bilgisi": { en: "Air signal", de: "Luftmeldung" },
+    "Su bilgisi": { en: "Water signal", de: "Wassermeldung" },
+    "1. basınç sensörü": { en: "Pressure sensor 1", de: "Drucksensor 1" },
+    "2. basınç sensörü": { en: "Pressure sensor 2", de: "Drucksensor 2" },
+    "Tepe lambası kırmızı": { en: "Tower lamp red", de: "Signalleuchte rot" },
+    "Tepe lambası sarı": { en: "Tower lamp yellow", de: "Signalleuchte gelb" },
+    "Tepe lambası yeşil": { en: "Tower lamp green", de: "Signalleuchte grün" },
+    "PLC": { en: "PLC", de: "SPS" },
+    "Kapak sensörü 1": { en: "Lid sensor 1", de: "Deckelsensor 1" },
+    "Kapak sensörü 2": { en: "Lid sensor 2", de: "Deckelsensor 2" },
+    "SEPET YERİ SENSÖRÜ +24V": { en: "Basket position sensor +24V", de: "Korbpositionssensor +24V" },
+    "TERMOKUPL": { en: "Thermocouple", de: "Thermoelement" },
+    "EL KORUMA SENSÖRÜ": { en: "Hand protection sensor", de: "Handschutzsensor" },
+    "TABLO GÜCÜ": { en: "TABLE POWER", de: "SCHRANKLEISTUNG" },
+    "Yük": { en: "Load", de: "Last" },
+    "Tablo gücü": { en: "Table power", de: "Schrankleistung" },
+    "AKIM FORMÜLÜ": { en: "CURRENT FORMULA", de: "STROMFORMEL" },
+    "Yük tipi": { en: "Load type", de: "Lastart" },
+    "Formül": { en: "Formula", de: "Formel" },
+    "Kabul": { en: "Basis", de: "Annahme" },
+    "Motor": { en: "Motor", de: "Motor" },
+    "Isıtıcı": { en: "Heater", de: "Heizung" },
+    "Yağ sıyırıcı": { en: "Oil skimmer", de: "Ölabstreifer" },
+    "Verilen hat akımı": { en: "Given line current", de: "Angegebener Leiterstrom" },
+    "HAT AKIMI": { en: "LINE CURRENT", de: "LEITERSTROM" },
+    "Hesap": { en: "Calculation", de: "Rechnung" },
+    "Akım": { en: "Current", de: "Strom" },
+    "verilen": { en: "given", de: "angegeben" },
+    "Hat akımı": { en: "Line current", de: "Leiterstrom" },
+    "DEPO LİSTESİ": { en: "DEPOT LIST", de: "LAGERLISTE" },
+    "Stok": { en: "Stock", de: "Lager" },
+    "Foto": { en: "Photo", de: "Foto" },
+    "Malzeme": { en: "Material", de: "Material" },
+    "Adet": { en: "Qty", de: "Anzahl" },
+    "NOTLAR": { en: "NOTES", de: "HINWEISE" },
+    "Not": { en: "Note", de: "Hinweis" },
+    "Pano etiketi Almanca ve İngilizce olacak.": { en: "The panel label will be in German and English.", de: "Das Schaltschrankschild wird auf Deutsch und Englisch ausgeführt." },
+    "Panoda çift el butonu kullanılacak.": { en: "A two-hand control will be used on the panel.", de: "Am Schaltschrank wird eine Zweihandsteuerung verwendet." },
+    "Kapak sensörleri kuru kontaktır. Her biri 1 NO + 1 NC. 24 V veya 220 V beslemesi yoktur.": { en: "Lid sensors are dry contacts. Each is 1 NO + 1 NC. There is no 24 V or 220 V supply.", de: "Deckelsensoren sind potenzialfreie Kontakte. Jeder ist 1 NO + 1 NC. Es gibt keine 24-V- oder 220-V-Versorgung." },
+    "Kapak sensörleri ve ışın bariyeri emniyet rölesine bağlanır.": { en: "Lid sensors and the light barrier are wired to the safety relay.", de: "Deckelsensoren und die Lichtschranke werden an das Sicherheitsrelais angeschlossen." },
+    "Kapak piston sensörleri seri bağlanır, 2 input harcar.": { en: "Lid piston sensors are wired in series and use 2 inputs.", de: "Deckelkolben-Sensoren werden in Reihe geschaltet und belegen 2 Eingänge." },
+    "Sepet redüktörü invertör ile dönecek.": { en: "The basket reducer will be driven by an inverter.", de: "Das Korbgetriebe wird über einen Frequenzumrichter angetrieben." },
+    "Sepet durdurma sensörü +24VDC olacak.": { en: "The basket stop sensor will be +24VDC.", de: "Der Korbstoppsensor wird mit +24VDC ausgeführt." },
+    "KSYSTEM siparişi olduğu için SAFETY PLC koyulacak.": { en: "A safety PLC will be fitted because this is a KSYSTEM order.", de: "Weil es ein KSYSTEM-Auftrag ist, wird eine Sicherheits-SPS eingesetzt." },
+    "Kapak kapalı switchleri ve acil stop emniyet rölesine bağlanacak.": { en: "Lid-closed switches and the emergency stop will be wired to the safety relay.", de: "Deckel-geschlossen-Schalter und Not-Halt werden an das Sicherheitsrelais angeschlossen." },
+    "Standart 710x710 KBN 1B panosu kullanılacak.": { en: "The standard 710x710 KBN 1B panel will be used.", de: "Der Standardschrank 710x710 KBN 1B wird verwendet." },
+    "Doküman koyma kısmına dikkat edilecek, ters olmayacak.": { en: "The document pocket will be checked so it is not reversed.", de: "Das Dokumentenfach wird geprüft, damit es nicht seitenverkehrt sitzt." },
+    "Pano kapağına ve güç kaynağına topraklama hattı çekilmiş olacak.": { en: "An earth conductor will be run to the panel door and the power supply.", de: "Eine Schutzleiterleitung wird an die Schranktür und das Netzteil geführt." },
+    "İnvertör parametreleri ayarlanacak.": { en: "Inverter parameters will be set.", de: "Die Frequenzumrichter-Parameter werden eingestellt." },
+    "IO LİSTESİ": { en: "IO LIST", de: "E/A-LISTE" },
+    "Input No": { en: "Input No", de: "Eingang Nr." },
+    "Input": { en: "Input", de: "Eingang" },
+    "Röle No": { en: "Relay No", de: "Relais-Nr." },
+    "Output No": { en: "Output No", de: "Ausgang Nr." },
+    "Output": { en: "Output", de: "Ausgang" },
+    "Giriş": { en: "Input", de: "Eingang" },
+    "TC MODÜL": { en: "TC MODULE", de: "TC-MODUL" },
+    "ANALOG INPUT": { en: "ANALOG INPUT", de: "ANALOGEINGANG" },
+    "Termokupl": { en: "Thermocouple", de: "Thermoelement" },
+    "Basınç transmitteri": { en: "Pressure transmitter", de: "Drucktransmitter" },
+    "Yıkama tankı basınç transmitteri": { en: "Wash tank pressure transmitter", de: "Waschtank-Drucktransmitter" },
+    "Durulama tankı basınç transmitteri": { en: "Rinse tank pressure transmitter", de: "Spültank-Drucktransmitter" },
+    "Giriş komutu": { en: "Input command", de: "Eingangsbefehl" },
+    "Role": { en: "Relay", de: "Relais" },
+    "Çıkış": { en: "Output", de: "Ausgang" },
+    "Çıkış komutu": { en: "Output command", de: "Ausgangsbefehl" },
+    "Acil stop bilgisi": { en: "Emergency stop signal", de: "Not-Halt-Meldung" },
+    "Kapak kapandı bilgisi": { en: "Lid closed signal", de: "Deckel geschlossen Meldung" },
+    "SEPET REDÜKTÖR MOTORU ÇALIŞ BİLGİSİ (SI13 OMRON)": { en: "BASKET REDUCER MOTOR RUN SIGNAL (SI13 OMRON)", de: "KORBREDUKTOR-MOTOR LAUF-MELDUNG (SI13 OMRON)" },
+    "SEPET REDÜKTÖR MOTORU TEST BİLGİSİ (SI5 OMRON)": { en: "BASKET REDUCER MOTOR TEST SIGNAL (SI5 OMRON)", de: "KORBREDUKTOR-MOTOR TEST-MELDUNG (SI5 OMRON)" },
+    "Faz sıra rölesi faz bilgisi": { en: "Phase sequence relay phase signal", de: "Phasenfolgerelais Phasenmeldung" },
+    "Reset butonu bilgisi": { en: "Reset button signal", de: "Reset-Taster-Meldung" },
+    "Sepet redüktörü invertör arıza bilgisi": { en: "Basket reducer inverter fault", de: "Korbgetriebe Frequenzumrichter-Störung" },
+    "Sepet yükleme motoru invertör arıza bilgisi": { en: "Basket loading motor inverter fault", de: "Korb-Lademotor Frequenzumrichter-Störung" },
+    "Yıkama pompası invertör arıza bilgisi": { en: "Wash pump inverter fault", de: "Waschpumpe Frequenzumrichter-Störung" },
+    "Durulama pompası invertör arıza bilgisi": { en: "Rinse pump inverter fault", de: "Spülpumpe Frequenzumrichter-Störung" },
+    "Yıkama tankı yağ sıyırıcı MKŞ arıza": { en: "Wash tank oil skimmer MPCB fault", de: "Waschtank-Ölabstreifer Motorschutzschalter-Störung" },
+    "Durulama tankı yağ sıyırıcı MKŞ arıza": { en: "Rinse tank oil skimmer MPCB fault", de: "Spültank-Ölabstreifer Motorschutzschalter-Störung" },
+    "Drenaj pompası MKŞ arıza": { en: "Drain pump MPCB fault", de: "Ablaufpumpe Motorschutzschalter-Störung" },
+    "Egzoz fanı MKŞ arıza": { en: "Exhaust fan MPCB fault", de: "Abluftventilator Motorschutzschalter-Störung" },
+    "Kurutma fanı MKŞ arıza": { en: "Drying fan MPCB fault", de: "Trocknungsventilator Motorschutzschalter-Störung" },
+    "Yıkama tankı kaçak akım": { en: "Wash tank residual current", de: "Waschtank-Fehlerstrom" },
+    "Durulama tankı kaçak akım": { en: "Rinse tank residual current", de: "Spültank-Fehlerstrom" },
+    "Kurutma fanı kaçak akım": { en: "Drying fan residual current", de: "Trocknungsventilator-Fehlerstrom" },
+    "Kapak piston açık sensörleri": { en: "Lid piston open sensors", de: "Deckelkolben-offen-Sensoren" },
+    "Kapak piston kapalı sensörleri": { en: "Lid piston closed sensors", de: "Deckelkolben-geschlossen-Sensoren" },
+    "Kaskat vanası açık bilgisi": { en: "Cascade valve open signal", de: "Kaskadenventil Auf-Meldung" },
+    "Kaskat vanası kapalı bilgisi": { en: "Cascade valve closed signal", de: "Kaskadenventil Zu-Meldung" },
+    "Yıkama otomatik dolum vanası açık bilgisi": { en: "Wash automatic fill valve open signal", de: "Wasch-Füllventil Auf-Meldung" },
+    "Yıkama otomatik dolum vanası kapalı bilgisi": { en: "Wash automatic fill valve closed signal", de: "Wasch-Füllventil Zu-Meldung" },
+    "Durulama otomatik dolum vanası açık bilgisi": { en: "Rinse automatic fill valve open signal", de: "Spül-Füllventil Auf-Meldung" },
+    "Durulama otomatik dolum vanası kapalı bilgisi": { en: "Rinse automatic fill valve closed signal", de: "Spül-Füllventil Zu-Meldung" },
+    "ÖN YÜZ": { en: "FRONT FACE", de: "FRONTSEITE" },
+    "Ön yüz butonları": { en: "Front face buttons", de: "Fronttaster" },
+    "çift el · 2 aç + 2 kapat": { en: "two-hand · 2 open + 2 close", de: "Zweihand · 2 auf + 2 zu" },
+    "Acil stop 2 NC. Reset 1 NO + 1 NC. Sepet test 1 NO. Her kapak aç ve her kapak kapat 1 NO + 1 NC.": { en: "Emergency stop 2 NC. Reset 1 NO + 1 NC. Basket test 1 NO. Each open-lid and each close-lid button is 1 NO + 1 NC.", de: "Not-Halt 2 NC. Reset 1 NO + 1 NC. Korbtest 1 NO. Jeder Deckel-auf- und jeder Deckel-zu-Taster ist 1 NO + 1 NC." },
+    "Kapak aç butonu": { en: "Open lid button", de: "Deckel-auf-Taster" },
+    "Kapak kapat butonu": { en: "Close lid button", de: "Deckel-zu-Taster" },
+    "sol": { en: "left", de: "links" },
+    "sağ": { en: "right", de: "rechts" },
+    "üst": { en: "upper", de: "oben" },
+    "alt": { en: "lower", de: "unten" },
+    "Konveyör yükleme butonları": { en: "Conveyor loading buttons", de: "Förderer-Ladetaster" },
+    "çift el · 2 ileri + 2 geri": { en: "two-hand · 2 forward + 2 back", de: "Zweihand · 2 vor + 2 zurück" },
+    "Makine üzerinde. Solda alt alta 2 yeşil ileri, sağda alt alta 2 kırmızı geri. Her buton 2 NO. Pano etiketinde yok.": { en: "On the machine. Two green forward buttons stacked on the left, two red back buttons stacked on the right. Each button is 2 NO. Not on the panel label.", de: "An der Maschine. Links zwei grüne Vor-Taster untereinander, rechts zwei rote Zurück-Taster untereinander. Jeder Taster ist 2 NO. Nicht auf dem Schaltschrankschild." },
+    "Konveyör ileri butonu": { en: "Conveyor forward button", de: "Förderer Vor-Taster" },
+    "Konveyör geri butonu": { en: "Conveyor back button", de: "Förderer Zurück-Taster" },
+    "stok kodu yok": { en: "no stock code", de: "keine Lagernummer" },
+    "SICAKLIK": { en: "TEMPERATURE", de: "TEMPERATUR" },
+    "ISI": { en: "HEAT", de: "WÄRME" },
+    "SÜRE": { en: "DURATION", de: "DAUER" },
+    "ZAMAN": { en: "TIME", de: "ZEIT" },
+    "SIFIRLA": { en: "RESET", de: "RÜCKSETZEN" },
+    "RESET": { en: "RESET", de: "RÜCKSETZEN" },
+    "SEPET TEST": { en: "BASKET TEST", de: "KORBTEST" },
+    "TEST": { en: "TEST", de: "TEST" },
+    "KAPAK AÇ": { en: "OPEN LID", de: "DECKEL AUF" },
+    "KAPAK KAPAT": { en: "CLOSE LID", de: "DECKEL ZU" },
+    "YIKAMA": { en: "WASH", de: "WASCHEN" },
+    "STOP": { en: "STOP", de: "STOP" },
+    "ACİL STOP": { en: "E-STOP", de: "NOT-HALT" },
+    "DÜŞÜK SU": { en: "LOW WATER", de: "WASSERSTAND" },
+    "POMPA": { en: "PUMP", de: "PUMPE" },
+    "REDÜKTÖR": { en: "REDUCER", de: "GETRIEBE" },
+    "1. kapak": { en: "lid 1", de: "Deckel 1" },
+    "2. kapak": { en: "lid 2", de: "Deckel 2" },
+    "START": { en: "START", de: "START" },
+    "DUR": { en: "STOP", de: "STOP" },
+    "SEVİYESİ": { en: "LEVEL", de: "STAND" },
+    "ARIZASI": { en: "FAULT", de: "STÖRUNG" },
+    "MAKİNE OPSİYONLARI": { en: "MACHINE OPTIONS", de: "MASCHINENOPTIONEN" },
+    "Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar pano malzemesini etkiler.": { en: "Machine options are in the Selection column. Yellow rows affect the panel materials.", de: "Die Maschinenoptionen stehen in der Spalte Auswahl. Gelbe Zeilen wirken auf das Schaltschrankmaterial." },
+    "Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar elektrikle ilgilidir.": { en: "Machine options are in the Selection column. Yellow rows are electrical.", de: "Die Maschinenoptionen stehen in der Spalte Auswahl. Gelbe Zeilen sind elektrisch." },
+    "Seçim kodu": { en: "Selection code", de: "Auswahlcode" },
+    "Kod": { en: "Code", de: "Code" },
+    "Opsiyon": { en: "Option", de: "Option" },
+    "Seçim": { en: "Selection", de: "Auswahl" }
+  };
+
+  function textOf(src, lang) {
+    if (!src || lang === "tr") return src;
+    if (D[src] && D[src][lang]) return D[src][lang];
+    var m = src.match(/^ayar (.+)$/);
+    if (m) return (lang === "en" ? "set " : "Einst. ") + m[1];
+    m = src.match(/^(\d+) adet$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc" : " pcs") : " Stk.");
+    m = src.match(/^(\d+) adet · (.+)$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc · " : " pcs · ") : " Stk. · ") + textOf(m[2], lang);
+    if (src.indexOf("Tablo gücü") >= 0 || src.indexOf("Tablo akımı") >= 0 || src.indexOf("pano malzemesi") >= 0) {
+      return src
+        .replace("Tablo gücü", lang === "en" ? "Table power" : "Schrankleistung")
+        .replace("Tablo akımı", lang === "en" ? "Table current" : "Schrankstrom")
+        .replace("pano malzemesi", lang === "en" ? "panel materials" : "Schaltschrankmaterial");
+    }
+    return src;
+  }
+
+  function stockName(el) {
+    if (!el.classList || !el.classList.contains("n")) return false;
+    var c = el.parentElement && el.parentElement.querySelector(".c");
+    return !!(c && /10\s*\d{5}/.test(c.textContent));
+  }
+
+  function nodes() {
+    return Array.prototype.filter.call(
+      document.querySelectorAll("title, p, h2, th, td, b, span, div.meta"),
+      function (el) {
+        if (el.closest(".langs")) return false;
+        if (el.matches(".brand, .brand-sub, .cnk, .win")) return false;
+        if (el.closest(".depot") && el.matches("td:first-child, td:nth-child(3)")) return false;
+        if (el.closest(".opts") && el.matches("tbody td")) return false;
+        if (el.closest(".safety") && el.matches("tbody td")) return false;
+        if (el.children.length) return false;
+        if (stockName(el)) return false;
+        return true;
+      }
+    );
+  }
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    nodes().forEach(function (el) {
+      if (!el.hasAttribute("data-tr")) el.setAttribute("data-tr", el.textContent.trim());
+      el.textContent = textOf(el.getAttribute("data-tr"), lang);
+    });
+    document.querySelectorAll(".e").forEach(function (e) {
+      var t = e.parentElement && e.parentElement.querySelector(".t");
+      if (!t) return;
+      e.hidden = t.textContent.trim() === e.textContent.trim();
+    });
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      var on = b.getAttribute("data-lang") === lang;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { localStorage.setItem("kbn-lang", lang); } catch (err) {}
+  }
+
+  document.querySelectorAll(".langs button").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+  });
+
+  var saved = "tr";
+  try { saved = localStorage.getItem("kbn-lang") || "tr"; } catch (err) {}
+  if (saved !== "en" && saved !== "de") saved = "tr";
+  apply(saved);
+})();
+
+</script>
 </body>
 </html>

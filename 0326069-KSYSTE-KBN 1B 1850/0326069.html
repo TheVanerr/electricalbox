@@ -133,6 +133,16 @@
     .notes th { background: #1a1a1a; color: #fafafa; font-size: 11px; letter-spacing: 0.08em; font-weight: 650; }
     .notes th:not(.no) { text-align: center; }
     .notes td.no { width: 42px; text-align: center; font-weight: 650; background: #efefef; }
+  
+    header { align-items: flex-start; }
+    .head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      width: 28px; height: 18px; padding: 0; border: 1px solid #1a1a1a;
+      background: #fff; cursor: pointer; line-height: 0;
+    }
+    .langs button.on { outline: 2px solid #1a1a1a; outline-offset: 1px; }
+    .langs svg { display: block; width: 28px; height: 18px; }
   </style>
 </head>
 <body>
@@ -142,7 +152,14 @@
         <h1>0326069-KSYSTE-KBN 1B 1850</h1>
         <p class="supply">380 V · 50 Hz · Tablo gücü 22,74 kW · Tablo akımı 39,7 A</p>
       </div>
-      <div class="meta">MANUEL · KBN</div>
+      <div class="head-side">
+        <div class="langs" role="group" aria-label="Language">
+          <button type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 36" aria-hidden="true"><rect width="60" height="36" fill="#012169"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#fff" stroke-width="10"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#C8102E" stroke-width="6"/><path d="M30 0 V36 M0 18 H60" stroke="#fff" stroke-width="16"/><path d="M30 0 V36 M0 18 H60" stroke="#C8102E" stroke-width="9"/></svg></button>
+          <button type="button" data-lang="tr" title="Türkçe" aria-label="Türkçe"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="5" fill="#fff"/><circle cx="13.3" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="17,10 19.1,10.7 18.3,8.7 20,7.3 17.9,7.2 17,5.2 16.1,7.2 14,7.3 15.7,8.7 14.9,10.7"/></svg></button>
+          <button type="button" data-lang="de" title="Deutsch" aria-label="Deutsch"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#000"/><rect y="6.67" width="30" height="6.66" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></button>
+        </div>
+        <div class="meta">MANUEL · KBN</div>
+      </div>
     </header>
 
     <section class="row">
@@ -615,5 +632,275 @@
       </table>
     </section>
   </div>
+<script>
+(function () {
+  var D = {
+    "MANUEL · KBN": { en: "MANUAL · KBN", de: "MANUELL · KBN" },
+    "MAKİNE": { en: "MACHINE", de: "MASCHINE" },
+    "PANO": { en: "PANEL", de: "SCHALTSCHRANK" },
+    "Sepet redüktörü": { en: "Basket reducer", de: "Korbgetriebe" },
+    "Sepet yükleme motoru": { en: "Basket loading motor", de: "Korb-Lademotor" },
+    "Yıkama pompası": { en: "Wash pump", de: "Waschpumpe" },
+    "Durulama pompası": { en: "Rinse pump", de: "Spülpumpe" },
+    "Yıkama tankı yağ sıyırıcı": { en: "Wash tank oil skimmer", de: "Waschtank-Ölabstreifer" },
+    "Durulama tankı yağ sıyırıcı": { en: "Rinse tank oil skimmer", de: "Spültank-Ölabstreifer" },
+    "Drenaj pompası": { en: "Drain pump", de: "Ablaufpumpe" },
+    "Egzoz fanı": { en: "Exhaust fan", de: "Abluftventilator" },
+    "Kurutma fanı": { en: "Drying fan", de: "Trocknungsventilator" },
+    "Yıkama tankı 1. ısıtıcı": { en: "Wash tank heater 1", de: "Waschtank-Heizung 1" },
+    "Yıkama tankı 2. ısıtıcı": { en: "Wash tank heater 2", de: "Waschtank-Heizung 2" },
+    "Durulama tankı 1. ısıtıcı": { en: "Rinse tank heater 1", de: "Spültank-Heizung 1" },
+    "Durulama tankı 2. ısıtıcı": { en: "Rinse tank heater 2", de: "Spültank-Heizung 2" },
+    "Kurutma fanı ısıtıcısı": { en: "Drying fan heater", de: "Trocknungsventilator-Heizung" },
+    "Termokupl grubu": { en: "Thermocouple group", de: "Thermoelementgruppe" },
+    "Seviye sensörleri": { en: "Level sensors", de: "Füllstandssensoren" },
+    "Proximity sensörler": { en: "Proximity sensors", de: "Näherungssensoren" },
+    "Piston sensörleri": { en: "Piston sensors", de: "Kolbensensoren" },
+    "Kapak piston sensörleri": { en: "Lid piston sensors", de: "Deckelkolben-Sensoren" },
+    "Basınç transmitteri": { en: "Pressure transmitter", de: "Drucktransmitter" },
+    "Bilgi sensörleri": { en: "Status sensors", de: "Meldesensoren" },
+    "Tepe lambası": { en: "Tower lamp", de: "Signalleuchte" },
+    "PLC ve HMI": { en: "PLC and HMI", de: "SPS und HMI" },
+    "Kapak sensörleri": { en: "Lid sensors", de: "Deckelsensoren" },
+    "Işın bariyeri": { en: "Light barrier", de: "Lichtschranke" },
+    "Safety PLC": { en: "Safety PLC", de: "Sicherheits-SPS" },
+    "Faz sıra rölesi": { en: "Phase sequence relay", de: "Phasenfolgerelais" },
+    "1. Yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. Yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "1. Yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. Yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "1. yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "1. yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "Saha": { en: "Field", de: "Feld" },
+    "Kapak kapalı sensörü": { en: "Lid closed sensor", de: "Deckel-geschlossen-Sensor" },
+    "Besleme": { en: "Supply", de: "Einspeisung" },
+    "Manuel KBN": { en: "Manual KBN", de: "Manuell KBN" },
+    "0,37 kW · invertör + sigorta": { en: "0,37 kW · inverter + fuse", de: "0,37 kW · Frequenzumrichter + Sicherung" },
+    "7,5 kW · invertör + sigorta": { en: "7,5 kW · inverter + fuse", de: "7,5 kW · Frequenzumrichter + Sicherung" },
+    "0,09 kW · 0,46 A · MKŞ + kontaktör": { en: "0,09 kW · 0,46 A · MPCB + contactor", de: "0,09 kW · 0,46 A · Motorschutzschalter + Schütz" },
+    "1,1 kW · MKŞ + kontaktör": { en: "1,1 kW · MPCB + contactor", de: "1,1 kW · Motorschutzschalter + Schütz" },
+    "2,2 kW · MKŞ + kontaktör": { en: "2,2 kW · MPCB + contactor", de: "2,2 kW · Motorschutzschalter + Schütz" },
+    "4 kW · MKŞ + kontaktör": { en: "4 kW · MPCB + contactor", de: "4 kW · Motorschutzschalter + Schütz" },
+    "8 kW · kontaktör + 3P sigorta": { en: "8 kW · contactor + 3P fuse", de: "8 kW · Schütz + 3P-Sicherung" },
+    "6 kW · kontaktör + 3P sigorta": { en: "6 kW · contactor + 3P fuse", de: "6 kW · Schütz + 3P-Sicherung" },
+    "3 kW · termik + kontaktör": { en: "3 kW · thermal overload + contactor", de: "3 kW · Thermorelais + Schütz" },
+    "0,37 kW · termik + kontaktör": { en: "0,37 kW · thermal overload + contactor", de: "0,37 kW · Thermorelais + Schütz" },
+    "ORDEL yerine": { en: "instead of ORDEL", de: "anstelle von ORDEL" },
+    "Kontaktör yok": { en: "No contactor", de: "Kein Schütz" },
+    "kontaktör yok": { en: "no contactor", de: "kein Schütz" },
+    "zorunlu": { en: "mandatory", de: "Pflicht" },
+    "kuru kontak": { en: "dry contact", de: "potenzialfreier Kontakt" },
+    "1 NO + 1 NC · kuru kontak": { en: "1 NO + 1 NC · dry contact", de: "1 NO + 1 NC · potenzialfreier Kontakt" },
+    "el koruma sensörü": { en: "hand protection sensor", de: "Handschutzsensor" },
+    "24 V, faz, kaçak akım": { en: "24 V, phase, residual current", de: "24 V, Phase, Fehlerstrom" },
+    "Röle grubu": { en: "Relay group", de: "Relaisgruppe" },
+    "kumanda · 10 00302": { en: "control · 10 00302", de: "Steuerung · 10 00302" },
+    "yeşil · stok kodu yok": { en: "green · no stock code", de: "grün · keine Lagernummer" },
+    "kırmızı · stok kodu yok": { en: "red · no stock code", de: "rot · keine Lagernummer" },
+    "IO. Karşılık malzeme yok.": { en: "IO. No matching material.", de: "IO. Kein zugehöriges Material." },
+    "IO. Sensörler seri bağlanır, 2 input harcar.": { en: "IO. Sensors are wired in series and use 2 inputs.", de: "IO. Sensoren werden in Reihe geschaltet und belegen 2 Eingänge." },
+    "IO. Analog 4-20 mA. Karşılık malzeme yok.": { en: "IO. Analog 4-20 mA. No matching material.", de: "IO. Analog 4-20 mA. Kein zugehöriges Material." },
+    "+24VDC. Kontaktör, termik ve MKŞ yok. Stok kodu verilmedi.": { en: "+24VDC. No contactor, thermal overload or MPCB. No stock code was given.", de: "+24VDC. Kein Schütz, kein Thermorelais und kein Motorschutzschalter. Keine Lagernummer angegeben." },
+    "Kuru kontak. Sensörün üzerinde 24 V veya 220 V besleme yoktur. Her biri 1 NO + 1 NC. Kapak sensörleri emniyet rölesine bağlanır. Stok kodu verilmedi.": { en: "Dry contact. The sensor has no 24 V or 220 V supply. Each is 1 NO + 1 NC. Lid sensors are wired to the safety relay. No stock code was given.", de: "Potenzialfreier Kontakt. Der Sensor hat keine 24-V- oder 220-V-Versorgung. Jeder ist 1 NO + 1 NC. Deckelsensoren werden an das Sicherheitsrelais angeschlossen. Keine Lagernummer angegeben." },
+    "El koruma sensörü. Kontaktör, termik ve MKŞ yok. Emniyet rölesine bağlanır. Stok kodu verilmedi.": { en: "Hand protection sensor. No contactor, thermal overload or MPCB. Wired to the safety relay. No stock code was given.", de: "Handschutzsensor. Kein Schütz, kein Thermorelais und kein Motorschutzschalter. Anschluss an das Sicherheitsrelais. Keine Lagernummer angegeben." },
+    "Kapak sensörleri ve ışın bariyeri bu rölenin girişine bağlanır. G9SB2002 bu düzende kullanılmaz.": { en: "Lid sensors and the light barrier are wired to this relay input. G9SB2002 is not used in this arrangement.", de: "Deckelsensoren und die Lichtschranke werden an den Eingang dieses Relais angeschlossen. G9SB2002 wird in dieser Anordnung nicht verwendet." },
+    "Kuru kontaktır. Sensörün üzerinde 24 V veya 220 V besleme yoktur. Kapak kapalı switchleri ve acil stop, tek emniyet rölesinin girişine bağlanır.": { en: "It is a dry contact. The sensor has no 24 V or 220 V supply. Lid-closed switches and the emergency stop are wired to the single safety relay input.", de: "Potenzialfreier Kontakt. Der Sensor hat keine 24-V- oder 220-V-Versorgung. Deckel-geschlossen-Schalter und Not-Halt werden an den Eingang des einen Sicherheitsrelais angeschlossen." },
+    "Yıkama tankı termokupl": { en: "Wash tank thermocouple", de: "Waschtank-Thermoelement" },
+    "Durulama tankı termokupl": { en: "Rinse tank thermocouple", de: "Spültank-Thermoelement" },
+    "Kurutma fanı termokupl": { en: "Drying fan thermocouple", de: "Trocknungsventilator-Thermoelement" },
+    "Yıkama tankı alt seviye sensörü": { en: "Wash tank low level sensor", de: "Waschtank unterer Füllstandssensor" },
+    "Yıkama tankı üst seviye sensörü": { en: "Wash tank high level sensor", de: "Waschtank oberer Füllstandssensor" },
+    "Durulama tankı alt seviye sensörü": { en: "Rinse tank low level sensor", de: "Spültank unterer Füllstandssensor" },
+    "Durulama tankı üst seviye sensörü": { en: "Rinse tank high level sensor", de: "Spültank oberer Füllstandssensor" },
+    "Sepet pozisyon sensörü": { en: "Basket position sensor", de: "Korbpositionssensor" },
+    "Yükleme ünitesi 1. pozisyon sensörü": { en: "Loading unit position 1 sensor", de: "Ladeeinheit Position-1-Sensor" },
+    "Yükleme ünitesi 2. pozisyon sensörü": { en: "Loading unit position 2 sensor", de: "Ladeeinheit Position-2-Sensor" },
+    "Yükleme ünitesi 3. pozisyon sensörü": { en: "Loading unit position 3 sensor", de: "Ladeeinheit Position-3-Sensor" },
+    "Yıkama tahliye pistonu açık sensörü": { en: "Wash drain piston open sensor", de: "Waschablass Kolben-offen-Sensor" },
+    "Yıkama tahliye pistonu kapalı sensörü": { en: "Wash drain piston closed sensor", de: "Waschablass Kolben-geschlossen-Sensor" },
+    "Durulama tahliye pistonu açık sensörü": { en: "Rinse drain piston open sensor", de: "Spülablass Kolben-offen-Sensor" },
+    "Durulama tahliye pistonu kapalı sensörü": { en: "Rinse drain piston closed sensor", de: "Spülablass Kolben-geschlossen-Sensor" },
+    "Yükleme ünitesi 1. pozisyon piston sensörü": { en: "Loading unit position 1 piston sensor", de: "Ladeeinheit Position 1 Kolbensensor" },
+    "Yükleme ünitesi 2. pozisyon piston sensörü": { en: "Loading unit position 2 piston sensor", de: "Ladeeinheit Position 2 Kolbensensor" },
+    "Yükleme ünitesi 3. pozisyon piston sensörü": { en: "Loading unit position 3 piston sensor", de: "Ladeeinheit Position 3 Kolbensensor" },
+    "Kapak 1. piston açık sensörü": { en: "Lid 1 piston open sensor", de: "Deckel 1 Kolben-offen-Sensor" },
+    "Kapak 1. piston kapalı sensörü": { en: "Lid 1 piston closed sensor", de: "Deckel 1 Kolben-geschlossen-Sensor" },
+    "Kapak 2. piston açık sensörü": { en: "Lid 2 piston open sensor", de: "Deckel 2 Kolben-offen-Sensor" },
+    "Kapak 2. piston kapalı sensörü": { en: "Lid 2 piston closed sensor", de: "Deckel 2 Kolben-geschlossen-Sensor" },
+    "Yıkama basınç transmitteri": { en: "Wash pressure transmitter", de: "Wasch-Drucktransmitter" },
+    "Durulama basınç transmitteri": { en: "Rinse pressure transmitter", de: "Spül-Drucktransmitter" },
+    "Hava bilgisi": { en: "Air signal", de: "Luftmeldung" },
+    "Su bilgisi": { en: "Water signal", de: "Wassermeldung" },
+    "1. basınç sensörü": { en: "Pressure sensor 1", de: "Drucksensor 1" },
+    "2. basınç sensörü": { en: "Pressure sensor 2", de: "Drucksensor 2" },
+    "Tepe lambası kırmızı": { en: "Tower lamp red", de: "Signalleuchte rot" },
+    "Tepe lambası sarı": { en: "Tower lamp yellow", de: "Signalleuchte gelb" },
+    "Tepe lambası yeşil": { en: "Tower lamp green", de: "Signalleuchte grün" },
+    "PLC": { en: "PLC", de: "SPS" },
+    "Kapak sensörü 1": { en: "Lid sensor 1", de: "Deckelsensor 1" },
+    "Kapak sensörü 2": { en: "Lid sensor 2", de: "Deckelsensor 2" },
+    "SEPET YERİ SENSÖRÜ +24V": { en: "Basket position sensor +24V", de: "Korbpositionssensor +24V" },
+    "TERMOKUPL": { en: "Thermocouple", de: "Thermoelement" },
+    "EL KORUMA SENSÖRÜ": { en: "Hand protection sensor", de: "Handschutzsensor" },
+    "TABLO GÜCÜ": { en: "TABLE POWER", de: "SCHRANKLEISTUNG" },
+    "Yük": { en: "Load", de: "Last" },
+    "Tablo gücü": { en: "Table power", de: "Schrankleistung" },
+    "AKIM FORMÜLÜ": { en: "CURRENT FORMULA", de: "STROMFORMEL" },
+    "Yük tipi": { en: "Load type", de: "Lastart" },
+    "Formül": { en: "Formula", de: "Formel" },
+    "Kabul": { en: "Basis", de: "Annahme" },
+    "Motor": { en: "Motor", de: "Motor" },
+    "Isıtıcı": { en: "Heater", de: "Heizung" },
+    "Yağ sıyırıcı": { en: "Oil skimmer", de: "Ölabstreifer" },
+    "Verilen hat akımı": { en: "Given line current", de: "Angegebener Leiterstrom" },
+    "HAT AKIMI": { en: "LINE CURRENT", de: "LEITERSTROM" },
+    "Hesap": { en: "Calculation", de: "Rechnung" },
+    "Akım": { en: "Current", de: "Strom" },
+    "verilen": { en: "given", de: "angegeben" },
+    "Hat akımı": { en: "Line current", de: "Leiterstrom" },
+    "DEPO LİSTESİ": { en: "DEPOT LIST", de: "LAGERLISTE" },
+    "Stok": { en: "Stock", de: "Lager" },
+    "Foto": { en: "Photo", de: "Foto" },
+    "Malzeme": { en: "Material", de: "Material" },
+    "Adet": { en: "Qty", de: "Anzahl" },
+    "NOTLAR": { en: "NOTES", de: "HINWEISE" },
+    "Not": { en: "Note", de: "Hinweis" },
+    "Pano etiketi Almanca ve İngilizce olacak.": { en: "The panel label will be in German and English.", de: "Das Schaltschrankschild wird auf Deutsch und Englisch ausgeführt." },
+    "Panoda çift el butonu kullanılacak.": { en: "A two-hand control will be used on the panel.", de: "Am Schaltschrank wird eine Zweihandsteuerung verwendet." },
+    "Kapak sensörleri kuru kontaktır. Her biri 1 NO + 1 NC. 24 V veya 220 V beslemesi yoktur.": { en: "Lid sensors are dry contacts. Each is 1 NO + 1 NC. There is no 24 V or 220 V supply.", de: "Deckelsensoren sind potenzialfreie Kontakte. Jeder ist 1 NO + 1 NC. Es gibt keine 24-V- oder 220-V-Versorgung." },
+    "Kapak sensörleri ve ışın bariyeri emniyet rölesine bağlanır.": { en: "Lid sensors and the light barrier are wired to the safety relay.", de: "Deckelsensoren und die Lichtschranke werden an das Sicherheitsrelais angeschlossen." },
+    "Kapak piston sensörleri seri bağlanır, 2 input harcar.": { en: "Lid piston sensors are wired in series and use 2 inputs.", de: "Deckelkolben-Sensoren werden in Reihe geschaltet und belegen 2 Eingänge." },
+    "Sepet redüktörü invertör ile dönecek.": { en: "The basket reducer will be driven by an inverter.", de: "Das Korbgetriebe wird über einen Frequenzumrichter angetrieben." },
+    "Sepet durdurma sensörü +24VDC olacak.": { en: "The basket stop sensor will be +24VDC.", de: "Der Korbstoppsensor wird mit +24VDC ausgeführt." },
+    "KSYSTEM siparişi olduğu için SAFETY PLC koyulacak.": { en: "A safety PLC will be fitted because this is a KSYSTEM order.", de: "Weil es ein KSYSTEM-Auftrag ist, wird eine Sicherheits-SPS eingesetzt." },
+    "Kapak kapalı switchleri ve acil stop emniyet rölesine bağlanacak.": { en: "Lid-closed switches and the emergency stop will be wired to the safety relay.", de: "Deckel-geschlossen-Schalter und Not-Halt werden an das Sicherheitsrelais angeschlossen." },
+    "Standart 710x710 KBN 1B panosu kullanılacak.": { en: "The standard 710x710 KBN 1B panel will be used.", de: "Der Standardschrank 710x710 KBN 1B wird verwendet." },
+    "Doküman koyma kısmına dikkat edilecek, ters olmayacak.": { en: "The document pocket will be checked so it is not reversed.", de: "Das Dokumentenfach wird geprüft, damit es nicht seitenverkehrt sitzt." },
+    "Pano kapağına ve güç kaynağına topraklama hattı çekilmiş olacak.": { en: "An earth conductor will be run to the panel door and the power supply.", de: "Eine Schutzleiterleitung wird an die Schranktür und das Netzteil geführt." },
+    "İnvertör parametreleri ayarlanacak.": { en: "Inverter parameters will be set.", de: "Die Frequenzumrichter-Parameter werden eingestellt." },
+    "IO LİSTESİ": { en: "IO LIST", de: "E/A-LISTE" },
+    "Input No": { en: "Input No", de: "Eingang Nr." },
+    "Input": { en: "Input", de: "Eingang" },
+    "Röle No": { en: "Relay No", de: "Relais-Nr." },
+    "Output No": { en: "Output No", de: "Ausgang Nr." },
+    "Output": { en: "Output", de: "Ausgang" },
+    "Acil stop bilgisi": { en: "Emergency stop signal", de: "Not-Halt-Meldung" },
+    "Faz sıra rölesi faz bilgisi": { en: "Phase sequence relay phase signal", de: "Phasenfolgerelais Phasenmeldung" },
+    "Reset butonu bilgisi": { en: "Reset button signal", de: "Reset-Taster-Meldung" },
+    "Sepet redüktörü invertör arıza bilgisi": { en: "Basket reducer inverter fault", de: "Korbgetriebe Frequenzumrichter-Störung" },
+    "Sepet yükleme motoru invertör arıza bilgisi": { en: "Basket loading motor inverter fault", de: "Korb-Lademotor Frequenzumrichter-Störung" },
+    "Yıkama pompası invertör arıza bilgisi": { en: "Wash pump inverter fault", de: "Waschpumpe Frequenzumrichter-Störung" },
+    "Durulama pompası invertör arıza bilgisi": { en: "Rinse pump inverter fault", de: "Spülpumpe Frequenzumrichter-Störung" },
+    "Yıkama tankı yağ sıyırıcı MKŞ arıza": { en: "Wash tank oil skimmer MPCB fault", de: "Waschtank-Ölabstreifer Motorschutzschalter-Störung" },
+    "Durulama tankı yağ sıyırıcı MKŞ arıza": { en: "Rinse tank oil skimmer MPCB fault", de: "Spültank-Ölabstreifer Motorschutzschalter-Störung" },
+    "Drenaj pompası MKŞ arıza": { en: "Drain pump MPCB fault", de: "Ablaufpumpe Motorschutzschalter-Störung" },
+    "Egzoz fanı MKŞ arıza": { en: "Exhaust fan MPCB fault", de: "Abluftventilator Motorschutzschalter-Störung" },
+    "Kurutma fanı MKŞ arıza": { en: "Drying fan MPCB fault", de: "Trocknungsventilator Motorschutzschalter-Störung" },
+    "Yıkama tankı kaçak akım": { en: "Wash tank residual current", de: "Waschtank-Fehlerstrom" },
+    "Durulama tankı kaçak akım": { en: "Rinse tank residual current", de: "Spültank-Fehlerstrom" },
+    "Kurutma fanı kaçak akım": { en: "Drying fan residual current", de: "Trocknungsventilator-Fehlerstrom" },
+    "Kapak piston açık sensörleri": { en: "Lid piston open sensors", de: "Deckelkolben-offen-Sensoren" },
+    "Kapak piston kapalı sensörleri": { en: "Lid piston closed sensors", de: "Deckelkolben-geschlossen-Sensoren" },
+    "ÖN YÜZ": { en: "FRONT FACE", de: "FRONTSEITE" },
+    "SICAKLIK": { en: "TEMPERATURE", de: "TEMPERATUR" },
+    "ISI": { en: "HEAT", de: "WÄRME" },
+    "SÜRE": { en: "DURATION", de: "DAUER" },
+    "ZAMAN": { en: "TIME", de: "ZEIT" },
+    "SIFIRLA": { en: "RESET", de: "RÜCKSETZEN" },
+    "RESET": { en: "RESET", de: "RÜCKSETZEN" },
+    "SEPET TEST": { en: "BASKET TEST", de: "KORBTEST" },
+    "TEST": { en: "TEST", de: "TEST" },
+    "KAPAK AÇ": { en: "OPEN LID", de: "DECKEL AUF" },
+    "KAPAK KAPAT": { en: "CLOSE LID", de: "DECKEL ZU" },
+    "YIKAMA": { en: "WASH", de: "WASCHEN" },
+    "STOP": { en: "STOP", de: "STOP" },
+    "ACİL STOP": { en: "E-STOP", de: "NOT-HALT" },
+    "DÜŞÜK SU": { en: "LOW WATER", de: "WASSERSTAND" },
+    "POMPA": { en: "PUMP", de: "PUMPE" },
+    "REDÜKTÖR": { en: "REDUCER", de: "GETRIEBE" },
+    "1. kapak": { en: "lid 1", de: "Deckel 1" },
+    "2. kapak": { en: "lid 2", de: "Deckel 2" },
+    "START": { en: "START", de: "START" },
+    "DUR": { en: "STOP", de: "STOP" },
+    "SEVİYESİ": { en: "LEVEL", de: "STAND" },
+    "ARIZASI": { en: "FAULT", de: "STÖRUNG" },
+    "MAKİNE OPSİYONLARI": { en: "MACHINE OPTIONS", de: "MASCHINENOPTIONEN" },
+    "Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar pano malzemesini etkiler.": { en: "Machine options are in the Selection column. Yellow rows affect the panel materials.", de: "Die Maschinenoptionen stehen in der Spalte Auswahl. Gelbe Zeilen wirken auf das Schaltschrankmaterial." },
+    "Kod": { en: "Code", de: "Code" },
+    "Opsiyon": { en: "Option", de: "Option" },
+    "Seçim": { en: "Selection", de: "Auswahl" }
+  };
+
+  function textOf(src, lang) {
+    if (!src || lang === "tr") return src;
+    if (D[src] && D[src][lang]) return D[src][lang];
+    var m = src.match(/^ayar (.+)$/);
+    if (m) return (lang === "en" ? "set " : "Einst. ") + m[1];
+    m = src.match(/^(\d+) adet$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc" : " pcs") : " Stk.");
+    m = src.match(/^(\d+) adet · (.+)$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc · " : " pcs · ") : " Stk. · ") + textOf(m[2], lang);
+    if (src.indexOf("Tablo gücü") >= 0 || src.indexOf("Tablo akımı") >= 0 || src.indexOf("pano malzemesi") >= 0) {
+      return src
+        .replace("Tablo gücü", lang === "en" ? "Table power" : "Schrankleistung")
+        .replace("Tablo akımı", lang === "en" ? "Table current" : "Schrankstrom")
+        .replace("pano malzemesi", lang === "en" ? "panel materials" : "Schaltschrankmaterial");
+    }
+    return src;
+  }
+
+  function stockName(el) {
+    if (!el.classList || !el.classList.contains("n")) return false;
+    var c = el.parentElement && el.parentElement.querySelector(".c");
+    return !!(c && /10\s*\d{5}/.test(c.textContent));
+  }
+
+  function nodes() {
+    return Array.prototype.filter.call(
+      document.querySelectorAll("title, p, h2, th, td, b, span, div.meta"),
+      function (el) {
+        if (el.closest(".langs")) return false;
+        if (el.matches(".brand, .brand-sub, .cnk, .win")) return false;
+        if (el.closest(".depot") && el.matches("td:first-child, td:nth-child(3)")) return false;
+        if (el.closest(".opts") && el.matches("tbody td")) return false;
+        if (el.children.length) return false;
+        if (stockName(el)) return false;
+        return true;
+      }
+    );
+  }
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    nodes().forEach(function (el) {
+      if (!el.hasAttribute("data-tr")) el.setAttribute("data-tr", el.textContent.trim());
+      el.textContent = textOf(el.getAttribute("data-tr"), lang);
+    });
+    document.querySelectorAll(".e").forEach(function (e) {
+      var t = e.parentElement && e.parentElement.querySelector(".t");
+      if (!t) return;
+      e.hidden = t.textContent.trim() === e.textContent.trim();
+    });
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      var on = b.getAttribute("data-lang") === lang;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { localStorage.setItem("kbn-lang", lang); } catch (err) {}
+  }
+
+  document.querySelectorAll(".langs button").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+  });
+
+  var saved = "tr";
+  try { saved = localStorage.getItem("kbn-lang") || "tr"; } catch (err) {}
+  if (saved !== "en" && saved !== "de") saved = "tr";
+  apply(saved);
+})();
+
+</script>
 </body>
 </html>
