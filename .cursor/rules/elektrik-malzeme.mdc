@@ -67,6 +67,8 @@ Bir motoru süren düzenlerden yalnız biri seçilir. Üçü bir arada olmaz. MK
 ## Eşleme
 
 - Sepet redüktörü 0,37 kW invertörle sürülür. İnvertörün tam adı İNVERTÖR VFD004EL21W-1 0,4KW — 10 16319. Tam adıyla yaz. Sigortası SCHNEIDER SİGORTA A9F74106 1*6 — 10 01421.
+- 7,5 kW pompa invertörü İNVERTÖR VFD75E43A 7,5KW — 10 05803. Tam adıyla yaz. Giriş 380 V üç fazdır, ön sigorta 3 kutuptur: SİGORTA A9F74340 SCHNEİDER 40A — 10 16119.
+- 3 kutup sigorta serisi, akımı karşılayan en küçük modeli seç: SİGORTA A9F74306 SCHNEIDER DEVRE KESİCİ İC60N,6KA,6A,3P,C EĞRİSİ — 10 06646. SİGORTA A9F74316 SCHNEİDER 16A — 10 04000. SİGORTA A9F74332 SCHNEİDER 32A — 10 02774. SİGORTA A9F74340 SCHNEİDER 40A — 10 16119. SİGORTA A9F74350 SCHNEİDER 50A — 10 11474. SİGORTA A9F74363 SCHNEİDER 63A — 10 02933. Akım 63 A üstündeyse uydurma, yetmediğini yaz.
 - 8 kW ısıtıcı için 16 A kontaktör: KONTAKTÖR LC1K1610M7 220V — 10 01332. Isıtıcıya termik veya MKŞ ekleme.
 - Sensör, termokupl ve el koruma sensörüne kontaktör, termik, MKŞ ekleme.
 - Kapak kapalı sensörü kuru kontaktır. 24 V veya 220 V beslemesi yoktur. KSYSTEM siparişinde emniyet rölesi 1 adettir: EMNİYET RÖLESİ G9SPN20S OMRON G9SX — 10 04538. Kapak kapalı switchleri ve acil stop bu röleye bağlanır. G9SB2002 bu düzende kullanılmaz.
@@ -93,5 +95,6 @@ Makine sütununda ve malzeme satırında sembolün altındaki yazılar ortalıd�
 Tablo istendiğinde bu hiza kullanılır.
 
 - Başlık satırındaki bütün yazılar ortalıdır.
-- Bir sütundaki değerlerin hepsi aynı genişlikteyse o sütunun içeriği ortalıdır.
+- Sayı sütununda ondalık hane, o sütundaki en uzun değere göre eşitlenir. 0,46 varken 1,1 yazılmaz; 1,10 yazılır. 16 bu sütunda 16,00 olur. Birim her satırda aynı yerde durur.
+- Eşitlenen sayı sütunu ortalıdır.
 - Genişliği değişen sütunlar sola dayalı kalır.
