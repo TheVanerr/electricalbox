@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>0326072 — pano malzemesi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #cfcfcf;
+      color: #1a1a1a;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .sheet {
+      width: 960px;
+      margin: 18px auto;
+      background: #fafafa;
+      border: 1px solid #1a1a1a;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 14px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    h1 { margin: 0; font-size: 14px; font-weight: 650; letter-spacing: 0.04em; }
+    .supply { margin: 4px 0 0; font-size: 13px; font-weight: 650; }
+    .meta { font-size: 11px; letter-spacing: 0.06em; }
+    .row {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .src {
+      padding: 10px 12px;
+      border-right: 1px solid #1a1a1a;
+      text-align: center;
+    }
+    .src svg { display: block; margin: 0 auto; }
+    .src .k {
+      margin: 0;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+    }
+    .src .v { margin: 3px 0 0; font-size: 13px; font-weight: 650; }
+    .src .s { margin: 2px 0 0; font-size: 11px; }
+    .out {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 8px 12px;
+      align-items: flex-start;
+    }
+    .part { width: 168px; text-align: center; }
+    .part svg { display: block; width: 52px; height: 44px; margin: 0 auto; }
+    .n { margin: 3px 0 0; font-size: 11px; line-height: 1.25; font-weight: 650; }
+    .c { margin: 1px 0 0; font-size: 11px; line-height: 1.25; }
+    .q { margin: 1px 0 0; font-size: 11px; font-weight: 650; }
+    .explain { width: 100%; margin: 0 0 4px; font-size: 12px; line-height: 1.35; }
+    .face { padding: 12px 14px 16px; }
+    .face h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; }
+    .label {
+      width: 400px; margin: 0 auto; background: #fff; color: #1a1a1a;
+      border: 1px solid #1a1a1a; padding: 22px 18px 8px;
+    }
+    .brand { margin: 0; text-align: center; color: #e10600; font-size: 48px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
+    .brand-sub { margin: 6px 0 18px; text-align: center; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; }
+    .disp { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .side { width: 78px; text-align: center; }
+    .side b { display: block; font-size: 11px; letter-spacing: 0.04em; }
+    .side span { display: block; font-size: 10px; }
+    .win { width: 128px; height: 86px; border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .win .screen { width: 96px; height: 26px; background: #163024; margin-bottom: 4px; }
+    .win p { margin: 0; font-size: 9px; text-align: center; line-height: 1.2; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-bottom: 16px; align-items: center; }
+    .cell { display: flex; align-items: center; gap: 8px; }
+    .cell:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+    .hands { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 8px 0 16px; }
+    .hand { display: flex; flex-direction: column; }
+    .hand.left { align-items: flex-start; }
+    .hand.right { align-items: flex-end; }
+    .hand .cell { flex-direction: row; text-align: left; }
+    .hand.right .cell { flex-direction: row-reverse; text-align: right; }
+    .hand .vspan {
+      min-height: 250px; display: flex; align-items: center; justify-content: center;
+      border-left: 1px solid #1a1a1a; margin: 8px 13px; padding-left: 6px;
+      font-size: 9px; letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .hand.right .vspan { border-left: none; border-right: 1px solid #1a1a1a; padding-left: 0; padding-right: 6px; margin: 8px 13px 8px auto; }
+    .hands .estop { margin: 0 8px; }
+    .cap { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #1a1a1a; flex: none; }
+    .cap.start, .cap.open { background: #2f8f4e; }
+    .cap.stop, .cap.close { background: #c0392b; }
+    .cap.plain { background: #f7f7f7; }
+    .cap.reset { background: #2f6fbf; }
+    .cap.lamp { background: #c0392b; width: 16px; height: 16px; margin: 0 auto 4px; }
+    .cell .t { margin: 0; font-size: 11px; font-weight: 750; letter-spacing: 0.02em; }
+    .cell .e { margin: 0; font-size: 9px; }
+    .cell .s { margin: 0; font-size: 8px; line-height: 1.2; }
+    .estop { display: flex; flex-direction: column; align-items: center; margin: 6px 0 18px; }
+    .ring {
+      width: 78px; height: 78px; border-radius: 50%; background: #f5d400;
+      border: 2px solid #1a1a1a; display: flex; align-items: center; justify-content: center;
+    }
+    .ring .cap { width: 40px; height: 40px; background: #c0392b; border-width: 2px; }
+    .estop .t { margin: 4px 0 0; font-size: 11px; font-weight: 750; }
+    .estop .s { margin: 0; font-size: 8px; }
+    .faults { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; text-align: center; margin-top: 8px; }
+    .faults .t { margin: 0; font-size: 9px; font-weight: 750; line-height: 1.15; }
+    .faults .e, .faults .s { margin: 0; font-size: 8px; line-height: 1.2; }
+    .cnk { margin-top: 12px; border-top: 2px solid #1a1a1a; padding-top: 6px; text-align: center; font-size: 9px; line-height: 1.35; }
+    .cnk strong { display: block; font-size: 11px; letter-spacing: 0.01em; }
+    footer {
+      padding: 8px 14px;
+      font-size: 11px;
+    }
+    .calc { padding: 8px 14px 4px; }
+    .calc h2 { margin: 8px 0; font-size: 12px; letter-spacing: 0.12em; }
+    .calc table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; }
+    .calc th, .calc td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; }
+    .calc th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
+    .calc td.num { text-align: center; }
+    .calc tr.sum td { font-weight: 650; }
+    .opts { padding: 4px 14px 8px; }
+    .opts h2 { margin: 8px 0 2px; font-size: 12px; letter-spacing: 0.12em; }
+    .opts p { margin: 0 0 8px; font-size: 11px; }
+    .opts table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .opts th, .opts td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; }
+    .opts th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
+    .opts td:first-child { text-align: center; }
+    .opts tr.el { background: #f3e2a8; }
+    .depot { padding: 4px 14px 16px; }
+    .depot h2 { margin: 8px 0; font-size: 12px; letter-spacing: 0.12em; }
+    .depot table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .depot th, .depot td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; vertical-align: middle; }
+    .depot th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
+    .depot td:first-child, .depot td.adet, .depot td.foto { text-align: center; }
+    .depot td.foto { width: 76px; padding: 3px; }
+    .depot td.foto img { width: 68px; height: 68px; object-fit: contain; display: block; margin: 0 auto; }
+    .depot td.adet, .depot th.adet { width: 64px; }
+    .notes { padding: 8px 14px 18px; }
+    .notes h2 { margin: 10px 0 8px; font-size: 12px; letter-spacing: 0.08em; }
+    .notes table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .notes th, .notes td { border: 1px solid #1a1a1a; padding: 7px 10px; text-align: left; }
+    .notes th { background: #1a1a1a; color: #fafafa; font-size: 11px; letter-spacing: 0.08em; font-weight: 650; }
+    .notes th:not(.no) { text-align: center; }
+    .notes td.no { width: 42px; text-align: center; font-weight: 650; background: #efefef; }
+
+    header { align-items: flex-start; }
+    .head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .langs { display: flex; gap: 6px; }
+    .langs button {
+      width: 28px; height: 18px; padding: 0; border: 1px solid #1a1a1a;
+      background: #fff; cursor: pointer; line-height: 0;
+    }
+    .langs button.on { outline: 2px solid #1a1a1a; outline-offset: 1px; }
+    .langs svg { display: block; width: 28px; height: 18px; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <div>
+        <h1>0326072-KÜRSAN-KBN 1B 2050</h1>
+        <p class="supply">380 V · 50 Hz · Tablo gücü 25,20 kW · Tablo akımı 45,86 A</p>
+      </div>
+      <div class="head-side">
+        <div class="langs" role="group" aria-label="Language">
+          <button type="button" data-lang="en" title="English" aria-label="English"><svg viewBox="0 0 60 36" aria-hidden="true"><rect width="60" height="36" fill="#012169"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#fff" stroke-width="10"/><path d="M0 0 L60 36 M60 0 L0 36" stroke="#C8102E" stroke-width="6"/><path d="M30 0 V36 M0 18 H60" stroke="#fff" stroke-width="16"/><path d="M30 0 V36 M0 18 H60" stroke="#C8102E" stroke-width="9"/></svg></button>
+          <button type="button" data-lang="tr" title="Türkçe" aria-label="Türkçe"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="5" fill="#fff"/><circle cx="13.3" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="17,10 19.1,10.7 18.3,8.7 20,7.3 17.9,7.2 17,5.2 16.1,7.2 14,7.3 15.7,8.7 14.9,10.7"/></svg></button>
+          <button type="button" data-lang="de" title="Deutsch" aria-label="Deutsch"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#000"/><rect y="6.67" width="30" height="6.66" fill="#DD0000"/><rect y="13.33" width="30" height="6.67" fill="#FFCE00"/></svg></button>
+        </div>
+        <div class="meta">MANUEL · KBN</div>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="16" cy="18" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M10 26 L10 10 L24 18 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M28 18 H48" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">1. Yıkama pompası</p>
+        <p class="s">4 kW · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0910M7 220V</p>
+          <p class="c">9 A · 10 01331</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0316 8-11,5A</p>
+          <p class="c">ayar 8,9 A · 10 01359</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="16" cy="18" r="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M10 26 L10 10 L24 18 Z" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M28 18 H48" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">2. Yıkama pompası</p>
+        <p class="s">4 kW · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0910M7 220V</p>
+          <p class="c">9 A · 10 01331</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0316 8-11,5A</p>
+          <p class="c">ayar 8,9 A · 10 01359</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="14" cy="18" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="30" cy="18" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M20 14 L24 18 L20 22" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Üst Nozzle Redüktörü</p>
+        <p class="s">0,37 kW · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0610M7 220V</p>
+          <p class="c">6 A · 10 02314</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0306 0,80-1,2A</p>
+          <p class="c">ayar 1,1 A · 10 00244</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="14" cy="18" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <circle cx="30" cy="18" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M20 14 L24 18 L20 22" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Alt Nozzle Redüktörü</p>
+        <p class="s">0,37 kW · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0610M7 220V</p>
+          <p class="c">6 A · 10 02314</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0306 0,80-1,2A</p>
+          <p class="c">ayar 1,1 A · 10 00244</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M18 8 V12 M18 24 V28 M8 18 H12 M24 18 H28" stroke="#1a1a1a" stroke-width="1.2"/>
+        </svg>
+        <p class="v">Egzoz fanı</p>
+        <p class="s">0,37 kW · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0610M7 220V</p>
+          <p class="c">6 A · 10 02314</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0306 0,80-1,2A</p>
+          <p class="c">ayar 1,1 A · 10 00244</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <circle cx="16" cy="18" r="10" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M16 8 V12 M28 12 H44" stroke="#1a1a1a" stroke-width="1.3"/>
+        </svg>
+        <p class="v">Yağ sıyırıcı</p>
+        <p class="s">0,09 kW · 0,46 A · termik + kontaktör</p>
+      </div>
+      <div class="out">
+        <p class="explain">Verilen hat akımı 0,46 A. LR2K serisinin en düşük modeli LR2K0305 0,54-0,8 A; 0,46 A aralığın dışında. Termik yazılmadı.</p>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K0610M7 220V</p>
+          <p class="c">6 A · 10 02314</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">1. Yıkama ısıtıcısı</p>
+        <p class="s">8 kW · yalnız kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <svg width="52" height="36" viewBox="0 0 52 36" aria-hidden="true">
+          <path d="M8 28 H44" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M14 28 V16 M20 28 V10 M26 28 V14 M32 28 V8 M38 28 V16" stroke="#1a1a1a" stroke-width="1.4"/>
+        </svg>
+        <p class="v">2. Yıkama ısıtıcısı</p>
+        <p class="s">8 kW · yalnız kontaktör</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
+          <p class="n">KONTAKTÖR LC1K1610M7 220V</p>
+          <p class="c">16 A · 10 01332</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">MAKİNE</p>
+        <p class="v">Saha</p>
+        <p class="s">Kontaktör yok</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="8" width="10" height="28" fill="#fafafa" stroke="#1a1a1a"/><rect x="36" y="8" width="10" height="28" fill="#fafafa" stroke="#1a1a1a"/><path d="M16 22 H36" stroke="#1a1a1a" stroke-dasharray="2 2"/></svg>
+          <p class="n">EL KORUMA SENSÖRÜ</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">NOZZLE DURDURMA SENSÖRÜ +24V</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="14" width="22" height="16" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="22" r="6" fill="none" stroke="#1a1a1a"/><path d="M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">SEPET YERİNDE SENSÖRÜ +24V</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><path d="M26 6 V18" stroke="#1a1a1a"/><circle cx="26" cy="24" r="6" fill="none" stroke="#1a1a1a"/><path d="M22 30 L18 38 M30 30 L34 38" stroke="#1a1a1a"/></svg>
+          <p class="n">YIKAMA TANKI TERMOKUPL</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="8" width="16" height="28" fill="#fafafa" stroke="#1a1a1a"/><path d="M18 22 H10 M18 28 H12" stroke="#1a1a1a"/></svg>
+          <p class="n">YIKAMA TANKI ALT SEVİYE SENSÖRÜ</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" fill="#f4f4f4" stroke="#1a1a1a"/><rect x="12" y="12" width="20" height="12" fill="#163024" stroke="#1a1a1a"/><circle cx="38" cy="28" r="2" fill="none" stroke="#1a1a1a"/></svg>
+          <p class="n">ORDEL OC990-9/0240 FIR.KON.CİH-DİJ.PAN.</p>
+          <p class="c">10 00229</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <p class="v">Besleme</p>
+        <p class="s">24 V, faz, kaçak akım</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="12" y="6" width="28" height="32" fill="#ececec" stroke="#1a1a1a"/><rect x="16" y="10" width="20" height="8" fill="#fafafa" stroke="#1a1a1a"/><path d="M18 28 H34 M18 32 H28" stroke="#1a1a1a"/></svg>
+          <p class="n">GÜÇ KAYNAĞI MDR 100/24</p>
+          <p class="c">10 02772</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="6" width="24" height="32" rx="2" fill="#f7f7f7" stroke="#1a1a1a"/><circle cx="22" cy="16" r="2" fill="#1a1a1a"/><circle cx="30" cy="16" r="2" fill="none" stroke="#1a1a1a"/><path d="M18 26 H34 M20 34 V40 M32 34 V40" stroke="#1a1a1a"/></svg>
+          <p class="n">FAZ KORUMA RÖLESİ MKS-03</p>
+          <p class="c">10 00258</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="4" width="24" height="36" fill="#fafafa" stroke="#1a1a1a"/><path d="M20 12 H32 M26 12 V20 M22 24 H30" stroke="#1a1a1a"/></svg>
+          <p class="n">SİGORTA KAÇAK AKIMLI A9R41463 4'LÜ</p>
+          <p class="c">63 A · 10 00305</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="16" y="4" width="20" height="36" fill="#fafafa" stroke="#1a1a1a"/><rect x="20" y="14" width="12" height="12" fill="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74463 SCHNEIDER iC60N 6KA 63A 4P 63A</p>
+          <p class="c">10 04732</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="20" y="6" width="12" height="32" fill="#fafafa" stroke="#1a1a1a"/><rect x="23" y="16" width="6" height="8" fill="#1a1a1a"/></svg>
+          <p class="n">SİGORTA A9F74103 1*3</p>
+          <p class="c">kumanda · 10 00302</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="8" width="24" height="28" rx="2" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 8 V4 M18 22 H34" stroke="#1a1a1a"/></svg>
+          <p class="n">PAKO ŞALTER YKL301M63 3*63 OPAŞ</p>
+          <p class="c">63 A · 10 00287</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="14" width="40" height="16" fill="#d8d8d8" stroke="#1a1a1a"/><path d="M10 18 H42 M10 22 H42 M10 26 H42" stroke="#1a1a1a"/></svg>
+          <p class="n">BARA GWEST 4*7MM</p>
+          <p class="c">10 03578</p>
+          <p class="q">1 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="src">
+        <p class="k">PANO</p>
+        <p class="v">Manuel KBN</p>
+        <p class="s">Röle grubu</p>
+      </div>
+      <div class="out">
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="6" width="24" height="28" rx="2" fill="#f7f7f7" stroke="#1a1a1a"/><rect x="18" y="10" width="16" height="8" fill="#d9dde2" stroke="#1a1a1a"/><path d="M20 34 V40 M26 34 V40 M32 34 V40" stroke="#1a1a1a"/></svg>
+          <p class="n">MİNYATÜR RÖLE RXM4AB1BD 24V 16 PİNLİ</p>
+          <p class="c">10 01398</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="14" y="6" width="24" height="28" rx="2" fill="#f7f7f7" stroke="#1a1a1a"/><rect x="18" y="10" width="16" height="8" fill="#e7d7a4" stroke="#1a1a1a"/><path d="M20 34 V40 M26 34 V40 M32 34 V40" stroke="#1a1a1a"/></svg>
+          <p class="n">MİNYATÜR RÖLE RXM4AB1P7 220V</p>
+          <p class="c">10 00294</p>
+          <p class="q">2 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="14" width="32" height="18" fill="#ececec" stroke="#1a1a1a"/><path d="M16 14 V8 M26 14 V8 M36 14 V8 M16 32 V38 M26 32 V38 M36 32 V38" stroke="#1a1a1a"/></svg>
+          <p class="n">RÖLE SOKETİ RXZE2M114M</p>
+          <p class="c">10 00295</p>
+          <p class="q">3 adet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="face">
+      <h2>ÖN YÜZ</h2>
+      <div class="label">
+        <p class="brand">Dolfin</p>
+        <p class="brand-sub">INDUSTRIAL WASHING SYSTEMS</p>
+        <div class="disp">
+          <div class="side"><b>SICAKLIK</b><span>ISI</span></div>
+          <div class="win">
+            <div class="screen"></div>
+            <p>ORDEL OC990-9/0240</p>
+            <p>10 00229</p>
+          </div>
+          <div class="side"><b>SÜRE</b><span>ZAMAN</span></div>
+        </div>
+        <div class="cols">
+          <div class="cell">
+            <div class="cap reset"></div>
+            <div><p class="t">SIFIRLA</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
+          </div>
+          <div class="cell">
+            <div class="cap plain"></div>
+            <div><p class="t">SEPET TEST</p><p class="e">TEST</p><p class="s">B100DB · 10 00270</p></div>
+          </div>
+          <div class="cell">
+            <div class="cap start"></div>
+            <div><p class="t">YIKAMA</p><p class="e">START</p><p class="s">B100DY · 10 00273</p></div>
+          </div>
+          <div class="cell">
+            <div class="cap stop"></div>
+            <div><p class="t">STOP</p><p class="e">DUR</p><p class="s">B100DK · 10 00271</p></div>
+          </div>
+        </div>
+        <div class="hands">
+          <div class="hand left">
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">1. kapak</p><p class="s">B100DY · 10 00273</p></div>
+            </div>
+            <div class="vspan">25–30 cm</div>
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">2. kapak</p><p class="s">B100DY · 10 00273</p></div>
+            </div>
+          </div>
+          <div class="estop">
+            <div class="ring"><div class="cap"></div></div>
+            <p class="t">ACİL STOP</p>
+            <p class="s">B200EE · 10 03445</p>
+          </div>
+          <div class="hand right">
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">1. kapak</p><p class="s">B100DK · 10 00271</p></div>
+            </div>
+            <div class="vspan">25–30 cm</div>
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">2. kapak</p><p class="s">B100DK · 10 00271</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="faults">
+          <div><div class="cap lamp"></div><p class="t">DÜŞÜK SU</p><p class="e">SEVİYESİ</p><p class="s">S14K · 10 00278</p></div>
+          <div><div class="cap lamp"></div><p class="t">POMPA</p><p class="e">ARIZASI</p><p class="s">S14K · 10 00278</p></div>
+          <div><div class="cap lamp"></div><p class="t">REDÜKTÖR</p><p class="e">ARIZASI</p><p class="s">S14K · 10 00278</p></div>
+        </div>
+        <div class="cnk">
+          <strong>CNK ELEKTRONİK MAKİNE SAN. A.Ş.</strong>
+          Organize San. Böl. Orhan Işık Bulv. No:8 Sincan / ANKARA<br>
+          Tel : +90 312 267 30 15<br>
+          www.dolfintr.com
+        </div>
+      </div>
+    </section>
+
+    <section class="calc">
+      <h2>TABLO GÜCÜ</h2>
+      <table>
+        <thead>
+          <tr><th>Yük</th><th>kW</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. yıkama pompası</td><td class="num">4,00</td></tr>
+          <tr><td>2. yıkama pompası</td><td class="num">4,00</td></tr>
+          <tr><td>Üst nozzle redüktörü</td><td class="num">0,37</td></tr>
+          <tr><td>Alt nozzle redüktörü</td><td class="num">0,37</td></tr>
+          <tr><td>Egzoz fanı</td><td class="num">0,37</td></tr>
+          <tr><td>Yağ sıyırıcı</td><td class="num">0,09</td></tr>
+          <tr><td>1. yıkama ısıtıcısı</td><td class="num">8,00</td></tr>
+          <tr><td>2. yıkama ısıtıcısı</td><td class="num">8,00</td></tr>
+          <tr class="sum"><td>Tablo gücü</td><td class="num">25,20</td></tr>
+        </tbody>
+      </table>
+      <h2>AKIM FORMÜLÜ</h2>
+      <table>
+        <thead>
+          <tr><th>Yük tipi</th><th>Formül</th><th>Kabul</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Isıtıcı</td><td>I = P / (√3 × U)</td><td>380 V, cosφ = 1</td></tr>
+          <tr><td>Motor</td><td>I = P / (√3 × U × cosφ × η)</td><td>380 V, √3 = 1,732</td></tr>
+          <tr><td>Yağ sıyırıcı</td><td>Verilen hat akımı</td><td>0,46 A</td></tr>
+        </tbody>
+      </table>
+      <h2>HAT AKIMI</h2>
+      <table>
+        <thead>
+          <tr><th>Yük</th><th>Hesap</th><th>Akım</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. yıkama pompası</td><td>4000 / (1,732 × 380 × 0,82 × 0,84)</td><td class="num">8,90 A</td></tr>
+          <tr><td>2. yıkama pompası</td><td>4000 / (1,732 × 380 × 0,82 × 0,84)</td><td class="num">8,90 A</td></tr>
+          <tr><td>Üst nozzle redüktörü</td><td>370 / (1,732 × 380 × 0,73 × 0,70)</td><td class="num">1,10 A</td></tr>
+          <tr><td>Alt nozzle redüktörü</td><td>370 / (1,732 × 380 × 0,73 × 0,70)</td><td class="num">1,10 A</td></tr>
+          <tr><td>Egzoz fanı</td><td>370 / (1,732 × 380 × 0,73 × 0,70)</td><td class="num">1,10 A</td></tr>
+          <tr><td>Yağ sıyırıcı</td><td>verilen</td><td class="num">0,46 A</td></tr>
+          <tr><td>1. yıkama ısıtıcısı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr><td>2. yıkama ısıtıcısı</td><td>8000 / (1,732 × 380)</td><td class="num">12,15 A</td></tr>
+          <tr class="sum"><td>Hat akımı</td><td>8,90 + 8,90 + 1,10 + 1,10 + 1,10 + 0,46 + 12,15 + 12,15</td><td class="num">45,86 A</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="opts">
+      <h2>MAKİNE OPSİYONLARI</h2>
+      <p>Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar pano malzemesini etkiler.</p>
+      <table>
+        <thead>
+          <tr><th>Kod</th><th>Opsiyon</th><th>Seçim</th></tr>
+        </thead>
+        <tbody>
+          <tr class="el"><td>EX110</td><td>BUHAR TAHLİYE FANI</td><td>BUHAR TAHLİYE FANI</td></tr>
+          <tr><td>EX100</td><td>MAKİNE ETİKETİ</td><td>DOLFIN TÜRKÇE ETİKET GRUBU</td></tr>
+          <tr><td>EX105</td><td>NOZUL</td><td>DÜZ NOZUL</td></tr>
+          <tr class="el"><td>EX116</td><td>EL KORUMA IŞIN BARİYERİ</td><td>EL KORUMA SENSÖR</td></tr>
+          <tr><td>EX104</td><td>TAŞIMA ARABASI</td><td>GALVANİZLİ TAŞIMA ARABASI</td></tr>
+          <tr><td>EX107</td><td>BAĞLANTI ELEMANLARI</td><td>GALVANİZLİ BAĞLANTI ELEMANLARI</td></tr>
+          <tr><td>EX101</td><td>YIKAMA SEPETİ</td><td>GALVANİZLİ SEPET</td></tr>
+          <tr><td>EX106</td><td>BORULAMA</td><td>PASLANMAZ BORULAMA</td></tr>
+          <tr><td>EX154</td><td>SANDIK</td><td>EXPORT SANDIK (Y.SİPİRİCİLİ)</td></tr>
+          <tr class="el"><td>EX109</td><td>POMPA</td><td>STANDART LEDO</td></tr>
+          <tr class="el"><td>EX111</td><td>YAĞ SIYIRICI</td><td>YAĞ SIYIRICI DİSK TİP</td></tr>
+          <tr class="el"><td>EX174</td><td>SEW REDÜKTÖR FARKI</td><td>YILMAZ REDÜKTÖR</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="depot">
+      <h2>DEPO LİSTESİ</h2>
+      <table>
+        <thead>
+          <tr><th>Stok</th><th>Foto</th><th>Malzeme</th><th class="adet">Adet</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>10 00229</td><td class="foto"><img src="../photos/temiz/10%2000229.png" alt="10 00229"></td><td>ORDEL OC990-9/0240 FIR.KON.CİH-DİJ.PAN.</td><td class="adet">1</td></tr>
+          <tr><td>10 00244</td><td class="foto"><img src="../photos/temiz/10%2000244.png" alt="10 00244"></td><td>TERMIK RÖLESİ LR2K0306 0,80-1,2A</td><td class="adet">3</td></tr>
+          <tr><td>10 00258</td><td class="foto"><img src="../photos/temiz/10%2000258.png" alt="10 00258"></td><td>FAZ KORUMA RÖLESİ MKS-03</td><td class="adet">1</td></tr>
+          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">8</td></tr>
+          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">9</td></tr>
+          <tr><td>10 00270</td><td class="foto"><img src="../photos/temiz/10%2000270.png" alt="10 00270"></td><td>BUTON START B100DB</td><td class="adet">1</td></tr>
+          <tr><td>10 00271</td><td class="foto"><img src="../photos/temiz/10%2000271.png" alt="10 00271"></td><td>BUTON START B100DK</td><td class="adet">3</td></tr>
+          <tr><td>10 00272</td><td class="foto"><img src="../photos/temiz/10%2000272.png" alt="10 00272"></td><td>BUTON START B100DM</td><td class="adet">1</td></tr>
+          <tr><td>10 00273</td><td class="foto"><img src="../photos/temiz/10%2000273.png" alt="10 00273"></td><td>BUTON START B100DY</td><td class="adet">3</td></tr>
+          <tr><td>10 00278</td><td class="foto"><img src="../photos/temiz/10%2000278.png" alt="10 00278"></td><td>SİNYAL LAMBASI S14K KIRMIZI 220V</td><td class="adet">3</td></tr>
+          <tr><td>10 00287</td><td class="foto"><img src="../photos/temiz/10%2000287.png" alt="10 00287"></td><td>PAKO ŞALTER YKL301M63 3*63 OPAŞ</td><td class="adet">1</td></tr>
+          <tr><td>10 00294</td><td class="foto"><img src="../photos/temiz/10%2000294.png" alt="10 00294"></td><td>MİNYATÜR RÖLE RXM4AB1P7 220V</td><td class="adet">2</td></tr>
+          <tr><td>10 00295</td><td class="foto"><img src="../photos/temiz/10%2000295.png" alt="10 00295"></td><td>RÖLE SOKETİ RXZE2M114M</td><td class="adet">3</td></tr>
+          <tr><td>10 00302</td><td class="foto"><img src="../photos/temiz/10%2000302.png" alt="10 00302"></td><td>SİGORTA A9F74103 1*3</td><td class="adet">1</td></tr>
+          <tr><td>10 00305</td><td class="foto"><img src="../photos/temiz/10%2000305.png" alt="10 00305"></td><td>SİGORTA KAÇAK AKIMLI A9R41463 4'LÜ 63 A</td><td class="adet">1</td></tr>
+          <tr><td>10 01331</td><td class="foto"><img src="../photos/temiz/10%2001331.png" alt="10 01331"></td><td>KONTAKTÖR LC1K0910M7 220V</td><td class="adet">2</td></tr>
+          <tr><td>10 01332</td><td class="foto"><img src="../photos/temiz/10%2001332.png" alt="10 01332"></td><td>KONTAKTÖR LC1K1610M7 220V</td><td class="adet">2</td></tr>
+          <tr><td>10 01359</td><td class="foto"><img src="../photos/temiz/10%2001359.png" alt="10 01359"></td><td>TERMIK RÖLESİ LR2K0316 8-11,5A</td><td class="adet">2</td></tr>
+          <tr><td>10 01398</td><td class="foto"><img src="../photos/temiz/10%2001398.png" alt="10 01398"></td><td>MİNYATÜR RÖLE RXM4AB1BD 24V 16 PİNLİ</td><td class="adet">1</td></tr>
+          <tr><td>10 02314</td><td class="foto"><img src="../photos/temiz/10%2002314.png" alt="10 02314"></td><td>KONTAKTÖR LC1K0610M7 220V</td><td class="adet">4</td></tr>
+          <tr><td>10 02772</td><td class="foto"><img src="../photos/temiz/10%2002772.png" alt="10 02772"></td><td>GÜÇ KAYNAĞI MDR 100/24</td><td class="adet">1</td></tr>
+          <tr><td>10 03445</td><td class="foto"><img src="../photos/temiz/10%2003445.png" alt="10 03445"></td><td>BUTON ACİL STOP MANTAR B200EE</td><td class="adet">1</td></tr>
+          <tr><td>10 03578</td><td class="foto"><img src="../photos/temiz/10%2003578.png" alt="10 03578"></td><td>BARA GWEST 4*7MM</td><td class="adet">1</td></tr>
+          <tr><td>10 04732</td><td class="foto"><img src="../photos/temiz/10%2004732.png" alt="10 04732"></td><td>SİGORTA A9F74463 SCHNEIDER iC60N 6KA 63A 4P 63A</td><td class="adet">1</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="notes">
+      <h2>NOTLAR</h2>
+      <table>
+        <thead>
+          <tr><th class="no">No</th><th>Not</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="no">1</td><td>Panoda çift el butonu kullanılacak.</td></tr>
+          <tr><td class="no">2</td><td>Standart 710x710 KBN 1B panosu kullanılacak.</td></tr>
+          <tr><td class="no">3</td><td>Doküman koyma kısmına dikkat edilecek, ters olmayacak.</td></tr>
+          <tr><td class="no">4</td><td>Pano kapağına ve güç kaynağına topraklama hattı çekilmiş olacak.</td></tr>
+          <tr><td class="no">5</td><td>Nozzle durdurma sensörü +24VDC olacak.</td></tr>
+          <tr><td class="no">6</td><td>Sepet yerinde sensörü +24VDC olacak.</td></tr>
+          <tr><td class="no">7</td><td>Tüm motorlar aynı anda çalışabilir; tablo akımı bu duruma göredir.</td></tr>
+          <tr><td class="no">8</td><td>Yağ sıyırıcı 0,46 A için LR2K serisi yetmez. En düşük model LR2K0305 0,54-0,8 A.</td></tr>
+          <tr><td class="no">9</td><td>Isıtıcı grubuna BARA GWEST 4*7MM konulacak.</td></tr>
+          <tr><td class="no">10</td><td>Çift el: iki kapak aç solda, iki kapak kapat sağda. Aynı taraftaki iki buton arasında yukarıdan aşağı en az 25–30 cm.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+<script>
+(function () {
+  var D = {
+    "MANUEL · KBN": { en: "MANUAL · KBN", de: "MANUELL · KBN" },
+    "MAKİNE": { en: "MACHINE", de: "MASCHINE" },
+    "PANO": { en: "PANEL", de: "SCHALTSCHRANK" },
+    "1. Yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. Yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "1. yıkama pompası": { en: "Wash pump 1", de: "Waschpumpe 1" },
+    "2. yıkama pompası": { en: "Wash pump 2", de: "Waschpumpe 2" },
+    "Üst Nozzle Redüktörü": { en: "Upper nozzle reducer", de: "Oberes Düsengetriebe" },
+    "Alt Nozzle Redüktörü": { en: "Lower nozzle reducer", de: "Unteres Düsengetriebe" },
+    "Üst nozzle redüktörü": { en: "Upper nozzle reducer", de: "Oberes Düsengetriebe" },
+    "Alt nozzle redüktörü": { en: "Lower nozzle reducer", de: "Unteres Düsengetriebe" },
+    "Egzoz fanı": { en: "Exhaust fan", de: "Abluftventilator" },
+    "Yağ sıyırıcı": { en: "Oil skimmer", de: "Ölabstreifer" },
+    "1. Yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. Yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "1. yıkama ısıtıcısı": { en: "Wash heater 1", de: "Waschheizung 1" },
+    "2. yıkama ısıtıcısı": { en: "Wash heater 2", de: "Waschheizung 2" },
+    "Saha": { en: "Field", de: "Feld" },
+    "Besleme": { en: "Supply", de: "Einspeisung" },
+    "Manuel KBN": { en: "Manual KBN", de: "Manuell KBN" },
+    "4 kW · termik + kontaktör": { en: "4 kW · thermal overload + contactor", de: "4 kW · Thermorelais + Schütz" },
+    "0,37 kW · termik + kontaktör": { en: "0,37 kW · thermal overload + contactor", de: "0,37 kW · Thermorelais + Schütz" },
+    "0,09 kW · 0,46 A · termik + kontaktör": { en: "0,09 kW · 0,46 A · thermal overload + contactor", de: "0,09 kW · 0,46 A · Thermorelais + Schütz" },
+    "8 kW · yalnız kontaktör": { en: "8 kW · contactor only", de: "8 kW · nur Schütz" },
+    "Kontaktör yok": { en: "No contactor", de: "Kein Schütz" },
+    "24 V, faz, kaçak akım": { en: "24 V, phase, residual current", de: "24 V, Phase, Fehlerstrom" },
+    "Röle grubu": { en: "Relay group", de: "Relaisgruppe" },
+    "kumanda · 10 00302": { en: "control · 10 00302", de: "Steuerung · 10 00302" },
+    "Verilen hat akımı 0,46 A. LR2K serisinin en düşük modeli LR2K0305 0,54-0,8 A; 0,46 A aralığın dışında. Termik yazılmadı.": { en: "Given line current is 0,46 A. The lowest LR2K model is LR2K0305 0,54-0,8 A; 0,46 A is outside the range. No thermal relay was written.", de: "Angegebener Leiterstrom 0,46 A. Das kleinste LR2K-Modell ist LR2K0305 0,54-0,8 A; 0,46 A liegt außerhalb des Bereichs. Kein Thermorelais geschrieben." },
+    "EL KORUMA SENSÖRÜ": { en: "Hand protection sensor", de: "Handschutzsensor" },
+    "NOZZLE DURDURMA SENSÖRÜ +24V": { en: "Nozzle stop sensor +24V", de: "Düsen-Stoppsensor +24V" },
+    "SEPET YERİNDE SENSÖRÜ +24V": { en: "Basket in-place sensor +24V", de: "Korb-an-Ort-Sensor +24V" },
+    "YIKAMA TANKI TERMOKUPL": { en: "Wash tank thermocouple", de: "Waschtank-Thermoelement" },
+    "YIKAMA TANKI ALT SEVİYE SENSÖRÜ": { en: "Wash tank low level sensor", de: "Waschtank unterer Füllstandssensor" },
+    "TABLO GÜCÜ": { en: "TABLE POWER", de: "SCHRANKLEISTUNG" },
+    "Yük": { en: "Load", de: "Last" },
+    "Tablo gücü": { en: "Table power", de: "Schrankleistung" },
+    "AKIM FORMÜLÜ": { en: "CURRENT FORMULA", de: "STROMFORMEL" },
+    "Yük tipi": { en: "Load type", de: "Lastart" },
+    "Formül": { en: "Formula", de: "Formel" },
+    "Kabul": { en: "Basis", de: "Annahme" },
+    "Motor": { en: "Motor", de: "Motor" },
+    "Isıtıcı": { en: "Heater", de: "Heizung" },
+    "Verilen hat akımı": { en: "Given line current", de: "Angegebener Leiterstrom" },
+    "HAT AKIMI": { en: "LINE CURRENT", de: "LEITERSTROM" },
+    "Hesap": { en: "Calculation", de: "Rechnung" },
+    "Akım": { en: "Current", de: "Strom" },
+    "verilen": { en: "given", de: "angegeben" },
+    "Hat akımı": { en: "Line current", de: "Leiterstrom" },
+    "DEPO LİSTESİ": { en: "DEPOT LIST", de: "LAGERLISTE" },
+    "Stok": { en: "Stock", de: "Lager" },
+    "Foto": { en: "Photo", de: "Foto" },
+    "Malzeme": { en: "Material", de: "Material" },
+    "Adet": { en: "Qty", de: "Anzahl" },
+    "NOTLAR": { en: "NOTES", de: "HINWEISE" },
+    "Not": { en: "Note", de: "Hinweis" },
+    "Panoda çift el butonu kullanılacak.": { en: "A two-hand control will be used on the panel.", de: "Am Schaltschrank wird eine Zweihandsteuerung verwendet." },
+    "Standart 710x710 KBN 1B panosu kullanılacak.": { en: "The standard 710x710 KBN 1B panel will be used.", de: "Der Standardschrank 710x710 KBN 1B wird verwendet." },
+    "Doküman koyma kısmına dikkat edilecek, ters olmayacak.": { en: "The document pocket will be checked so it is not reversed.", de: "Das Dokumentenfach wird geprüft, damit es nicht seitenverkehrt sitzt." },
+    "Pano kapağına ve güç kaynağına topraklama hattı çekilmiş olacak.": { en: "An earth conductor will be run to the panel door and the power supply.", de: "Eine Schutzleiterleitung wird an die Schranktür und das Netzteil geführt." },
+    "Nozzle durdurma sensörü +24VDC olacak.": { en: "The nozzle stop sensor will be +24VDC.", de: "Der Düsen-Stoppsensor wird mit +24VDC ausgeführt." },
+    "Sepet yerinde sensörü +24VDC olacak.": { en: "The basket in-place sensor will be +24VDC.", de: "Der Korb-an-Ort-Sensor wird mit +24VDC ausgeführt." },
+    "Tüm motorlar aynı anda çalışabilir; tablo akımı bu duruma göredir.": { en: "All motors can run at the same time; table current is based on this case.", de: "Alle Motoren können gleichzeitig laufen; der Schrankstrom gilt für diesen Fall." },
+    "Yağ sıyırıcı 0,46 A için LR2K serisi yetmez. En düşük model LR2K0305 0,54-0,8 A.": { en: "The LR2K series does not cover the oil skimmer 0,46 A. The lowest model is LR2K0305 0,54-0,8 A.", de: "Die LR2K-Serie deckt den Ölabstreifer 0,46 A nicht ab. Das kleinste Modell ist LR2K0305 0,54-0,8 A." },
+    "Isıtıcı grubuna BARA GWEST 4*7MM konulacak.": { en: "BARA GWEST 4*7MM will be fitted for the heater group.", de: "Für die Heizergruppe wird BARA GWEST 4*7MM eingesetzt." },
+    "Çift el: iki kapak aç solda, iki kapak kapat sağda. Aynı taraftaki iki buton arasında yukarıdan aşağı en az 25–30 cm.": { en: "Two-hand: two lid-open buttons on the left, two lid-close buttons on the right. At least 25–30 cm top to bottom between the two buttons on the same side.", de: "Zweihand: zwei Deckel-auf-Taster links, zwei Deckel-zu-Taster rechts. Auf derselben Seite oben nach unten mindestens 25–30 cm Abstand." },
+    "25–30 cm": { en: "25–30 cm", de: "25–30 cm" },
+    "ÖN YÜZ": { en: "FRONT FACE", de: "FRONTSEITE" },
+    "SICAKLIK": { en: "TEMPERATURE", de: "TEMPERATUR" },
+    "ISI": { en: "HEAT", de: "WÄRME" },
+    "SÜRE": { en: "DURATION", de: "DAUER" },
+    "ZAMAN": { en: "TIME", de: "ZEIT" },
+    "SIFIRLA": { en: "RESET", de: "RÜCKSETZEN" },
+    "RESET": { en: "RESET", de: "RÜCKSETZEN" },
+    "SEPET TEST": { en: "BASKET TEST", de: "KORBTEST" },
+    "TEST": { en: "TEST", de: "TEST" },
+    "KAPAK AÇ": { en: "OPEN LID", de: "DECKEL AUF" },
+    "KAPAK KAPAT": { en: "CLOSE LID", de: "DECKEL ZU" },
+    "YIKAMA": { en: "WASH", de: "WASCHEN" },
+    "STOP": { en: "STOP", de: "STOP" },
+    "ACİL STOP": { en: "E-STOP", de: "NOT-HALT" },
+    "DÜŞÜK SU": { en: "LOW WATER", de: "WASSERSTAND" },
+    "POMPA": { en: "PUMP", de: "PUMPE" },
+    "REDÜKTÖR": { en: "REDUCER", de: "GETRIEBE" },
+    "1. kapak": { en: "lid 1", de: "Deckel 1" },
+    "2. kapak": { en: "lid 2", de: "Deckel 2" },
+    "START": { en: "START", de: "START" },
+    "DUR": { en: "STOP", de: "STOP" },
+    "SEVİYESİ": { en: "LEVEL", de: "STAND" },
+    "ARIZASI": { en: "FAULT", de: "STÖRUNG" },
+    "MAKİNE OPSİYONLARI": { en: "MACHINE OPTIONS", de: "MASCHINENOPTIONEN" },
+    "Makinedeki opsiyonlar Seçim sütunundadır. Sarı satırlar pano malzemesini etkiler.": { en: "Machine options are in the Selection column. Yellow rows affect the panel materials.", de: "Die Maschinenoptionen stehen in der Spalte Auswahl. Gelbe Zeilen wirken auf das Schaltschrankmaterial." },
+    "Kod": { en: "Code", de: "Code" },
+    "Opsiyon": { en: "Option", de: "Option" },
+    "Seçim": { en: "Selection", de: "Auswahl" }
+  };
+
+  function textOf(src, lang) {
+    if (!src || lang === "tr") return src;
+    if (D[src] && D[src][lang]) return D[src][lang];
+    var m = src.match(/^ayar (.+)$/);
+    if (m) return (lang === "en" ? "set " : "Einst. ") + m[1];
+    m = src.match(/^(\d+) adet$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc" : " pcs") : " Stk.");
+    m = src.match(/^(\d+) adet · (.+)$/);
+    if (m) return m[1] + (lang === "en" ? (m[1] === "1" ? " pc · " : " pcs · ") : " Stk. · ") + textOf(m[2], lang);
+    if (src.indexOf("Tablo gücü") >= 0 || src.indexOf("Tablo akımı") >= 0 || src.indexOf("pano malzemesi") >= 0) {
+      return src
+        .replace("Tablo gücü", lang === "en" ? "Table power" : "Schrankleistung")
+        .replace("Tablo akımı", lang === "en" ? "Table current" : "Schrankstrom")
+        .replace("pano malzemesi", lang === "en" ? "panel materials" : "Schaltschrankmaterial");
+    }
+    return src;
+  }
+
+  function stockName(el) {
+    if (!el.classList || !el.classList.contains("n")) return false;
+    var c = el.parentElement && el.parentElement.querySelector(".c");
+    return !!(c && /10\s*\d{5}/.test(c.textContent));
+  }
+
+  function nodes() {
+    return Array.prototype.filter.call(
+      document.querySelectorAll("title, p, h2, th, td, b, span, div.meta"),
+      function (el) {
+        if (el.closest(".langs")) return false;
+        if (el.matches(".brand, .brand-sub, .cnk, .win")) return false;
+        if (el.closest(".depot") && el.matches("td:first-child, td:nth-child(3)")) return false;
+        if (el.closest(".opts") && el.matches("tbody td")) return false;
+        if (el.children.length) return false;
+        if (stockName(el)) return false;
+        return true;
+      }
+    );
+  }
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    nodes().forEach(function (el) {
+      if (!el.hasAttribute("data-tr")) el.setAttribute("data-tr", el.textContent.trim());
+      el.textContent = textOf(el.getAttribute("data-tr"), lang);
+    });
+    document.querySelectorAll(".e").forEach(function (e) {
+      var t = e.parentElement && e.parentElement.querySelector(".t");
+      if (!t) return;
+      e.hidden = t.textContent.trim() === e.textContent.trim();
+    });
+    document.querySelectorAll(".langs button").forEach(function (b) {
+      var on = b.getAttribute("data-lang") === lang;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { localStorage.setItem("kbn-lang", lang); } catch (err) {}
+  }
+
+  document.querySelectorAll(".langs button").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+  });
+
+  var saved = "tr";
+  try { saved = localStorage.getItem("kbn-lang") || "tr"; } catch (err) {}
+  if (saved !== "en" && saved !== "de") saved = "tr";
+  apply(saved);
+})();
+
+</script>
+</body>
+</html>
