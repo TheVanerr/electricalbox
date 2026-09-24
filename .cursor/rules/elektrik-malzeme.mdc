@@ -97,6 +97,41 @@ Bir motoru süren düzenlerden yalnız biri seçilir. Üçü bir arada olmaz. MK
 
 Depo listesinde Foto sütunu vardır. Kaynak `photos` klasörüdür; dosya adı stok kodudur ve format JPG'dir. Ölçü ve kadraj değiştirilmez. Arka plan varsa temizlenir ve saydam yapılır. Her foto aynı kareye, oranı bozulmadan sığdırılır. Tabloda `photos/temiz` altındaki saydam PNG kullanılır. Fotoğrafı olmayan satır boş kalır.
 
+## Pano iç layout (DIN 35)
+
+Kullanıcı bir pafta için pano içi 2D dizilim istediğinde ayrı HTML dosyası açma; ilgili proje HTML dosyasının en altına `<section class="pano-layout">` ekle veya güncelle. Satır içeriğini kullanıcı projeye göre söyler; aşağıdaki çerçeve ve ölçü kuralları her projede aynıdır.
+
+### Tava ve kanallar
+
+- Dış kare: standart **710×710 mm** KBN 1B pano (KBN 2B farklıysa projede yazılı ölçü).
+- İç kare: **tava** montaj alanı (tipik **630×630 mm**; farklıysa paftada belirtilir).
+- **Üst:** 40 mm kablo kanalı, tava üst kenarına **sıfır**.
+- **Sol ve sağ:** 40 mm kablo kanalı, tava **alt kenarına kadar**.
+- **Satırlar arası:** her DIN satırı arasında 40 mm kablo kanalı.
+- **Alt:** 40 mm kablo kanalı, tava alt kenarına **sıfır**.
+- İç alan genişliği = tava − 2×40 mm. Dikey pay: üst kanal + satır bantları + ara kanallar + alt kanal = tava yüksekliği.
+
+### DIN ray ve boşluklar
+
+- Her satırda DIN 35 rayı **sol kanaldan sağ kanala** tam genişlikte çizilir.
+- Malzemeler **yalnız ray üzerinde**; katalog genişlik×yükseklik (mm) kutuları ray dışına **taşmaz**. Sığmazsa yalnız **aralık** daraltılır; kutu ölçüsü küçültülmez.
+- Yan yana kutular arası tipik **2 mm**; motor/termik grupları arasında biraz daha geniş aralık kullanılabilir.
+- Satır dikey bandı: o satırdaki **en üstte kalan** ve **en altta kalan** parça veya birleşime göre hesaplanır. Bu uç noktalar ile satırın **hemen üstündeki** ve **hemen altındaki** 40 mm kablo kanalı arasında **en az 20 mm (2 cm)** boşluk kalır; band yüksekliği buna göre ayarlanır (ör. satır 2’de MDR gibi yüksek parça). Motor satırında alt uç genelde termik alt hizasıdır.
+- **Satır 1** (besleme/koruma): kullanıcının verdiği sıra. Referans **invertör** varsa aynı satırdaki parçaların Y merkezi invertör merkezine hizalı; DIN ray merkezi aynı Y’de.
+- **Motor satırı:** yalnız **motor** yükleri **termik + kontaktör** (TeSys K: LC1K 45×58 mm, LR2K 45×58 mm, direkt montaj birleşim **94 mm**, 22 mm bindirme). Kontaktör üstte, termik altta. Ray merkezi **kontaktör merkezinde**. **Termik alt hizasından 20 mm** sonra bir sonraki (aşağıdaki) 40 mm kablo kanalı başlar.
+- **KBN 1B ısıtıcı:** yalnız **kontaktör** (LC1K1610M7); termik ve MKŞ **çizilmez**, motor birleşimi kullanılmaz.
+- **KBN 2B ısıtıcı:** kontaktör + 3P sigorta (ayrı kural); termik/MKŞ yok.
+- **Klemens satırı:** kullanıcı veya pafta listesine göre; tipik düzen: solda birkaç geniş güç klemensi, her motor **4**, her ısıtıcı **3** (ısıtıcı hatvesi motor klemensinden geniş), kumanda hatveleri; toplam ray içinde.
+- **Ray dışı:** ön yüz/kapı (ORDEL, acil stop, buton, lamba, priz, HMI, PLC ekran vb.) aynı SVG’de not edilir veya ayrı gösterim; DIN rayına zorla sığdırılmaz.
+
+### Çizim
+
+- Ölçek **1 mm = 1,55 px**. Depo/stok adı ve kodu kutuda yazılır.
+- **BARA GWEST 4×7 mm** (10 03578): kesit 4×7 mm; DIN ray çiziminde ray üstü blok genişliği **10 mm** (kesit ölçüsü ray genişliği değildir).
+- Renk ayrımı: koruma mavisi, kontaktör mavi, termik kırmızımsı, röle yeşil, invertör koyu zemin, ısıtıcı kontaktörü turuncu, klemens türüne göre yeşil/mavi/turuncu/mor, ray çelik grisi, kanal gri.
+
+
+
 ## Sembol
 
 Makine sütununda ve malzeme satırında sembolün altındaki yazılar ortalıdır. Sembol de bu yazının üstünde ortada durur.
