@@ -61,27 +61,41 @@
     .face { padding: 12px 14px 16px; }
     .face h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; }
     .label {
-      width: 400px; margin: 0 auto; background: #fff; color: #1a1a1a;
-      border: 1px solid #1a1a1a; padding: 22px 18px 8px;
+      width: 320px; margin: 0 auto; background: #fff; color: #1a1a1a;
+      border: 1px solid #1a1a1a; padding: 16px 12px 8px;
     }
-    .brand { margin: 0; text-align: center; color: #e10600; font-size: 48px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
-    .brand-sub { margin: 6px 0 18px; text-align: center; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; }
-    .disp { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-    .side { width: 78px; text-align: center; }
-    .side b { display: block; font-size: 11px; letter-spacing: 0.04em; }
-    .side span { display: block; font-size: 10px; }
-    .win { width: 128px; height: 86px; border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .win .screen { width: 96px; height: 26px; background: #163024; margin-bottom: 4px; }
-    .win p { margin: 0; font-size: 9px; text-align: center; line-height: 1.2; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-bottom: 16px; align-items: center; }
+    .brand { margin: 0; text-align: center; color: #e10600; font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
+    .brand-sub { margin: 6px 0 14px; text-align: center; font-size: 9px; font-weight: 750; letter-spacing: 0.04em; }
+    .disp { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
+    .side { width: 56px; text-align: center; }
+    .side b { display: block; font-size: 9px; letter-spacing: 0.03em; }
+    .side span { display: block; font-size: 8px; }
+    .win { width: 110px; height: 74px; border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .win .screen { width: 82px; height: 22px; background: #163024; margin-bottom: 4px; }
+    .win p { margin: 0; font-size: 8px; text-align: center; line-height: 1.2; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 8px; margin-bottom: 12px; align-items: center; }
     .cell { display: flex; align-items: center; gap: 8px; }
     .cell:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+    .hands { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 6px 0 12px; column-gap: 4px; }
+    .hand { display: flex; flex-direction: column; }
+    .hand.left { align-items: flex-start; }
+    .hand.right { align-items: flex-end; }
+    .hand .cell { flex-direction: row; text-align: left; }
+    .hand.right .cell { flex-direction: row-reverse; text-align: right; }
+    .hand .vspan {
+      min-height: 250px; display: flex; align-items: center; justify-content: center;
+      border-left: 1px solid #1a1a1a; margin: 8px 6px; padding-left: 4px;
+      font-size: 8px; letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .hand.right .vspan { border-left: none; border-right: 1px solid #1a1a1a; padding-left: 0; padding-right: 4px; margin: 8px 6px 8px auto; }
+    .hands .estop { margin: 0 2px; }
     .cap { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #1a1a1a; flex: none; }
     .cap.start, .cap.open { background: #2f8f4e; }
     .cap.stop, .cap.close { background: #c0392b; }
     .cap.plain { background: #f7f7f7; }
     .cap.reset { background: #2f6fbf; }
     .cap.lamp { background: #c0392b; width: 16px; height: 16px; margin: 0 auto 4px; }
+    .cap.wlamp { background: #f4f4f4; width: 16px; height: 16px; }
     .cell .t { margin: 0; font-size: 11px; font-weight: 750; letter-spacing: 0.02em; }
     .cell .e { margin: 0; font-size: 9px; }
     .cell .s { margin: 0; font-size: 8px; line-height: 1.2; }
@@ -371,8 +385,8 @@
       <div class="out">
         <div class="part">
           <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="12" y="6" width="28" height="32" fill="#ececec" stroke="#1a1a1a"/><rect x="16" y="10" width="20" height="8" fill="#fafafa" stroke="#1a1a1a"/><path d="M18 28 H34 M18 32 H28" stroke="#1a1a1a"/></svg>
-          <p class="n">GÜÇ KAYNAĞI MDR 20/24</p>
-          <p class="c">10 02491</p>
+          <p class="n">GÜÇ KAYNAĞI MDR 100/24</p>
+          <p class="c">10 02772</p>
           <p class="q">1 adet</p>
         </div>
         <div class="part">
@@ -440,55 +454,63 @@
       <h2>ÖN YÜZ</h2>
       <div class="label">
         <p class="brand">Dolfin</p>
-        <p class="brand-sub">INDUSTRIAL WASHING SYSTEMS</p>
+        <p class="brand-sub">ENDÜSTRİYEL YIKAMA SİSTEMLERİ</p>
         <div class="disp">
-          <div class="side"><b>SICAKLIK</b><span>ISI</span></div>
+          <div class="side"><b>SICAKLIK</b><span>HEAT</span></div>
           <div class="win">
             <div class="screen"></div>
             <p>ORDEL OC990-9/0240</p>
             <p>10 00229</p>
           </div>
-          <div class="side"><b>SÜRE</b><span>ZAMAN</span></div>
+          <div class="side"><b>ZAMAN</b><span>TIME</span></div>
         </div>
         <div class="cols">
           <div class="cell">
             <div class="cap reset"></div>
-            <div><p class="t">SIFIRLA</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
+            <div><p class="t">RESET</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
           </div>
           <div class="cell">
             <div class="cap plain"></div>
-            <div><p class="t">SEPET TEST</p><p class="e">TEST</p><p class="s">B100DB · 10 00270</p></div>
+            <div><p class="t">TEST</p><p class="e">TEST</p><p class="s">B100DB · 10 00270</p></div>
           </div>
-          <div class="cell">
-            <div class="cap open"></div>
-            <div><p class="t">KAPAK AÇ</p><p class="e">1. kapak</p><p class="s">yeşil · stok kodu yok</p></div>
-          </div>
-          <div class="cell">
-            <div class="cap close"></div>
-            <div><p class="t">KAPAK KAPAT</p><p class="e">1. kapak</p><p class="s">kırmızı · stok kodu yok</p></div>
-          </div>
-          <div class="cell">
-            <div class="cap start"></div>
-            <div><p class="t">YIKAMA</p><p class="e">START</p><p class="s">B100DY · 10 00273</p></div>
-          </div>
-          <div class="cell">
-            <div class="cap stop"></div>
-            <div><p class="t">STOP</p><p class="e">DUR</p><p class="s">B100DK · 10 00271</p></div>
-          </div>
-        </div>
-        <div class="estop">
-          <div class="ring"><div class="cap"></div></div>
-          <p class="t">ACİL STOP</p>
-          <p class="s">B200EE · 10 03445</p>
         </div>
         <div class="cols">
           <div class="cell">
-            <div class="cap open"></div>
-            <div><p class="t">KAPAK AÇ</p><p class="e">2. kapak</p><p class="s">yeşil · stok kodu yok</p></div>
+            <div class="cap wlamp"></div>
+            <div><p class="t">YIKAMA</p><p class="e">WASHING</p><p class="s">S14B · 10 00279</p></div>
           </div>
           <div class="cell">
-            <div class="cap close"></div>
-            <div><p class="t">KAPAK KAPAT</p><p class="e">2. kapak</p><p class="s">kırmızı · stok kodu yok</p></div>
+            <div class="cap wlamp"></div>
+            <div><p class="t">ISITICI</p><p class="e">HEATER</p><p class="s">S14B · 10 00279</p></div>
+          </div>
+        </div>
+        <div class="hands">
+          <div class="hand left">
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">1. kapak</p><p class="s">B100DY · 10 00273</p></div>
+            </div>
+            <div class="vspan">25–30 cm</div>
+            <div class="cell">
+              <div class="cap open"></div>
+              <div><p class="t">KAPAK AÇ</p><p class="e">2. kapak</p><p class="s">B100DY · 10 00273</p></div>
+            </div>
+          </div>
+          <div class="estop">
+            <div class="ring"><div class="cap"></div></div>
+            <p class="t">ACİL STOP</p>
+            <p class="s">B200EE · 10 03445</p>
+          </div>
+          <div class="hand right">
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">1. kapak</p><p class="s">B100DK · 10 00271</p></div>
+            </div>
+            <div class="vspan">25–30 cm</div>
+            <div class="cell">
+              <div class="cap close"></div>
+              <div><p class="t">KAPAK KAPAT</p><p class="e">2. kapak</p><p class="s">B100DK · 10 00271</p></div>
+            </div>
           </div>
         </div>
         <div class="faults">
@@ -584,13 +606,14 @@
           <tr><td>10 00244</td><td class="foto"><img src="../photos/temiz/10%2000244.png" alt="10 00244"></td><td>TERMIK RÖLESİ LR2K0306 0,80-1,2A</td><td class="adet">1</td></tr>
           <tr><td>10 00249</td><td class="foto"><img src="../photos/temiz/10%2000249.png" alt="10 00249"></td><td>TERMIK RÖLESİ LR2K0314 5,80-8,0A</td><td class="adet">2</td></tr>
           <tr><td>10 00258</td><td class="foto"><img src="../photos/temiz/10%2000258.png" alt="10 00258"></td><td>FAZ KORUMA RÖLESİ MKS-03</td><td class="adet">1</td></tr>
-          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">8</td></tr>
-          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">9</td></tr>
+          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">6</td></tr>
+          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">7</td></tr>
           <tr><td>10 00270</td><td class="foto"><img src="../photos/temiz/10%2000270.png" alt="10 00270"></td><td>BUTON START B100DB</td><td class="adet">1</td></tr>
-          <tr><td>10 00271</td><td class="foto"><img src="../photos/temiz/10%2000271.png" alt="10 00271"></td><td>BUTON START B100DK</td><td class="adet">1</td></tr>
+          <tr><td>10 00271</td><td class="foto"><img src="../photos/temiz/10%2000271.png" alt="10 00271"></td><td>BUTON START B100DK</td><td class="adet">2</td></tr>
           <tr><td>10 00272</td><td class="foto"><img src="../photos/temiz/10%2000272.png" alt="10 00272"></td><td>BUTON START B100DM</td><td class="adet">1</td></tr>
-          <tr><td>10 00273</td><td class="foto"><img src="../photos/temiz/10%2000273.png" alt="10 00273"></td><td>BUTON START B100DY</td><td class="adet">1</td></tr>
+          <tr><td>10 00273</td><td class="foto"><img src="../photos/temiz/10%2000273.png" alt="10 00273"></td><td>BUTON START B100DY</td><td class="adet">2</td></tr>
           <tr><td>10 00278</td><td class="foto"><img src="../photos/temiz/10%2000278.png" alt="10 00278"></td><td>SİNYAL LAMBASI S14K KIRMIZI 220V</td><td class="adet">3</td></tr>
+          <tr><td>10 00279</td><td class="foto"><img src="../photos/temiz/10%2000279.png" alt="10 00279"></td><td>SİNYAL LAMBASI S14B BEYAZ 220V</td><td class="adet">2</td></tr>
           <tr><td>10 00286</td><td class="foto"><img src="../photos/temiz/10%2000286.png" alt="10 00286"></td><td>PAKO ŞALTER YKL301M40 3*40 KÜÇÜK KASALI OPAŞ</td><td class="adet">1</td></tr>
           <tr><td>10 00294</td><td class="foto"><img src="../photos/temiz/10%2000294.png" alt="10 00294"></td><td>MİNYATÜR RÖLE RXM4AB1P7 220V</td><td class="adet">2</td></tr>
           <tr><td>10 00295</td><td class="foto"><img src="../photos/temiz/10%2000295.png" alt="10 00295"></td><td>RÖLE SOKETİ RXZE2M114M</td><td class="adet">3</td></tr>
@@ -601,7 +624,7 @@
           <tr><td>10 01398</td><td class="foto"><img src="../photos/temiz/10%2001398.png" alt="10 01398"></td><td>MİNYATÜR RÖLE RXM4AB1BD 24V 16 PİNLİ</td><td class="adet">1</td></tr>
           <tr><td>10 01421</td><td class="foto"><img src="../photos/temiz/10%2001421.png" alt="10 01421"></td><td>SCHNEIDER SİGORTA A9F74106 1*6</td><td class="adet">1</td></tr>
           <tr><td>10 02314</td><td class="foto"><img src="../photos/temiz/10%2002314.png" alt="10 02314"></td><td>KONTAKTÖR LC1K0610M7 220V</td><td class="adet">1</td></tr>
-          <tr><td>10 02491</td><td class="foto"><img src="../photos/temiz/10%2002491.png" alt="10 02491"></td><td>GÜÇ KAYNAĞI MDR 20/24</td><td class="adet">1</td></tr>
+          <tr><td>10 02772</td><td class="foto"><img src="../photos/temiz/10%2002772.png" alt="10 02772"></td><td>GÜÇ KAYNAĞI MDR 100/24</td><td class="adet">1</td></tr>
           <tr><td>10 02664</td><td class="foto"><img src="../photos/temiz/10%2002664.png" alt="10 02664"></td><td>SİGORTA A9F74440 SCHNEIDER 40A</td><td class="adet">1</td></tr>
           <tr><td>10 03445</td><td class="foto"><img src="../photos/temiz/10%2003445.png" alt="10 03445"></td><td>BUTON ACİL STOP MANTAR B200EE</td><td class="adet">1</td></tr>
           <tr><td>10 03578</td><td class="foto"><img src="../photos/temiz/10%2003578.png" alt="10 03578"></td><td>BARA GWEST 4*7MM</td><td class="adet">1</td></tr>
@@ -814,7 +837,13 @@
     "TEST": { en: "TEST", de: "TEST" },
     "KAPAK AÇ": { en: "OPEN LID", de: "DECKEL AUF" },
     "KAPAK KAPAT": { en: "CLOSE LID", de: "DECKEL ZU" },
-    "YIKAMA": { en: "WASH", de: "WASCHEN" },
+    "YIKAMA": { en: "WASHING", de: "WASCHEN" },
+    "WASHING": { en: "WASHING", de: "WASCHEN" },
+    "ISITICI": { en: "HEATER", de: "HEIZUNG" },
+    "HEATER": { en: "HEATER", de: "HEIZUNG" },
+    "HEAT": { en: "HEAT", de: "WÄRME" },
+    "TIME": { en: "TIME", de: "ZEIT" },
+    "25–30 cm": { en: "25–30 cm", de: "25–30 cm" },
     "STOP": { en: "STOP", de: "STOP" },
     "ACİL STOP": { en: "E-STOP", de: "NOT-HALT" },
     "DÜŞÜK SU": { en: "LOW WATER", de: "WASSERSTAND" },
