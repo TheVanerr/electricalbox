@@ -61,22 +61,22 @@
     .face { padding: 12px 14px 16px; }
     .face h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; }
     .label {
-      width: 400px; margin: 0 auto; background: #fff; color: #1a1a1a;
-      border: 1px solid #1a1a1a; padding: 22px 18px 8px;
+      width: 320px; margin: 0 auto; background: #fff; color: #1a1a1a;
+      border: 1px solid #1a1a1a; padding: 16px 12px 8px;
     }
-    .brand { margin: 0; text-align: center; color: #e10600; font-size: 48px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
-    .brand-sub { margin: 6px 0 18px; text-align: center; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; }
-    .disp { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-    .side { width: 78px; text-align: center; }
-    .side b { display: block; font-size: 11px; letter-spacing: 0.04em; }
-    .side span { display: block; font-size: 10px; }
-    .win { width: 128px; height: 86px; border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .win .screen { width: 96px; height: 26px; background: #163024; margin-bottom: 4px; }
-    .win p { margin: 0; font-size: 9px; text-align: center; line-height: 1.2; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; margin-bottom: 16px; align-items: center; }
+    .brand { margin: 0; text-align: center; color: #e10600; font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 0.95; }
+    .brand-sub { margin: 6px 0 14px; text-align: center; font-size: 9px; font-weight: 750; letter-spacing: 0.04em; }
+    .disp { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 6px; }
+    .side { width: 56px; text-align: center; }
+    .side b { display: block; font-size: 9px; letter-spacing: 0.03em; }
+    .side span { display: block; font-size: 8px; }
+    .win { width: 110px; height: 74px; border: 2px solid #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .win .screen { width: 82px; height: 22px; background: #163024; margin-bottom: 4px; }
+    .win p { margin: 0; font-size: 8px; text-align: center; line-height: 1.2; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 8px; margin-bottom: 12px; align-items: center; }
     .cell { display: flex; align-items: center; gap: 8px; }
     .cell:nth-child(even) { flex-direction: row-reverse; text-align: right; }
-    .hands { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 8px 0 16px; }
+    .hands { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 6px 0 12px; column-gap: 4px; }
     .hand { display: flex; flex-direction: column; }
     .hand.left { align-items: flex-start; }
     .hand.right { align-items: flex-end; }
@@ -84,17 +84,19 @@
     .hand.right .cell { flex-direction: row-reverse; text-align: right; }
     .hand .vspan {
       min-height: 250px; display: flex; align-items: center; justify-content: center;
-      border-left: 1px solid #1a1a1a; margin: 8px 13px; padding-left: 6px;
-      font-size: 9px; letter-spacing: 0.04em; white-space: nowrap;
+      border-left: 1px solid #1a1a1a; margin: 8px 6px; padding-left: 4px;
+      font-size: 8px; letter-spacing: 0.04em; white-space: nowrap;
     }
-    .hand.right .vspan { border-left: none; border-right: 1px solid #1a1a1a; padding-left: 0; padding-right: 6px; margin: 8px 13px 8px auto; }
-    .hands .estop { margin: 0 8px; }
+    .hand.right .vspan { border-left: none; border-right: 1px solid #1a1a1a; padding-left: 0; padding-right: 4px; margin: 8px 6px 8px auto; }
+    .hands .estop { margin: 0 2px; }
     .cap { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #1a1a1a; flex: none; }
     .cap.start, .cap.open { background: #2f8f4e; }
     .cap.stop, .cap.close { background: #c0392b; }
     .cap.plain { background: #f7f7f7; }
     .cap.reset { background: #2f6fbf; }
+    .cap.mandal { background: #2a2a2a; }
     .cap.lamp { background: #c0392b; width: 16px; height: 16px; margin: 0 auto 4px; }
+    .cap.wlamp { background: #f4f4f4; width: 16px; height: 16px; }
     .cell .t { margin: 0; font-size: 11px; font-weight: 750; letter-spacing: 0.02em; }
     .cell .e { margin: 0; font-size: 9px; }
     .cell .s { margin: 0; font-size: 8px; line-height: 1.2; }
@@ -117,6 +119,7 @@
     }
     .calc { padding: 8px 14px 4px; }
     .calc h2 { margin: 8px 0; font-size: 12px; letter-spacing: 0.12em; }
+    .calc p { margin: 0 0 8px; font-size: 11px; line-height: 1.35; }
     .calc table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; }
     .calc th, .calc td { border: 1px solid #1a1a1a; padding: 4px 8px; text-align: left; }
     .calc th { font-size: 11px; letter-spacing: 0.04em; text-align: center; }
@@ -320,11 +323,16 @@
         <p class="s">0,09 kW · 0,46 A · termik + kontaktör</p>
       </div>
       <div class="out">
-        <p class="explain">Verilen hat akımı 0,46 A. LR2K serisinin en düşük modeli LR2K0305 0,54-0,8 A; 0,46 A aralığın dışında. Termik yazılmadı.</p>
         <div class="part">
           <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="8" y="8" width="36" height="28" rx="2" fill="#e6e6e6" stroke="#1a1a1a"/><rect x="16" y="16" width="20" height="10" fill="#fafafa" stroke="#1a1a1a"/><circle cx="16" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="26" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/><circle cx="36" cy="8" r="2" fill="#fafafa" stroke="#1a1a1a"/></svg>
           <p class="n">KONTAKTÖR LC1K0610M7 220V</p>
           <p class="c">6 A · 10 02314</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="6" width="32" height="32" fill="#f3e2a8" stroke="#1a1a1a"/><circle cx="26" cy="20" r="7" fill="#fafafa" stroke="#1a1a1a"/><path d="M26 20 V14" stroke="#1a1a1a"/></svg>
+          <p class="n">TERMIK RÖLESİ LR2K0305 0,54-0,8A</p>
+          <p class="c">ayar 0,46 A · 10 00243</p>
           <p class="q">1 adet</p>
         </div>
       </div>
@@ -400,6 +408,21 @@
         <div class="part">
           <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="18" y="8" width="16" height="28" fill="#fafafa" stroke="#1a1a1a"/><path d="M18 22 H10 M18 28 H12" stroke="#1a1a1a"/></svg>
           <p class="n">YIKAMA TANKI ALT SEVİYE SENSÖRÜ</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><circle cx="26" cy="22" r="10" fill="none" stroke="#1a1a1a"/><path d="M26 12 V8 M22 22 H16 M30 22 H36" stroke="#1a1a1a"/></svg>
+          <p class="n">HAVA BASINCI SENSÖRÜ</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="10" y="12" width="32" height="20" fill="#fafafa" stroke="#1a1a1a"/><path d="M18 12 V32 M34 12 V32 M26 8 V12" stroke="#1a1a1a"/></svg>
+          <p class="n">ANA VALF 3/2 +24VDC</p>
+          <p class="q">1 adet</p>
+        </div>
+        <div class="part">
+          <svg viewBox="0 0 52 44" aria-hidden="true"><rect x="6" y="12" width="40" height="20" fill="#fafafa" stroke="#1a1a1a"/><path d="M16 12 V32 M26 12 V32 M36 12 V32 M26 8 V12" stroke="#1a1a1a"/></svg>
+          <p class="n">KAPAK AÇ - KAPAK KAPAT VALFİ 5/2 +24VDC</p>
           <p class="q">1 adet</p>
         </div>
         <div class="part">
@@ -495,32 +518,44 @@
       <h2>ÖN YÜZ</h2>
       <div class="label">
         <p class="brand">Dolfin</p>
-        <p class="brand-sub">INDUSTRIAL WASHING SYSTEMS</p>
+        <p class="brand-sub">ENDÜSTRİYEL YIKAMA SİSTEMLERİ</p>
         <div class="disp">
-          <div class="side"><b>SICAKLIK</b><span>ISI</span></div>
+          <div class="side"><b>SICAKLIK</b><span>HEAT</span></div>
           <div class="win">
             <div class="screen"></div>
             <p>ORDEL OC990-9/0240</p>
             <p>10 00229</p>
           </div>
-          <div class="side"><b>SÜRE</b><span>ZAMAN</span></div>
+          <div class="side"><b>ZAMAN</b><span>TIME</span></div>
         </div>
         <div class="cols">
           <div class="cell">
             <div class="cap reset"></div>
-            <div><p class="t">SIFIRLA</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
+            <div><p class="t">RESET</p><p class="e">RESET</p><p class="s">B100DM · 10 00272</p></div>
           </div>
           <div class="cell">
             <div class="cap plain"></div>
-            <div><p class="t">SEPET TEST</p><p class="e">TEST</p><p class="s">B100DB · 10 00270</p></div>
+            <div><p class="t">TEST</p><p class="e">TEST</p><p class="s">B100DB · 10 00270</p></div>
+          </div>
+        </div>
+        <div class="cols">
+          <div class="cell">
+            <div class="cap wlamp"></div>
+            <div><p class="t">YIKAMA</p><p class="e">WASHING</p><p class="s">S14B · 10 00279</p></div>
           </div>
           <div class="cell">
-            <div class="cap start"></div>
-            <div><p class="t">YIKAMA</p><p class="e">START</p><p class="s">B100DY · 10 00273</p></div>
+            <div class="cap wlamp"></div>
+            <div><p class="t">ISITICI</p><p class="e">HEATER</p><p class="s">S14B · 10 00279</p></div>
+          </div>
+        </div>
+        <div class="cols">
+          <div class="cell">
+            <div class="cap mandal"></div>
+            <div><p class="t">YAĞ SIYIRICI</p><p class="e">OIL SKIMMER</p><p class="s">B100S20 · 10 00262</p></div>
           </div>
           <div class="cell">
-            <div class="cap stop"></div>
-            <div><p class="t">STOP</p><p class="e">DUR</p><p class="s">B100DK · 10 00271</p></div>
+            <div class="cap wlamp"></div>
+            <div><p class="t">SIYIRICI</p><p class="e">OIL SKIMMER</p><p class="s">S14B · 10 00279</p></div>
           </div>
         </div>
         <div class="hands">
@@ -612,6 +647,26 @@
           <tr class="sum"><td>Hat akımı</td><td>8,90 + 8,90 + 1,10 + 1,10 + 1,10 + 0,46 + 12,15 + 12,15</td><td class="num">45,86 A</td></tr>
         </tbody>
       </table>
+      <h2>NOMİNAL AKIM HESABI</h2>
+      <p>Tek durum: tüm motorlar aynı anda çalışabilir. Senaryo akımı, hat akımı tablosundaki değerlerin toplamıdır. Nominal akım bu senaryodur. Makine anma akımı, bu akım yukarı tam sayıya yuvarlanıp 2 A eklenerek bulunur.</p>
+      <table>
+        <thead>
+          <tr><th>Senaryo</th><th>Tüketici</th><th>kW</th><th>Akım</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num" rowspan="9">1</td><td>1. yıkama pompası</td><td class="num">4,00</td><td class="num">8,90 A</td></tr>
+          <tr><td>2. yıkama pompası</td><td class="num">4,00</td><td class="num">8,90 A</td></tr>
+          <tr><td>Üst nozzle redüktörü</td><td class="num">0,37</td><td class="num">1,10 A</td></tr>
+          <tr><td>Alt nozzle redüktörü</td><td class="num">0,37</td><td class="num">1,10 A</td></tr>
+          <tr><td>Egzoz fanı</td><td class="num">0,37</td><td class="num">1,10 A</td></tr>
+          <tr><td>Yağ sıyırıcı</td><td class="num">0,09</td><td class="num">0,46 A</td></tr>
+          <tr><td>1. yıkama ısıtıcısı</td><td class="num">8,00</td><td class="num">12,15 A</td></tr>
+          <tr><td>2. yıkama ısıtıcısı</td><td class="num">8,00</td><td class="num">12,15 A</td></tr>
+          <tr class="sum"><td>Toplam</td><td class="num">25,20</td><td class="num">45,86 A</td></tr>
+          <tr class="sum"><td class="num">—</td><td>Nominal akım</td><td class="num">25,20</td><td class="num">45,86 A</td></tr>
+          <tr class="sum"><td class="num">—</td><td>Makine anma akımı</td><td class="num">—</td><td class="num">≥ 48 A</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <section class="opts">
@@ -646,15 +701,18 @@
         </thead>
         <tbody>
           <tr><td>10 00229</td><td class="foto"><img src="../photos/temiz/10%2000229.png" alt="10 00229"></td><td>ORDEL OC990-9/0240 FIR.KON.CİH-DİJ.PAN.</td><td class="adet">1</td></tr>
+          <tr><td>10 00243</td><td class="foto"><img src="../photos/temiz/10%2000243.png" alt="10 00243"></td><td>TERMIK RÖLESİ LR2K0305 0,54-0,8A</td><td class="adet">1</td></tr>
           <tr><td>10 00244</td><td class="foto"><img src="../photos/temiz/10%2000244.png" alt="10 00244"></td><td>TERMIK RÖLESİ LR2K0306 0,80-1,2A</td><td class="adet">3</td></tr>
           <tr><td>10 00258</td><td class="foto"><img src="../photos/temiz/10%2000258.png" alt="10 00258"></td><td>FAZ KORUMA RÖLESİ MKS-03</td><td class="adet">1</td></tr>
-          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">8</td></tr>
-          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">9</td></tr>
+          <tr><td>10 00262</td><td class="foto"><img src="../photos/temiz/10%2000262.png" alt="10 00262"></td><td>BUTON MANDAL B100S20</td><td class="adet">1</td></tr>
+          <tr><td>10 00267</td><td class="foto"><img src="../photos/temiz/10%2000267.png" alt="10 00267"></td><td>KONTAK BLOK NO B1</td><td class="adet">7</td></tr>
+          <tr><td>10 00268</td><td class="foto"><img src="../photos/temiz/10%2000268.png" alt="10 00268"></td><td>KONTAK BLOK NC B2</td><td class="adet">8</td></tr>
           <tr><td>10 00270</td><td class="foto"><img src="../photos/temiz/10%2000270.png" alt="10 00270"></td><td>BUTON START B100DB</td><td class="adet">1</td></tr>
-          <tr><td>10 00271</td><td class="foto"><img src="../photos/temiz/10%2000271.png" alt="10 00271"></td><td>BUTON START B100DK</td><td class="adet">3</td></tr>
+          <tr><td>10 00271</td><td class="foto"><img src="../photos/temiz/10%2000271.png" alt="10 00271"></td><td>BUTON START B100DK</td><td class="adet">2</td></tr>
           <tr><td>10 00272</td><td class="foto"><img src="../photos/temiz/10%2000272.png" alt="10 00272"></td><td>BUTON START B100DM</td><td class="adet">1</td></tr>
-          <tr><td>10 00273</td><td class="foto"><img src="../photos/temiz/10%2000273.png" alt="10 00273"></td><td>BUTON START B100DY</td><td class="adet">3</td></tr>
+          <tr><td>10 00273</td><td class="foto"><img src="../photos/temiz/10%2000273.png" alt="10 00273"></td><td>BUTON START B100DY</td><td class="adet">2</td></tr>
           <tr><td>10 00278</td><td class="foto"><img src="../photos/temiz/10%2000278.png" alt="10 00278"></td><td>SİNYAL LAMBASI S14K KIRMIZI 220V</td><td class="adet">3</td></tr>
+          <tr><td>10 00279</td><td class="foto"><img src="../photos/temiz/10%2000279.png" alt="10 00279"></td><td>SİNYAL LAMBASI S14B BEYAZ 220V</td><td class="adet">3</td></tr>
           <tr><td>10 00287</td><td class="foto"><img src="../photos/temiz/10%2000287.png" alt="10 00287"></td><td>PAKO ŞALTER YKL301M63 3*63 OPAŞ</td><td class="adet">1</td></tr>
           <tr><td>10 00294</td><td class="foto"><img src="../photos/temiz/10%2000294.png" alt="10 00294"></td><td>MİNYATÜR RÖLE RXM4AB1P7 220V</td><td class="adet">2</td></tr>
           <tr><td>10 00295</td><td class="foto"><img src="../photos/temiz/10%2000295.png" alt="10 00295"></td><td>RÖLE SOKETİ RXZE2M114M</td><td class="adet">3</td></tr>
@@ -687,9 +745,6 @@
           <tr><td class="no">5</td><td>Nozzle durdurma sensörü +24VDC olacak.</td></tr>
           <tr><td class="no">6</td><td>Sepet yerinde sensörü +24VDC olacak.</td></tr>
           <tr><td class="no">7</td><td>Tüm motorlar aynı anda çalışabilir; tablo akımı bu duruma göredir.</td></tr>
-          <tr><td class="no">8</td><td>Yağ sıyırıcı 0,46 A için LR2K serisi yetmez. En düşük model LR2K0305 0,54-0,8 A.</td></tr>
-          <tr><td class="no">9</td><td>Isıtıcı grubuna BARA GWEST 4*7MM konulacak.</td></tr>
-          <tr><td class="no">10</td><td>Çift el: iki kapak aç solda, iki kapak kapat sağda. Aynı taraftaki iki buton arasında yukarıdan aşağı en az 25–30 cm.</td></tr>
         </tbody>
       </table>
     </section>
@@ -725,8 +780,10 @@
     "24 V, faz, kaçak akım": { en: "24 V, phase, residual current", de: "24 V, Phase, Fehlerstrom" },
     "Röle grubu": { en: "Relay group", de: "Relaisgruppe" },
     "kumanda · 10 00302": { en: "control · 10 00302", de: "Steuerung · 10 00302" },
-    "Verilen hat akımı 0,46 A. LR2K serisinin en düşük modeli LR2K0305 0,54-0,8 A; 0,46 A aralığın dışında. Termik yazılmadı.": { en: "Given line current is 0,46 A. The lowest LR2K model is LR2K0305 0,54-0,8 A; 0,46 A is outside the range. No thermal relay was written.", de: "Angegebener Leiterstrom 0,46 A. Das kleinste LR2K-Modell ist LR2K0305 0,54-0,8 A; 0,46 A liegt außerhalb des Bereichs. Kein Thermorelais geschrieben." },
     "EL KORUMA SENSÖRÜ": { en: "Hand protection sensor", de: "Handschutzsensor" },
+    "HAVA BASINCI SENSÖRÜ": { en: "Air pressure sensor", de: "Luftdrucksensor" },
+    "ANA VALF 3/2 +24VDC": { en: "Main valve 3/2 +24VDC", de: "Hauptventil 3/2 +24VDC" },
+    "KAPAK AÇ - KAPAK KAPAT VALFİ 5/2 +24VDC": { en: "Lid open-close valve 5/2 +24VDC", de: "Deckel auf-zu Ventil 5/2 +24VDC" },
     "NOZZLE DURDURMA SENSÖRÜ +24V": { en: "Nozzle stop sensor +24V", de: "Düsen-Stoppsensor +24V" },
     "SEPET YERİNDE SENSÖRÜ +24V": { en: "Basket in-place sensor +24V", de: "Korb-an-Ort-Sensor +24V" },
     "YIKAMA TANKI TERMOKUPL": { en: "Wash tank thermocouple", de: "Waschtank-Thermoelement" },
@@ -746,6 +803,13 @@
     "Akım": { en: "Current", de: "Strom" },
     "verilen": { en: "given", de: "angegeben" },
     "Hat akımı": { en: "Line current", de: "Leiterstrom" },
+    "NOMİNAL AKIM HESABI": { en: "NOMINAL CURRENT CALCULATION", de: "NENNSTROMBERECHNUNG" },
+    "Tek durum: tüm motorlar aynı anda çalışabilir. Senaryo akımı, hat akımı tablosundaki değerlerin toplamıdır. Nominal akım bu senaryodur. Makine anma akımı, bu akım yukarı tam sayıya yuvarlanıp 2 A eklenerek bulunur.": { en: "Single case: all motors can run at the same time. Scenario current is the sum of the line-current table. Nominal current is this scenario. Machine rated current is this value rounded up to a whole number plus 2 A.", de: "Ein Fall: alle Motoren können gleichzeitig laufen. Der Szenariostrom ist die Summe der Leiterstromtabelle. Der Nennstrom ist dieses Szenario. Der Maschinen-Nennstrom ist dieser Wert auf ganze Zahl aufgerundet plus 2 A." },
+    "Senaryo": { en: "Scenario", de: "Szenario" },
+    "Tüketici": { en: "Consumer", de: "Verbraucher" },
+    "Toplam": { en: "Total", de: "Summe" },
+    "Nominal akım": { en: "Nominal current", de: "Nennstrom" },
+    "Makine anma akımı": { en: "Machine rated current", de: "Maschinen-Nennstrom" },
     "DEPO LİSTESİ": { en: "DEPOT LIST", de: "LAGERLISTE" },
     "Stok": { en: "Stock", de: "Lager" },
     "Foto": { en: "Photo", de: "Foto" },
@@ -760,23 +824,24 @@
     "Nozzle durdurma sensörü +24VDC olacak.": { en: "The nozzle stop sensor will be +24VDC.", de: "Der Düsen-Stoppsensor wird mit +24VDC ausgeführt." },
     "Sepet yerinde sensörü +24VDC olacak.": { en: "The basket in-place sensor will be +24VDC.", de: "Der Korb-an-Ort-Sensor wird mit +24VDC ausgeführt." },
     "Tüm motorlar aynı anda çalışabilir; tablo akımı bu duruma göredir.": { en: "All motors can run at the same time; table current is based on this case.", de: "Alle Motoren können gleichzeitig laufen; der Schrankstrom gilt für diesen Fall." },
-    "Yağ sıyırıcı 0,46 A için LR2K serisi yetmez. En düşük model LR2K0305 0,54-0,8 A.": { en: "The LR2K series does not cover the oil skimmer 0,46 A. The lowest model is LR2K0305 0,54-0,8 A.", de: "Die LR2K-Serie deckt den Ölabstreifer 0,46 A nicht ab. Das kleinste Modell ist LR2K0305 0,54-0,8 A." },
-    "Isıtıcı grubuna BARA GWEST 4*7MM konulacak.": { en: "BARA GWEST 4*7MM will be fitted for the heater group.", de: "Für die Heizergruppe wird BARA GWEST 4*7MM eingesetzt." },
-    "Çift el: iki kapak aç solda, iki kapak kapat sağda. Aynı taraftaki iki buton arasında yukarıdan aşağı en az 25–30 cm.": { en: "Two-hand: two lid-open buttons on the left, two lid-close buttons on the right. At least 25–30 cm top to bottom between the two buttons on the same side.", de: "Zweihand: zwei Deckel-auf-Taster links, zwei Deckel-zu-Taster rechts. Auf derselben Seite oben nach unten mindestens 25–30 cm Abstand." },
     "25–30 cm": { en: "25–30 cm", de: "25–30 cm" },
     "ÖN YÜZ": { en: "FRONT FACE", de: "FRONTSEITE" },
     "SICAKLIK": { en: "TEMPERATURE", de: "TEMPERATUR" },
     "ISI": { en: "HEAT", de: "WÄRME" },
-    "SÜRE": { en: "DURATION", de: "DAUER" },
+    "HEAT": { en: "HEAT", de: "WÄRME" },
     "ZAMAN": { en: "TIME", de: "ZEIT" },
-    "SIFIRLA": { en: "RESET", de: "RÜCKSETZEN" },
+    "TIME": { en: "TIME", de: "ZEIT" },
     "RESET": { en: "RESET", de: "RÜCKSETZEN" },
-    "SEPET TEST": { en: "BASKET TEST", de: "KORBTEST" },
     "TEST": { en: "TEST", de: "TEST" },
     "KAPAK AÇ": { en: "OPEN LID", de: "DECKEL AUF" },
     "KAPAK KAPAT": { en: "CLOSE LID", de: "DECKEL ZU" },
-    "YIKAMA": { en: "WASH", de: "WASCHEN" },
-    "STOP": { en: "STOP", de: "STOP" },
+    "YIKAMA": { en: "WASHING", de: "WASCHEN" },
+    "WASHING": { en: "WASHING", de: "WASCHEN" },
+    "ISITICI": { en: "HEATER", de: "HEIZUNG" },
+    "HEATER": { en: "HEATER", de: "HEIZUNG" },
+    "SIYIRICI": { en: "OIL SKIMMER", de: "ÖLABSTREIFER" },
+    "YAĞ SIYIRICI": { en: "OIL SKIMMER", de: "ÖLABSTREIFER" },
+    "OIL SKIMMER": { en: "OIL SKIMMER", de: "ÖLABSTREIFER" },
     "ACİL STOP": { en: "E-STOP", de: "NOT-HALT" },
     "DÜŞÜK SU": { en: "LOW WATER", de: "WASSERSTAND" },
     "POMPA": { en: "PUMP", de: "PUMPE" },
