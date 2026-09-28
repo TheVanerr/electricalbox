@@ -98,7 +98,7 @@ Bir motoru süren düzenlerden yalnız biri seçilir. Üçü bir arada olmaz. MK
 
 Depo listesinde Foto sütunu vardır. Kaynak `photos` klasörüdür; dosya adı stok kodudur ve format JPG'dir. Ölçü ve kadraj değiştirilmez. Arka plan varsa temizlenir ve saydam yapılır. Her foto aynı kareye, oranı bozulmadan sığdırılır. Tabloda `photos/temiz` altındaki saydam PNG kullanılır. Fotoğrafı olmayan satır boş kalır.
 
-HTML her oluşturulduğunda veya depo listesi yazıldığında fotoğraflar dosyanın içine gömülür. `img` dış yola (`photos/temiz/...`) bağlanmaz; HTML tek başına gönderildiğinde fotoğraflar durur. Kaynak PNG'ye dokunulmaz. Hücre 68×68 px olduğu için uzun kenar 136 px olur, oran bozulmaz, saydamlık kalır. WebP kalite 75 ile `data:image/webp;base64,...` yazılır. Fotoğrafı olmayan satır boş kalır.
+HTML her oluşturulduğunda, kopyalandığında veya depo listesi yazıldığında fotoğraflar dosyanın içine gömülür. `img` asla `../photos/temiz/...` veya başka bir dosya yoluna bağlanmaz. HTML proje klasöründen çıkıp başka bir yere kopyalanınca da fotoğraflar durur; yanına `photos` klasörü gerekmez. Kaynak PNG'ye dokunulmaz. Hücre 68×68 px olduğu için uzun kenar 136 px olur, oran bozulmaz, saydamlık kalır. WebP kalite 75 ile `data:image/webp;base64,...` yazılır. Fotoğrafı olmayan satır boş kalır. Kökte veya başka klasörde duran kopya da aynı şekilde gömülür.
 
 ## Pano iç layout (DIN 35)
 
