@@ -7,6 +7,8 @@ alwaysApply: true
 
 Kullanıcı sonraki KBN 1B manuel panoyu istediğinde bu dosyadaki kuralların tamamına uy. Kontaktör, termik, MKŞ, sigorta, pako şalter ve röle yalnızca bu stoktan seçilir. Başka marka veya bu listede olmayan kod yazma. Çıktıda malzeme adını ve stok kodunu birlikte yaz.
 
+Elektrik kutusu yap denince pano ölçüsünü sor. Verilen genişlik x yükseklik değerini HTML üst satırına yaz: 380 V · 50 Hz · Pano 1000x1200 mm · Tablo gücü … Aynı ölçü notlarda da durur: Pano ölçüsü 1000x1200 mm. Ölçü sorulmadan yazılmaz. Bu projelerin ölçüleri: KBN 1B panolar 710x710, 1326050 1200x1000, 0326070 1000x1200.
+
 Akım verilmezse 380 V, 3 faz, 50 Hz kabul et. Çizimde "380 V · 50 Hz" ibaresi üstte durur. In yaklaşık: 0,37 kW→1,1 A; 0,55→1,5; 0,75→1,9; 1,1→2,6; 1,5→3,7; 2,2→5,2; 3→6,6; 4→8,9; 5,5→12; 7,5→16; 11→23. Ayar = In. Tablo gücü kW toplamıdır. Tablo akımı, yükler aynı anda çalışırken hat akımlarının toplamıdır.
 
 - Kontaktör: hem AC-3 akımı hem katalog kW değeri motoru karşılayan en küçük model.
@@ -106,7 +108,7 @@ Kullanıcı bir pafta için pano içi 2D dizilim istediğinde ayrı HTML dosyas�
 
 ### Tava ve kanallar
 
-- Dış kare: standart **710×710 mm** KBN 1B pano (KBN 2B farklıysa projede yazılı ölçü).
+- Dış kare: verilen pano ölçüsü. KBN 1B projeleri 710×710 mm. 1326050 1200×1000 mm. 0326070 1000×1200 mm. Yeni elektrik kutusunda ölçü sorulur.
 - İç kare: **tava** montaj alanı (tipik **630×630 mm**; farklıysa paftada belirtilir).
 - **Üst:** 40 mm kablo kanalı, tava üst kenarına **sıfır**.
 - **Sol ve sağ:** 40 mm kablo kanalı, tava **alt kenarına kadar**.

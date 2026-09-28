@@ -170,7 +170,7 @@
     <header>
       <div>
         <h1>0326069-KSYSTE-KBN 1B 1850</h1>
-        <p class="supply">380 V · 50 Hz · Tablo gücü 22,74 kW · Tablo akımı 39,7 A</p>
+        <p class="supply">380 V · 50 Hz · Pano 710x710 mm · Tablo gücü 22,74 kW · Tablo akımı 39,7 A</p>
       </div>
       <div class="head-side">
         <div class="langs" role="group" aria-label="Language">
@@ -1049,6 +1049,7 @@
       return src
         .replace("Tablo gücü", lang === "en" ? "Table power" : "Schrankleistung")
         .replace("Tablo akımı", lang === "en" ? "Table current" : "Schrankstrom")
+        .replace("Pano ", lang === "en" ? "Panel " : "Schrank ")
         .replace("pano malzemesi", lang === "en" ? "panel materials" : "Schaltschrankmaterial");
     }
     return src;
