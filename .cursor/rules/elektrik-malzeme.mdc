@@ -7,7 +7,15 @@ alwaysApply: true
 
 Kullanıcı sonraki KBN 1B manuel panoyu istediğinde bu dosyadaki kuralların tamamına uy. Kontaktör, termik, MKŞ, sigorta, pako şalter ve röle yalnızca bu stoktan seçilir. Başka marka veya bu listede olmayan kod yazma. Çıktıda malzeme adını ve stok kodunu birlikte yaz.
 
-Elektrik kutusu yap denince pano ölçüsünü sor. Verilen genişlik x yükseklik değerini HTML üst satırına yaz: 380 V · 50 Hz · Pano 1000x1200 mm · Tablo gücü … Aynı ölçü notlarda da durur: Pano ölçüsü 1000x1200 mm. Ölçü sorulmadan yazılmaz. Bu projelerin ölçüleri: KBN 1B panolar 710x710, 1326050 1200x1000, 0326070 1000x1200.
+## Elektrik kutusu hazırlama — sorular ve hatırlatmalar
+
+Kullanıcı **elektrik kutusu yap**, **elektrik kutusu hazırlayalım** veya benzeri dediğinde pafta/depo yazmadan önce eksikleri sor; aşağıdakileri **hatırlat**:
+
+1. **Pano ölçüsü** kullanıcı vermediyse **mutlaka sor**. Bilinen proje (1326050, 0326070, KBN 1B vb.) olsa bile ölçü mesajda yoksa sorulmadan HTML’e yazılmaz.
+2. **Ana kesme (TMŞ / Pako):** Projede ana besleme **TMŞ** mi **Pako şalter** mi? Kullanıcı belirtmediyse sor. Tasarımda yalnız biri vardır; ikisi birlikte değildir. Seçilen tipe göre malzeme yaz; **seçilmeyen** için paftaya ekleme. Paftada **TMŞ yoksa** veya **Pako şalter yoksa** bunu kullanıcıya **açıkça söyle** (not veya kısa bilgi: «Panoda Pako şalter yok, ana kesme TMŞ» / «Panoda TMŞ yok, ana kesme Pako»). Seri yetmiyorsa uydurma; notta belirt.
+3. **Kaçak akım yardımcı kontak:** Grup kaçak akımlarına **YARDIMCI KONTAK 1NA/1NK A9A26924 IOF — 10 10820** her projede yoktur; bazen konur bazen konmaz. Kullanıcı net söylemediyse **hatırlat ve sor:** hangi kaçak akım(lar)ına yardımcı kontak isteniyor? Onay almadan IOF ekleme veya atlama.
+
+Ölçü alındıktan sonra HTML üst satırına yaz: `380 V · 50 Hz · Pano 1000x1200 mm · Tablo gücü …` Aynı ölçü notlarda da durur: Pano ölçüsü 1000x1200 mm. Bilinen ölçüler: KBN 1B panolar 710x710, 1326050 1200x1000, 0326070 1000x1200.
 
 Akım verilmezse 380 V, 3 faz, 50 Hz kabul et. Çizimde "380 V · 50 Hz" ibaresi üstte durur. In yaklaşık: 0,37 kW→1,1 A; 0,55→1,5; 0,75→1,9; 1,1→2,6; 1,5→3,7; 2,2→5,2; 3→6,6; 4→8,9; 5,5→12; 7,5→16; 11→23. Ayar = In. Tablo gücü kW toplamıdır. Tablo akımı, yükler aynı anda çalışırken hat akımlarının toplamıdır.
 
