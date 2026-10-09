@@ -78,6 +78,7 @@ Kural numaraları (R1.2 gibi) üzerinden konuşulur. Stok kodu biçimi her zaman
 - **R4.1c** MİNYATÜR RÖLE RXM4AB1P7 220V `10 00294` — 1 adet, R7.4'teki röle setine **ek**. Yalnız KBN 1B ve invertörlü LYM.
 - **R4.1d** RÖLE SOKETİ RXZE2M114M `10 00295` — 1 adet, R7.4'teki soketlere **ek**. Yalnız KBN 1B ve invertörlü LYM.
 - **R4.2 Pompa 7,5 kW** — İNVERTÖR VFD75E43A 7,5KW `10 05803`. Giriş 380 V üç faz; ön sigorta 3 kutup: SİGORTA A9F74340 SCHNEİDER 40A `10 16119`.
+- **R4.2a Pompa 2,2 kW invertörlü (KBN 2B)** — KBN 2B'de yıkama ve durulama pompaları invertörle sürülür (pompa basıncı invertör kontrolü). İnvertör sepet invertörüyle aynı seriden: İNVERTÖR VFD022EL43A 2,2KW (Delta VFD-EL, 380 V üç faz) — STOK KODU YOK (R0.5a). Ön sigorta 3 kutup: SİGORTA A9F74316 SCHNEİDER 16A `10 04000`. MKŞ ve termik eklenmez.
 - **R4.3 Isıtıcı — KBN 1B** — yalnız kontaktör: KONTAKTÖR LC1K1610M7 220V `10 01332` (8 kW için 16 A). Termik, MKŞ ve ayrı sigorta eklenmez; ısıtıcı hattının koruması girişteki tek büyük sigortadan (aşırı akım koruma, R5.5) gelir.
 - **R4.4 Isıtıcı — KBN 2B** — kontaktör + 3P sigorta. Termik ve MKŞ eklenmez. 8 kW (12,15 A) ve 6 kW (9,12 A) için: KONTAKTÖR LC1K1610M7 220V `10 01332` + SİGORTA A9F74316 SCHNEİDER 16A `10 04000`. LC1K09 (9 A) 6 kW ısıtıcının 9,12 A'ini karşılamaz. A9F74306 (6 A) ikisini de karşılamaz.
 - **R4.5 Sensörler** — sensör, termokupl ve el koruma sensörüne kontaktör, termik, MKŞ eklenmez.
@@ -86,6 +87,9 @@ Kural numaraları (R1.2 gibi) üzerinden konuşulur. Stok kodu biçimi her zaman
 - **R4.7a KBN 1B ve LYM: termik + kontaktör** — TERMIK RÖLESİ LR2K0305 0,54-0,8A `10 00243` + KONTAKTÖR LC1K0610M7 220V `10 02314`.
 - **R4.7b KBN 2B: MKŞ + kontaktör** — MOTOR KORUMA ŞALTERİ GV2ME04 0,40-0,63A `10 01368` + KONTAKTÖR LC1K0610M7 220V `10 02314` + YARDIMCI KONTAK GVAE11 MKŞ `10 01365`. (KBN 1B/LYM termiği LR2K0305 aynı kalır.) Etikete buton/lamba konmaz; yağ sıyırıcı **ekrandan** kumanda edilir.
 - **R4.7c Etiket kalemleri (yalnız KBN 1B ve LYM)** — BUTON MANDAL B100S20 `10 00262` 1 adet + SİNYAL LAMBASI S14B BEYAZ 220V `10 00279` 1 adet + KONTAK BLOK NO B1 `10 00267` 1 adet.
+- **R4.8 Saha satırı üç bölüm (KBN 2B)** — Saha kalemleri paftada üç satırda yazılır: **Sensörler**, **Valfler**, **Switchboxlar**. Hiçbirine kontaktör, termik, MKŞ eklenmez; stok kodu verilmedi.
+- **R4.9 Tahliye pistonu (KBN 2B)** — Her tank için 1 adet tahliye pistonu valfi 5/3 (yıkama tankı, durulama tankı …) yazılır. Her pistonun açık ve kapalı sensörü vardır (+24VDC, 2 giriş); PLC çıkışı pistonu aç / kapa (2 çıkış).
+- **R4.10 Otomatik dolum (EX108)** — Opsiyon varsa tank sayısı kaç olursa olsun **tank başına**: 1 adet 3/2 valf (aktüatörlü dolum vanası), 1 adet switchbox (vana açık / kapalı bilgisi, 2 giriş) ve 1 adet üst seviye sensörü. PLC çıkışı vana başına 1. Opsiyon yoksa tank başına yalnız alt seviye sensörü vardır.
 
 ## 5. Pano beslemesi — her panoda
 
@@ -230,6 +234,7 @@ Ayar aralığı Schneider GV2ME katalog değeridir. GV2ME32 bu stokta yok.
 |---|---|---|
 | İNVERTÖR VFD004EL21W-1 0,4KW | Sepet redüktörü 0,37 kW | 10 16319 |
 | İNVERTÖR VFD75E43A 7,5KW | Pompa 7,5 kW | 10 05803 |
+| İNVERTÖR VFD022EL43A 2,2KW | Pompa 2,2 kW (KBN 2B, R4.2a) | STOK KODU YOK |
 | GÜÇ KAYNAĞI MDR 20/24 | LYM | 10 02491 |
 | GÜÇ KAYNAĞI MDR 100/24 | KBN 1B | 10 02772 |
 | GÜÇ KAYNAĞI LRS 350/24 24VDC 14,6AMP | KBN 2B (PLC'li) | 10 04903 |
@@ -328,9 +333,9 @@ Stok kodları henüz yok (R0.5a). 36 kA @ 415 V. Gövde 3P: 105 × 161 × 86 mm 
 - **R8.1 Etiket** — üstte OMRON NB7W-TW01B `10 16496`. Sepet test butonu yoktur; B100DB `10 00270` etikete ve depoya yazılmaz.
 - **R8.2** Ortada SIFIRLA mavi = B100DM `10 00272`. Solunda START, sağında STOP. START ve STOP kapak aç/kapat butonlarından **ayrı** butonlardır, aynı model: START yeşil B100DY `10 00273`, STOP kırmızı B100DK `10 00271`. Etikette toplam 3 yeşil (START + 2 kapak aç) ve 3 kırmızı (STOP + 2 kapak kapat).
 - **R8.3 Çift el** KBN 1B ile aynı (R7.9).
-- **R8.4 PLC I/O** — CP2E-N60 dijital giriş 0.0–0.11, 1.0–1.11, 2.0–2.11. İlk dijital ek modül CP1W-20EDT1 giriş 3.0–3.11. Toplam 48 giriş. Çıkış 100.0–100.7, 101.0–101.7, 102.0–102.7, ek modül 103.0–103.7. Toplam 32 çıkış. Boş uç YEDEK. TS002 ve ADB21 bu dijital uçları kullanmaz.
-- **R8.4a İkinci ek modül** — Giriş 48'i veya çıkış 32'yi aşarsa 2. dijital ek modül eklenir; fazla I/O'yu karşılayan en küçüğü seçilir. Fazla ≤ 12 giriş ve ≤ 8 çıkış → PLC EK MODÜL OMRON CP1W20EDT1 `10 18528` (12DI/8DO; giriş 4.0–4.11, çıkış 104.0–104.7). Fazla ≤ 24 giriş ve ≤ 16 çıkış → CP1W-40EDT1 (24DI/16DO; giriş 4.0–4.11, 5.0–5.11, çıkış 104.0–104.7, 105.0–105.7). Toplam 72 giriş / 48 çıkışı aşarsa uydurma, yetmediğini yaz. Bu durumda çıkışlar 103.7 yerine 2. modülün son çıkışıyla biter (R8.5).
-- **R8.5 Çıkış rölesi** — YAPRAK ROLE KONTAĞI WEİDMÜLLER TRS 24VDC 1CO `10 02146`, adet R numarası kadar. Çıkışlar son ek modülün son ucuyla biter (tek ek modülde 103.7); boş giriş satırına röle yazılmaz. Safety PLC röle sütunu bir sonraki numaradan devam eder ve SO6 ile biter; çıkışı boş safety satırına röle yazılmaz.
+- **R8.4 PLC I/O** — CP2E-N60 dijital giriş 0.0–0.11, 1.0–1.11, 2.0–2.11 (36 giriş); çıkış 100.0–100.7, 101.0–101.7, 102.0–102.7 (24 çıkış). Dijital ek modül **yalnız** giriş 36'yı veya çıkış 24'ü aşarsa eklenir (R8.4a); aşmıyorsa PLC listesi CPU + TS002 + ADB21 + NB7W'dir ve gereksiz YEDEK uç bırakılmaz. CP1W-20EDT1 eklenirse giriş 3.0–3.11, çıkış 103.0–103.7. Boş uç YEDEK. TS002 ve ADB21 bu dijital uçları kullanmaz.
+- **R8.4a Ek modül seçimi** — CPU kapasitesini (36 giriş / 24 çıkış) aşan I/O'yu karşılayan en küçük ek modül seçilir. Fazla ≤ 12 giriş ve ≤ 8 çıkış → PLC EK MODÜL OMRON CP1W20EDT1 `10 18528` (12DI/8DO; giriş 3.0–3.11, çıkış 103.0–103.7). Fazla ≤ 24 giriş ve ≤ 16 çıkış → CP1W-40EDT1 (24DI/16DO; giriş 3.0–3.11, 4.0–4.11, çıkış 103.0–103.7, 104.0–104.7). Daha fazlası → 20EDT1 + 40EDT1 (en çok 72 giriş / 48 çıkış); aşarsa uydurma, yetmediğini yaz. Çıkışlar son modülün son ucuyla biter (R8.5).
+- **R8.5 Çıkış rölesi** — YAPRAK ROLE KONTAĞI WEİDMÜLLER TRS 24VDC 1CO `10 02146`, adet R numarası kadar. Çıkışlar son modülün son ucuyla biter (yalnız CPU'da 102.7, 20EDT1 ile 103.7); boş giriş satırına röle yazılmaz. Safety PLC röle sütunu bir sonraki numaradan devam eder ve SO6 ile biter; çıkışı boş safety satırına röle yazılmaz.
 - **R8.6 Röle köprüsü** — WEIDMÜLLER TCC 6.4/51 OR (24 diş) `10 13016`, her 24 röle için 1 adet. Safety röleleri (R8.7) bu sayıma dahildir.
 - **R8.7 Safety PLC varsa** — depo listesine ayrıca 6 adet YAPRAK ROLE KONTAĞI WEİDMÜLLER TRS 24VDC 1CO `10 02146` eklenir (SO1–SO6). Safety PLC yoksa bu 6 röle eklenmez.
 
@@ -362,6 +367,7 @@ Stok kodları henüz yok (R0.5a). 36 kA @ 415 V. Gövde 3P: 105 × 161 × 86 mm 
 ### Tava ve kanallar
 
 - **R11.2** Dış kare = pano ölçüsü. İç kare = tava montaj alanı (tipik 630×630 mm; farklıysa paftada belirtilir).
+- **R11.2a** 900×1200 panoda tava 800×1100 mm kabul edilir (kenarlardan 50 mm); TMŞ ve LRS 350/24 montaj plakasına vidalanır, ray dışıdır (R11.13a). Satırlar genişliğe göre otomatik bölünür; bir satıra sığmayan kalem bir sonraki satıra geçer.
 - **R11.3** 40 mm kablo kanalları: üstte (tava üst kenarına sıfır), solda ve sağda (tava alt kenarına kadar), her DIN satırı arasında, altta (tava alt kenarına sıfır).
 - **R11.4** İç alan genişliği = tava − 2×40 mm. Dikey: üst kanal + satır bantları + ara kanallar + alt kanal = tava yüksekliği.
 

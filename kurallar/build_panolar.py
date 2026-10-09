@@ -144,7 +144,7 @@ MODELS = [
             {"code": "10 03578", "qty": 1, "note": "Motor grubu", "rule": "R5.10"},
             {"code": "10 15962", "qty": 1, "note": "Ek bara", "rule": "R5.10"},
             {"code": "10 17185", "qty": 1, "rule": "R8.4"},
-            {"code": "10 18528", "qty": 1, "rule": "R8.4"},
+            {"code": "10 18528", "qty": "giriş > 36 / çıkış > 24 ise 1", "rule": "R8.4a"},
             {"code": "10 17183", "qty": 1, "rule": "R8.4"},
             {"code": "10 17184", "qty": 1, "rule": "R8.4"},
             {"code": "10 16496", "qty": 1, "rule": "R8.1"},
